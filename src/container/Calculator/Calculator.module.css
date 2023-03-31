@@ -1,0 +1,128 @@
+.accodion-header-title {
+  text-align: center !important;
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  border: none !important;
+}
+
+.accodion-header-title:hover,
+.accodion-header-title:active {
+  text-align: center !important;
+  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
+}
+
+.accodion-header-title-two {
+  text-align: center !important;
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  border: none !important;
+  margin-top: 10px;
+}
+
+.accodion-header-title-two:hover,
+.accodion-header-title-two:active {
+  text-align: center !important;
+  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
+}
+
+.panel-header-text {
+  font-size: 18px !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.heading-price {
+  background-color: #fafafa;
+  color: black;
+  font-size: 14px;
+  padding: 8px 10px;
+  margin-top: -12px;
+  font-weight: 600 !important;
+  text-align: center !important;
+  box-shadow: 0px 0px 0px 0px rgb(236, 236, 236) !important;
+}
+
+.heading-price-to-yield {
+  background-color: #fafafa;
+  color: black;
+  font-size: 14px;
+  padding: 8px 10px;
+  font-weight: 600 !important;
+  text-align: center !important;
+  box-shadow: 0px 0px 0px 0px rgb(236, 236, 236) !important;
+}
+
+.heading-paper {
+  padding: 10px 30px;
+  position: relative !important;
+  top: -6px;
+  background-color: white !important;
+  /* box-shadow: 1px 1px 3px 3px rgb(236, 236, 236) !important; */
+}
+
+.alltextfields-calculator {
+  height: 27px;
+  border-radius: 4px;
+}
+
+.all-field-labels {
+  font-size: 14px;
+  font-weight: 600 !important;
+}
+
+.interpolated-text {
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+.bottom-row-background {
+  background-color: #d5d6df;
+  padding: 8px 17px;
+  width: 100%;
+  margin: 0%;
+  margin-top: -3px;
+  /* box-shadow: 0px 1px 3px 3px rgb(236, 236, 236) !important; */
+}
+
+.calculate-btn {
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  color: white !important;
+  border: none;
+  border-radius: 4px !important;
+  padding: 7px 15px;
+  position: relative;
+  left: 10px;
+}
+
+.reset-btn {
+  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
+  color: white !important;
+  border: none;
+  border-radius: 4px !important;
+  padding: 7px 15px;
+  position: relative;
+  right: 10px;
+}
+
+.yield-to-price-labels {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-align: right !important;
+}
+
+.PIB-labels {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-align: right !important;
+}
+
+.slect-bond-p-to-y {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-align: right !important;
+}
+
+.maturity-bond-p-to-y {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-align: right !important;
+}
