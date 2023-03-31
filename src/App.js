@@ -8,10 +8,10 @@ import Sidebar from "./components/layout/Sidebar/Sidebar";
 function App() {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Header />
       {/* <Calculator /> */}
-      {/* <Client/> */}
+      <Client/>
 
       <div className="App"></div>
     </>

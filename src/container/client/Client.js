@@ -659,6 +659,7 @@ const Client = () => {
           setBuyModal();
           setSellModal();
         }}
+        // backdrop={true}
         modalHeaderClassName={
           viewModal === true ? "d-none" : "header-Video-Modal-close-btn"
         }

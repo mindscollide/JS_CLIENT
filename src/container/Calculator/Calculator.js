@@ -10,7 +10,7 @@ const Calculator = () => {
     <>
       <Container fluid>
         <Row className="mt-3">
-          <Col lg={12} md={12} sm={12}>
+          <Col lg={11} md={11} sm={11}>
             <Collapse
               size="small"
               showArrow={false}
@@ -980,6 +980,7 @@ const Calculator = () => {
               </Panel>
             </Collapse>
           </Col>
+          <Col lg={1} md={1} sm={1} />
         </Row>
       </Container>
     </>
