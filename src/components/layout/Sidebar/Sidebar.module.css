@@ -1,0 +1,44 @@
+.sidebar-row {
+  margin: 0 !important;
+}
+
+.new_sidebar {
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+  width: 100vh !important;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.js-sidebar {
+  margin: 0 !important;
+  background-color: #2a38af !important;
+  position: fixed;
+  right: 0 !important;
+  height: 90vh;
+  width: 75px !important;
+  top: 75px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sidebar-text {
+  color: white !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.openChat-panel {
+  height: 82vh !important;
+  width: 25% !important;
+  background-color: #fff;
+  border-radius: 0px;
+  border: 1px solid #2a38af !important;
+}
