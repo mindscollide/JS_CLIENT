@@ -11,7 +11,7 @@ function App() {
       <Sidebar />
       <Header />
       {/* <Calculator /> */}
-      {/* <Client/> */}
+      <Client/>
 
       <div className="App"></div>
     </>
