@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Col, Row, Card, Form } from "react-bootstrap";
-import { Collapse, Divider } from "antd";
+import { Collapse, Divider, Select } from "antd";
 import { Table, Button, Accordian, TextField } from "../../components/elements";
 import styles from "./Calculator.module.css";
 
@@ -43,17 +43,15 @@ const Calculator = () => {
                         </label>
                       </Col>
 
-                      <Col lg={5} md={5} sm={5}>
-                        <TextField
-                          className={styles["alltextfields-calculator"]}
-                        />
+                      <Col lg={5} md={5} sm={5} className="mt-3">
+                        <Select className={styles["select-field-calculator"]} />
                       </Col>
 
                       <Col
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Price
@@ -71,7 +69,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Settlement Date
@@ -89,7 +87,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Life Remaning
@@ -107,7 +105,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center  mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Maturity Date
@@ -142,7 +140,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Purchased Yield %
@@ -160,7 +158,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Approximate Price Change
@@ -178,7 +176,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Tenor
@@ -196,7 +194,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end  mt-3"
                       >
                         <label className={styles["yield-to-price-labels"]}>
                           Yield To Maturity %
@@ -209,12 +207,12 @@ const Calculator = () => {
                       </Col>
                     </Row>
 
-                    <Row className="mt-4">
+                    <Row className="mt-3">
                       <Col
                         lg={5}
                         md={5}
                         sm={5}
-                        className="d-flex justify-content-center"
+                        className="d-flex justify-content-start"
                       >
                         <p className={styles["interpolated-text"]}>
                           Interpolated PKRV Rates = 16.06
@@ -267,10 +265,8 @@ const Calculator = () => {
                         </label>
                       </Col>
 
-                      <Col lg={5} md={5} sm={5}>
-                        <TextField
-                          className={styles["alltextfields-calculator"]}
-                        />
+                      <Col lg={5} md={5} sm={5} className="mt-3">
+                        <Select className={styles["select-field-calculator"]} />
                       </Col>
                       {/* <Col lg={1} md={1} sm={1} /> */}
 
@@ -278,7 +274,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Yield To Maturity %
@@ -296,7 +292,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Settlement Date
@@ -332,7 +328,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Life Remaning
@@ -350,7 +346,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Maturity Date
@@ -386,7 +382,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-end mt-4"
+                        className="d-flex justify-content-end mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Purchased Yield %
@@ -404,7 +400,7 @@ const Calculator = () => {
                         lg={1}
                         md={1}
                         sm={1}
-                        className="d-flex justify-content-center mt-4"
+                        className="d-flex justify-content-center mt-3"
                       >
                         <label className={styles["maturity-bond-p-to-y"]}>
                           Approximate Price Change
@@ -513,10 +509,8 @@ const Calculator = () => {
                       </label>
                     </Col>
 
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
+                    <Col lg={5} md={5} sm={5} className="mt-3">
+                      <Select className={styles["select-field-calculator"]} />
                     </Col>
                     {/* <Col lg={2} md={2} sm={2} /> */}
 
@@ -526,7 +520,7 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
-                      <label className={styles["PIB-labels"]}>Price</label>
+                      <label className={styles["PIB-labels"]}>Frequency</label>
                     </Col>
                     <Col
                       lg={5}
@@ -565,7 +559,7 @@ const Calculator = () => {
                       lg={1}
                       md={1}
                       sm={1}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className={styles["PIB-labels"]}>
                         Settlement Date
@@ -584,6 +578,39 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
+                      <label className={styles["PIB-labels"]}>Price</label>
+                    </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Maturity Date
+                      </label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
                       <label className={styles["PIB-labels"]}>
                         Life Remaning
                       </label>
@@ -600,10 +627,10 @@ const Calculator = () => {
                       lg={1}
                       md={1}
                       sm={1}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className={styles["PIB-labels"]}>
-                        Maturity Date
+                        Coupon Rate %
                       </label>
                     </Col>
 
@@ -635,41 +662,6 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
-                      <label className={styles["PIB-labels"]}>
-                        Purchased Yield %
-                      </label>
-                    </Col>
-
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
-                    </Col>
-
-                    <Col
-                      lg={1}
-                      md={1}
-                      sm={1}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className={styles["PIB-labels"]}>
-                        Approximate Price Change
-                      </label>
-                    </Col>
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={1}
-                      md={1}
-                      sm={1}
-                      className="d-flex justify-content-end mt-4"
-                    >
                       <label className={styles["PIB-labels"]}>Tenor</label>
                     </Col>
 
@@ -685,8 +677,70 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
+                      <label className={styles["PIB-labels"]}>Duration</label>
+                    </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>Day Count</label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5} className="mt-3">
+                      <Select className={styles["select-field-calculator"]} />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>M Duration</label>
+                    </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
                       <label className={styles["PIB-labels"]}>
                         Yield To Maturity %
+                      </label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Effective Duration
                       </label>
                     </Col>
                     <Col lg={5} md={5} sm={5}>
@@ -696,18 +750,33 @@ const Calculator = () => {
                     </Col>
                   </Row>
 
-                  <Row className="mt-4">
+                  <Row>
                     <Col
                       lg={6}
                       md={6}
                       sm={6}
-                      className="d-flex justify-content-center"
+                      className="d-flex justify-content-start mt-3"
                     >
-                      <p className={styles["interpolated-text"]}>
+                      <p className={styles["interpolated-text-bottom"]}>
                         Interpolated PKRV Rates = 16.06
                       </p>
                     </Col>
-                    <Col lg={6} md={6} sm={6} />
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Approximate Price Change
+                      </label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
                   </Row>
                 </div>
 
@@ -720,7 +789,7 @@ const Calculator = () => {
                       className="d-flex justify-content-end"
                     >
                       <Button
-                        text="calculate"
+                        text="Calculate"
                         className={styles["calculate-btn"]}
                       />
                     </Col>
@@ -754,11 +823,10 @@ const Calculator = () => {
                       </label>
                     </Col>
 
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
+                    <Col lg={5} md={5} sm={5} className="mt-3">
+                      <Select className={styles["select-field-calculator"]} />
                     </Col>
+                    {/* <Col lg={2} md={2} sm={2} /> */}
 
                     <Col
                       lg={1}
@@ -766,7 +834,7 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
-                      <label className={styles["PIB-labels"]}>Price</label>
+                      <label className={styles["PIB-labels"]}>Frequency</label>
                     </Col>
                     <Col
                       lg={5}
@@ -805,7 +873,7 @@ const Calculator = () => {
                       lg={1}
                       md={1}
                       sm={1}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className={styles["PIB-labels"]}>
                         Settlement Date
@@ -822,9 +890,11 @@ const Calculator = () => {
                       lg={1}
                       md={1}
                       sm={1}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
-                      <label className={styles["PIB-labels"]}>Price</label>
+                      <label className={styles["PIB-labels"]}>
+                        Yield To Maturity %
+                      </label>
                     </Col>
                     <Col lg={5} md={5} sm={5}>
                       <TextField
@@ -838,29 +908,29 @@ const Calculator = () => {
                       lg={1}
                       md={1}
                       sm={1}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className={styles["PIB-labels"]}>
-                        Life Remaning
-                      </label>
-                    </Col>
-
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
-                    </Col>
-
-                    <Col
-                      lg={1}
-                      md={1}
-                      sm={1}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className={styles["PIB-labels"]}>
                         Maturity Date
                       </label>
                     </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Life Remaning
+                      </label>
+                    </Col>
                     <Col lg={5} md={5} sm={5}>
                       <TextField
                         className={styles["alltextfields-calculator"]}
@@ -869,6 +939,23 @@ const Calculator = () => {
                   </Row>
 
                   <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Coupon Rate %
+                      </label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+
                     <Col
                       lg={1}
                       md={1}
@@ -877,6 +964,22 @@ const Calculator = () => {
                     >
                       <label className={styles["PIB-labels"]}>PVBP</label>
                     </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>Tenor</label>
+                    </Col>
 
                     <Col lg={5} md={5} sm={5}>
                       <TextField
@@ -890,9 +993,7 @@ const Calculator = () => {
                       sm={1}
                       className="d-flex justify-content-end mt-4"
                     >
-                      <label className={styles["PIB-labels"]}>
-                        Purchased Yield %
-                      </label>
+                      <label className={styles["PIB-labels"]}>Duration</label>
                     </Col>
                     <Col lg={5} md={5} sm={5}>
                       <TextField
@@ -907,6 +1008,69 @@ const Calculator = () => {
                       md={1}
                       sm={1}
                       className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>Day Count</label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5} className="mt-3">
+                      <Select className={styles["select-field-calculator"]} />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>M Duration</label>
+                    </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-4"
+                    >
+                      <label className={styles["PIB-labels"]}>Price</label>
+                    </Col>
+
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
+                    >
+                      <label className={styles["PIB-labels"]}>
+                        Effective Duration
+                      </label>
+                    </Col>
+                    <Col lg={5} md={5} sm={5}>
+                      <TextField
+                        className={styles["alltextfields-calculator"]}
+                      />
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col lg={6} md={6} sm={6}></Col>
+                    <Col
+                      lg={1}
+                      md={1}
+                      sm={1}
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className={styles["PIB-labels"]}>
                         Approximate Price Change
@@ -918,39 +1082,6 @@ const Calculator = () => {
                         className={styles["alltextfields-calculator"]}
                       />
                     </Col>
-
-                    <Col
-                      lg={1}
-                      md={1}
-                      sm={1}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className={styles["PIB-labels"]}>Tenor</label>
-                    </Col>
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
-                    </Col>
-                  </Row>
-
-                  <Row className="mt-4">
-                    <Col
-                      lg={1}
-                      md={1}
-                      sm={1}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className={styles["all-field-labels"]}>
-                        Price
-                      </label>
-                    </Col>
-                    <Col lg={5} md={5} sm={5}>
-                      <TextField
-                        className={styles["alltextfields-calculator"]}
-                      />
-                    </Col>
-                    <Col lg={6} md={6} sm={6} />
                   </Row>
                 </div>
 
@@ -963,7 +1094,7 @@ const Calculator = () => {
                       className="d-flex justify-content-end"
                     >
                       <Button
-                        text="calculate"
+                        text="Calculate"
                         className={styles["calculate-btn"]}
                       />
                     </Col>

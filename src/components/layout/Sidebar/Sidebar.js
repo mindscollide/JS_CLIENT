@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Nav, Container, Navbar, NavDropdown } from "react-bootstrap";
 import Chat from "../../../assets/images/Comment-Icon.png";
 import {
+  Gear,
+  ChatLeft,
+  People,
   Search,
   ArrowsAngleExpand,
   X,
@@ -37,17 +40,28 @@ const Sidebar = () => {
             <>
               {/* ChatIcon */}
               <Nav.Link disabled={false}>
-                <img
-                  src={Chat}
-                  width={40}
-                  onClick={() => setOpenChat(!openChat)}
-                />
+                <span className={styles["sidebar-icons-color"]}>
+                  <i
+                    className="icon-chat2"
+                    size={40}
+                    onClick={() => setOpenChat(!openChat)}
+                  ></i>
+                </span>
+
                 <label className={styles["sidebar-text"]}>Chat</label>
               </Nav.Link>
 
               {/* Logged In User */}
               <Nav.Link disabled={false}>
-                <img src={Users} onClick={() => setOpenLogIn(!openLogIn)} />
+                {/* <img src={Users} onClick={() => setOpenLogIn(!openLogIn)} /> */}
+
+                <span className={styles["sidebar-icons-color"]}>
+                  <i
+                    className="icon-group-chat"
+                    size={40}
+                    onClick={() => setOpenLogIn(!openLogIn)}
+                  ></i>
+                </span>
                 <label className={styles["sidebar-text"]}>
                   Logged In Users
                 </label>
@@ -55,16 +69,24 @@ const Sidebar = () => {
 
               {/* Invite User */}
               <Nav.Link disabled={false}>
-                <img
-                  src={Broadcast}
-                  onClick={() => setOpenInvite(!openInvite)}
-                />
+                <span className={styles["sidebar-icons-color"]}>
+                  <i
+                    className="icon-group-chat"
+                    size={40}
+                    onClick={() => setOpenInvite(!openInvite)}
+                  ></i>
+                </span>
+
                 <label className={styles["sidebar-text"]}>Invite users</label>
               </Nav.Link>
 
               {/* Broadcast user */}
-              <Nav.Link disabled={true}>
-                <img src={Broadcast} />
+              <Nav.Link disabled={false}>
+                {/* <img src={Broadcast} /> */}
+
+                <span className={styles["sidebar-icons-color"]}>
+                  <i className="icon-message"></i>
+                </span>
                 <label className={styles["sidebar-text"]}>
                   Broadcast message
                 </label>
@@ -72,7 +94,10 @@ const Sidebar = () => {
 
               {/* Setting User */}
               <Nav.Link disabled={true}>
-                <img src={Broadcast} />
+                {/* <img src={Broadcast} /> */}
+                <span className={styles["sidebar-icons-color"]}>
+                  <i className="icon-settings"></i>
+                </span>
                 <label className={styles["sidebar-text"]}>Settings</label>
               </Nav.Link>
 
@@ -720,8 +745,8 @@ const Sidebar = () => {
                   <TextField className={styles["textfield-chatbox"]} />
                 </Col>
                 <Col lg={3} md={3} sm={3} className={styles["btm-icons"]}>
-                  <Send size={20}/>
-                  <Paperclip size={20}/>
+                  <Send size={20} />
+                  <Paperclip size={20} />
                 </Col>
               </Row>
             </div>
