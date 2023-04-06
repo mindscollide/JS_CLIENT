@@ -5,10 +5,14 @@ import {
   ChevronDown,
   CaretDownFill,
   ListUl,
+  ChatDots,
   Facebook,
 } from "react-bootstrap-icons";
 import DowJones from "../../assets/images/dowjones.png";
 import CNBC from "../../assets/images/cnbc.png";
+import PDF from "../../assets/images/pdf.png";
+import Excel from "../../assets/images/excel.png";
+
 import { Select } from "antd";
 import Tresmark from "../../assets/images/tresmark.png";
 import "./Client.css";
@@ -25,10 +29,578 @@ const Client = () => {
   //for sell modal for client
   const [sellModal, setSellModal] = useState(false);
 
-  // Filter Options
+  //for left table option state
+  const [currentTable, setCurrentTable] = useState(1);
+
+  //for right table option state
+  const [currentRightTable, setCurrentRightTable] = useState(3);
+
+  //for LEFT columns states in table
+  const [isTbills, setIsTbills] = useState(true);
+  const [isPib, setIsPib] = useState(false);
+  const [isPibFloater, setIsPibFloater] = useState(false);
+  const [isSukuk, setIsSukuk] = useState(false);
+
+  // for RIGHT columns states
+  const [isRightTbills, setIsRightTbills] = useState(true);
+  const [isRightPib, setIsRightPib] = useState(false);
+  const [isPibRightFloater, setIsPibRightFloater] = useState(false);
+  const [isRightSukuk, setIsRightSukuk] = useState(false);
+
+  // for bottom button export file toggle
+  const [isExport, setIsExport] = useState(false);
+
+  // fro another recent quote select panel
+  const [isRecent, setIsRecent] = useState(true);
+
+  // for another PKRV select panel
+  const [isPkrv, setIsPkrv] = useState(false);
+
+  // data for rows for first table
+  const data = [
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">12-01-2023</label>,
+      tenor: "1Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">22-01-2023</label>,
+      tenor: "3m",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">15-01-2023</label>,
+      tenor: "3m",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "6m",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "1Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "1Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+    },
+  ];
+
+  // data for rows for first table
+  const Pibdata = [
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">12-01-2023</label>,
+      tenor: "2Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">22-01-2023</label>,
+      tenor: "3Y",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">15-01-2023</label>,
+      tenor: "5Y",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "10Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "2Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "3Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+    },
+  ];
+
+  // data for rows for first table
+  const PibFloaterdata = [
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">12-01-2023</label>,
+      tenor: "1Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 2,
+      bidspread: 20,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">22-01-2023</label>,
+      tenor: "3Y",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 4,
+      bidspread: 20,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">15-01-2023</label>,
+      tenor: "2Y",
+      bid: 232,
+      offer: 15.43,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 4,
+      bidspread: 20,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "2Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 2,
+      bidspread: 25,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "10Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 2,
+      bidspread: 25,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "5Y",
+      bid: 232,
+      offer: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      frequency: 2,
+      bidspread: 25,
+    },
+  ];
+
+  // for Tbills filter data
+  const [filteredData, setFilteredData] = useState(data);
+
+  // for Pib filter data
+  const [pibFilter, setPibFilter] = useState(Pibdata);
+
+  // for pib floater filter data
+  const [pibFloaterFilter, setIsPibFloaterFilter] = useState(PibFloaterdata);
+
+  // for tbills filter handler
+  const handleFilter = (tenor) => {
+    // console.log(tenor, "filteredfiltered");
+    // console.log(data, "filteredfiltered");
+    const filtered = data.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    // console.log(filtered, "filteredfiltered");
+    setFilteredData(filtered);
+  };
+
+  // for pib filter handler
+  const pibHandleFilter = (tenor) => {
+    const filtered = Pibdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setPibFilter(filtered);
+  };
+
+  // for pib Floater filter handler
+  const pibFloaterHandleFilter = (tenor) => {
+    const filtered = PibFloaterdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setIsPibFloaterFilter(filtered);
+  };
+
+  // for Tbills right filter
+  const [rightFilter, setRightFilter] = useState(data);
+
+  //for pib right filter
+  const [rightPibFilter, setRightPibFilter] = useState(Pibdata);
+
+  //for pib floater filter data
+  const [rightFloaterFilter, setRightFloaterFilter] = useState(PibFloaterdata);
+
+  // for tbills right filter handler
+  const handleRightFilter = (tenor) => {
+    const filtered = data.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightFilter(filtered);
+  };
+
+  // for pib right filter handler
+  const pibRightHandleFilter = (tenor) => {
+    const filtered = Pibdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightPibFilter(filtered);
+  };
+
+  // for pib right Floater filter handler
+  const pibRightFloaterHandleFilter = (tenor) => {
+    const filtered = PibFloaterdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightFloaterFilter(filtered);
+  };
+
+  // data for PKRV panel table columns for table
+  const PkrvPanelcolumns = [
+    {
+      title: <label className="table-all-title">Issue Date</label>,
+      dataIndex: "issuedate",
+      key: "issuedate",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="issue-date-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Maturity</label>,
+      dataIndex: "maturity",
+      key: "maturity",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="maturity-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Tenor</label>,
+      dataIndex: "tenor",
+      key: "tenor",
+      align: "center",
+      width: "100px",
+      ellipsis: true,
+      filters: [
+        {
+          text: "1Y",
+          value: "1",
+        },
+        {
+          text: "6M",
+          value: "2",
+        },
+        {
+          text: "3M",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Instrument</label>,
+      dataIndex: "instrument",
+      key: "instrument",
+      width: "100px",
+      ellipsis: true,
+    },
+    {
+      title: <label className="table-all-title">PKRV</label>,
+      dataIndex: "pkrv",
+      key: "pkrv",
+      width: "100px",
+      // render: (text) => (
+      //   <Button
+      //     text={text}
+      //     onClick={openSellModal}
+      //     className="offer-text-button"
+      //   />
+      // ),
+    },
+    {
+      title: <label className="table-all-title">RFQ</label>,
+      dataIndex: "rfq",
+      key: "rfq",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => (
+        <Button
+          icon={<ListUl size={22} />}
+          text={text}
+          onClick={openModalHandler}
+          className="offer-text-button"
+        />
+      ),
+      filters: [
+        {
+          text: "119",
+          value: "1",
+        },
+        {
+          text: "20",
+          value: "2",
+        },
+        {
+          text: "21",
+          value: "3",
+        },
+        {
+          text: "35",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">DTM</label>,
+      dataIndex: "dtm",
+      key: "dtm",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Coupon</label>,
+      dataIndex: "Coupon",
+      key: "Coupon",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Coupon Frequency</label>,
+      dataIndex: "couponfrequency",
+      key: "couponfrequency",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Bid Spread</label>,
+      dataIndex: "bidspread",
+      key: "bidspread",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Offer Spread</label>,
+      dataIndex: "offerspread",
+      key: "offerspread",
+      width: "100px",
+    },
+  ];
+
+  // data for rows for first table
+  const PkrvPaneldata = [
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">12-01-2023</label>,
+      tenor: "1Y",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">22-01-2023</label>,
+      tenor: "3m",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">15-01-2023</label>,
+      tenor: "2m",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "1Y",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "1Y",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+    {
+      key: "1",
+      issuedate: <label className="column-boldness">19-10-2022</label>,
+      maturity: <label className="column-boldness">18-01-2023</label>,
+      tenor: "1Y",
+      instrument: "PIB",
+      pkrv: 15.72,
+      dtm: "ewew",
+      Coupon: 16,
+      couponfrequency: 4,
+      bidspread: 25,
+      offerspread: 75,
+    },
+  ];
+
+  // Filter Options for left table
   const tableFilterOptions = [
     { className: "filter-color", label: "Recent Quotes", value: 1 },
-    { className: "filter-color", label: "PKRV Derived bond", value: 2 },
+    {
+      className: "filter-color",
+      label: "PKRV Derived bond",
+      value: 2,
+      // onClick: {openPkrvPanel},
+      // onClick: { openPkrvPanel },
+    },
+    { className: "filter-color", label: "News", value: 3 },
+  ];
+
+  //filter options for right table
+  const rightTableOption = [
+    { className: "filter-color", label: "Recent Quotes", value: 1 },
+    {
+      className: "filter-color",
+      label: "PKRV Derived bond",
+      value: 2,
+      // onClick: {openPkrvPanel},
+      // onClick: { openPkrvPanel },
+    },
     { className: "filter-color", label: "News", value: 3 },
   ];
 
@@ -170,13 +742,321 @@ const Client = () => {
     },
   ];
 
+  // data for Pib table columns for first table
+  const Pibcolumns = [
+    {
+      title: <label className="table-all-title">Issue Date</label>,
+      dataIndex: "issuedate",
+      key: "issuedate",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="issue-date-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Maturity</label>,
+      dataIndex: "maturity",
+      key: "maturity",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="maturity-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Tenor</label>,
+      dataIndex: "tenor",
+      key: "tenor",
+      align: "center",
+      width: "100px",
+      ellipsis: true,
+      filters: [
+        {
+          text: "1Y",
+          value: "1",
+        },
+        {
+          text: "6M",
+          value: "2",
+        },
+        {
+          text: "3M",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Bid</label>,
+      dataIndex: "bid",
+      key: "bid",
+      width: "80px",
+      ellipsis: true,
+      render: (text) => (
+        <Button
+          text={text}
+          onClick={openBuyModal}
+          className="bid-text-button"
+        />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Offer</label>,
+      dataIndex: "offer",
+      key: "offer",
+      width: "70px",
+      render: (text) => (
+        <Button
+          text={text}
+          onClick={openSellModal}
+          className="offer-text-button"
+        />
+      ),
+    },
+    {
+      title: <label className="table-all-title">DTM</label>,
+      dataIndex: "dtm",
+      key: "dtm",
+      width: "80px",
+      ellipsis: true,
+      filters: [
+        {
+          text: "119",
+          value: "1",
+        },
+        {
+          text: "20",
+          value: "2",
+        },
+        {
+          text: "21",
+          value: "3",
+        },
+        {
+          text: "35",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Coupon</label>,
+      dataIndex: "Coupon",
+      width: "70px",
+      key: "Coupon",
+    },
+  ];
+
+  // data for PibFloater table columns for first table
+  const PibFloatercolumns = [
+    {
+      title: <label className="table-all-title">Issue Date</label>,
+      dataIndex: "issuedate",
+      key: "issuedate",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="issue-date-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Maturity</label>,
+      dataIndex: "maturity",
+      key: "maturity",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => <label className="maturity-column">{text}</label>,
+      filters: [
+        {
+          text: "12-10-2022",
+          value: "1",
+        },
+        {
+          text: "10-10-2022",
+          value: "2",
+        },
+        {
+          text: "09-10-2022",
+          value: "3",
+        },
+        {
+          text: "07-10-2022",
+          value: "4",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Tenor</label>,
+      dataIndex: "tenor",
+      key: "tenor",
+      width: "100px",
+      align: "center",
+      ellipsis: true,
+      filters: [
+        {
+          text: "1Y",
+          value: "1",
+        },
+        {
+          text: "6M",
+          value: "2",
+        },
+        {
+          text: "3M",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Bid</label>,
+      dataIndex: "bid",
+      key: "bid",
+      width: "100px",
+      ellipsis: true,
+      render: (text) => (
+        <Button
+          text={text}
+          onClick={openBuyModal}
+          className="bid-text-button"
+        />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Offer</label>,
+      dataIndex: "offer",
+      key: "offer",
+      width: "100px",
+      render: (text) => (
+        <Button
+          text={text}
+          onClick={openSellModal}
+          className="offer-text-button"
+        />
+      ),
+    },
+    {
+      title: <label className="table-all-title">DTM</label>,
+      dataIndex: "dtm",
+      key: "dtm",
+      width: "100px",
+      ellipsis: true,
+      filters: [
+        {
+          text: "119",
+          value: "1",
+        },
+        {
+          text: "20",
+          value: "2",
+        },
+        {
+          text: "21",
+          value: "3",
+        },
+        {
+          text: "35",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
+    },
+    {
+      title: <label className="table-all-title">Coupon</label>,
+      dataIndex: "Coupon",
+      key: "Coupon",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Frequency</label>,
+      dataIndex: "frequency",
+      key: "frequency",
+      width: "100px",
+    },
+    {
+      title: <label className="table-all-title">Bid Spread</label>,
+      dataIndex: "bidspread",
+      key: "bidspread",
+      width: "100px",
+    },
+  ];
+
   // data for columns for second table
   const columnsTwo = [
     {
       title: <label className="bottom-table-header">TXN ID</label>,
       dataIndex: "txnid",
       key: "txnid",
-      width: "90px",
+      width: "100px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -191,7 +1071,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Bank</label>,
       dataIndex: "bank",
       key: "bank",
-      width: "70px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -206,7 +1086,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Position</label>,
       dataIndex: "position",
       key: "position",
-      width: "90px",
+      width: "100px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -236,7 +1116,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Amount</label>,
       dataIndex: "amount",
       key: "amount",
-      width: "85px",
+      width: "80px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -251,14 +1131,14 @@ const Client = () => {
       title: <label className="bottom-table-header">Rate</label>,
       dataIndex: "rate",
       key: "rate",
-      width: "70px",
+      width: "80px",
       ellipsis: true,
     },
     {
       title: <label className="bottom-table-header">Tenor</label>,
       dataIndex: "tenor",
       key: "tenor",
-      width: "70px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -273,7 +1153,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "70px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -288,7 +1168,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Maturity Date</label>,
       dataIndex: "maturitydate",
       key: "maturitydate",
-      width: "90px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -303,7 +1183,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Trade Date</label>,
       dataIndex: "tradedate",
       key: "tradedate",
-      width: "85px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -318,7 +1198,7 @@ const Client = () => {
       title: <label className="bottom-table-header">No of Days</label>,
       dataIndex: "noofdays",
       key: "noofdays",
-      width: "90px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -333,7 +1213,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Settlement Date</label>,
       dataIndex: "settlement",
       key: "settlement",
-      width: "100px",
+      width: "110px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -363,80 +1243,25 @@ const Client = () => {
       title: <label className="bottom-table-header">Action</label>,
       dataIndex: "action",
       key: "action",
-      width: "60px",
+      width: "100px",
       // ellipsis: true,
     },
     {
       title: <label className="bottom-table-header">Comment</label>,
       dataIndex: "comment",
       key: "comment",
-      width: "70px",
+      width: "100px",
       // ellipsis: true,
     },
     {
       title: <label className="bottom-table-header">Chat</label>,
       dataIndex: "chat",
       key: "chat",
-      width: "70px",
+      width: "100px",
+      render: (text) => (
+        <Button text={text} className="chatIcon-inBotton-table" />
+      ),
       // ellipsis: true,
-    },
-  ];
-
-  // data for rows for first table
-  const data = [
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">12-01-2023</label>,
-      tenor: "1Y",
-      bid: 232,
-      offer: 15.72,
-      dtm: "ewew",
-    },
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">22-01-2023</label>,
-      tenor: "3m",
-      bid: 232,
-      offer: 15.43,
-      dtm: "ewew",
-    },
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">15-01-2023</label>,
-      tenor: "2m",
-      bid: 232,
-      offer: 15.43,
-      dtm: "ewew",
-    },
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">18-01-2023</label>,
-      tenor: "1Y",
-      bid: 232,
-      offer: 15.72,
-      dtm: "ewew",
-    },
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">18-01-2023</label>,
-      tenor: "1Y",
-      bid: 232,
-      offer: 15.72,
-      dtm: "ewew",
-    },
-    {
-      key: "1",
-      issuedate: <label className="column-boldness">19-10-2022</label>,
-      maturity: <label className="column-boldness">18-01-2023</label>,
-      tenor: "1Y",
-      bid: 232,
-      offer: 15.72,
-      dtm: "ewew",
     },
   ];
 
@@ -452,7 +1277,8 @@ const Client = () => {
       tradedate: "21-03-2023",
       noofdays: "0",
       settlement: "21-03-2023",
-      status: "Rejected",
+      status: <span className="rejected-status">Rejected</span>,
+      chat: <i className={"icon-chat2"}></i>,
     },
   ];
 
@@ -476,6 +1302,70 @@ const Client = () => {
     setSellModal(true);
   };
 
+  //open another Tbill table
+  const openTbillTable = () => {
+    setIsTbills(true);
+    setIsPib(false);
+    setIsPibFloater(false);
+  };
+
+  //open right tabe Tbill
+  const openRightTbill = () => {
+    setIsRightTbills(true);
+    setIsRightPib(false);
+    setIsPibRightFloater(false);
+  };
+
+  //open another Pib table
+  const openPibTable = () => {
+    setIsPib(true);
+    setIsTbills(false);
+    setIsPibFloater(false);
+  };
+
+  //open right pib table
+  const openRightPib = () => {
+    setIsRightPib(true);
+    setIsRightTbills(false);
+    setIsPibRightFloater(false);
+  };
+
+  //open another PibFoater table
+  const openPibFloaterTable = () => {
+    setIsPibFloater(true);
+    setIsPib(false);
+    setIsTbills(false);
+  };
+
+  //open right pibfloater table
+  const openRightFloater = () => {
+    setIsPibRightFloater(true);
+    setIsRightPib(false);
+    setIsRightTbills(false);
+  };
+
+  //open pkrv panel
+  const openPkrvPanel = () => {
+    setIsPkrv(true);
+    setIsRecent(false);
+  };
+
+  //for left table onchange handler
+  const panelHandler = (e) => {
+    console.log(e, "change Handler");
+    setCurrentTable(e);
+  };
+
+  // for right table onchange handler
+  const panelRightHandler = (e) => {
+    setCurrentRightTable(e);
+  };
+
+  // for bottom export button
+  const exportHandler = () => {
+    setIsExport(true);
+  };
+
   return (
     <>
       <Container fluid className="table-content-div">
@@ -488,140 +1378,626 @@ const Client = () => {
                     options={tableFilterOptions}
                     defaultValue={tableFilterOptions[0]}
                     className="tableFilter"
+                    onChange={panelHandler}
+                    // onClick={openPkrvPanel}
                   />
                 </Col>
 
-                <Col lg={4} md={4} sm={4} className="upper-3m-colum">
-                  <Button
-                    text="3M"
-                    className="upper-3m-button"
-                    onClick={openModalHandler}
-                  />
-                  <Button text="6M" className="upper-3m-button" />
-                  <Button text="1Y" className="upper-3m-button" />
-                </Col>
+                {currentTable === 1 ? (
+                  <>
+                    {isTbills ? (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="3M"
+                            onClick={() => handleFilter("3M")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="6M"
+                            onClick={() => handleFilter("6M")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="1Y"
+                            onClick={() => handleFilter("1Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    ) : isPibFloater ? (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="2Y"
+                            onClick={() => pibFloaterHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibFloaterHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibFloaterHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibFloaterHandleFilter("10Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    ) : (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="2Y"
+                            onClick={() => pibHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibHandleFilter("10Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    )}
+                  </>
+                ) : currentTable === 2 ? (
+                  <>
+                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                      <TextField
+                        placeholder="search"
+                        className="pkrv-search-textfield"
+                      />
+                    </Col>
+                  </>
+                ) : currentTable === 3 ? (
+                  <>
+                    <div className="second-row">
+                      <div className="News-div-scroll">
+                        <Row className="latest-date-row">
+                          <Col lg={12} md={12} sm={12}>
+                            <label className="latest-date">6-12-2022</label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img
+                              src={DowJones}
+                              width={40}
+                              onClick={openViewModal}
+                            />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={Tresmark} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="latest-date-row">
+                          <Col lg={12} md={12} sm={12}>
+                            <label className="latest-date">5-12-2022</label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={DowJones} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={Tresmark} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
               </Row>
-              <div className="upper-div-button">
-                <Button text="Tbills" className="table-upper-tbill-button" />
-                <Button text="PIBs" className="table-upper-PIB-button" />
-                <Button
-                  text="PIB Floater"
-                  className="table-upper-Floater-button"
-                />
-                <Button text="SUKUK" className="table-upper-SUKUK-button" />
-              </div>
-              <Table
-                column={columns}
-                rows={data}
-                className="inside-table"
-                pagination={false}
-              />
+
+              {/* current table 1 2 3 ye sb filters ma set ki hoe hain hm yaha condition laga kr match krraha */}
+              {currentTable === 1 ? (
+                <>
+                  <div className="upper-div-button">
+                    <Button
+                      text="Tbills"
+                      className={"table-upper-tbill-button"}
+                      onClick={openTbillTable}
+                    />
+                    <Button
+                      text="PIBs"
+                      className="table-upper-PIB-button"
+                      onClick={openPibTable}
+                    />
+                    <Button
+                      text="PIB Floater"
+                      className="table-upper-Floater-button"
+                      onClick={openPibFloaterTable}
+                    />
+                    <Button
+                      text="SUKUK"
+                      className="table-upper-SUKUK-button"
+                      onClick={openTbillTable}
+                    />
+                  </div>
+                </>
+              ) : null}
+
+              {currentTable === 1 ? (
+                <>
+                  {isTbills ? (
+                    <>
+                      <Table
+                        // dataSource={filteredData}
+                        column={columns}
+                        rows={filteredData}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isPib ? (
+                    <>
+                      <Table
+                        column={Pibcolumns}
+                        rows={pibFilter}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isPibFloater ? (
+                    <>
+                      <Table
+                        column={PibFloatercolumns}
+                        rows={pibFloaterFilter}
+                        scroll={{ x: "max-content" }}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isSukuk ? (
+                    <>
+                      <Table
+                        column={columns}
+                        rows={data}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : null}
+                </>
+              ) : currentTable === 2 ? (
+                <>
+                  <Table
+                    column={PkrvPanelcolumns}
+                    rows={PkrvPaneldata}
+                    className="inside-pkrv-table"
+                    pagination={false}
+                  />
+                </>
+              ) : null}
             </div>
           </Col>
 
           <Col lg={6} md={6} sm={6}>
-            <div className="second-row">
-              <Row>
-                <Col lg={12} md={12} sm={12}>
+            <div className="card-box">
+              <Row className="mt-2">
+                <Col lg={8} md={8} sm={8}>
                   <Select
-                    options={tableFilterOptions}
-                    defaultValue={tableFilterOptions[2]}
-                    className="NewsFilter"
+                    options={rightTableOption}
+                    defaultValue={rightTableOption[2]}
+                    className="tableFilter"
+                    onChange={panelRightHandler}
+                    // onClick={openPkrvPanel}
                   />
-                  {/* <label>News</label> */}
                 </Col>
+
+                {currentRightTable === 1 ? (
+                  <>
+                    {isRightTbills ? (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="3M"
+                            onClick={() => handleRightFilter("3M")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="6M"
+                            onClick={() => handleRightFilter("6M")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="1Y"
+                            onClick={() => handleRightFilter("1Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    ) : isPibRightFloater ? (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="2Y"
+                            onClick={() => pibRightFloaterHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibRightFloaterHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibRightFloaterHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibRightFloaterHandleFilter("10Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    ) : (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="2Y"
+                            onClick={() => pibRightHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibRightHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibRightHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibRightHandleFilter("10Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    )}
+                  </>
+                ) : currentRightTable === 2 ? (
+                  <>
+                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                      <TextField
+                        placeholder="search"
+                        className="pkrv-search-textfield"
+                      />
+                    </Col>
+                  </>
+                ) : currentRightTable === 3 ? (
+                  <>
+                    <div className="second-row">
+                      <div className="News-div-scroll">
+                        <Row className="latest-date-row">
+                          <Col lg={12} md={12} sm={12}>
+                            <label className="latest-date">6-12-2022</label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img
+                              src={DowJones}
+                              width={40}
+                              onClick={openViewModal}
+                            />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={Tresmark} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="latest-date-row">
+                          <Col lg={12} md={12} sm={12}>
+                            <label className="latest-date">5-12-2022</label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={DowJones} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={CNBC} width={40} />
+                            <label className="dj-jones-text">
+                              Russian oil Cap will work, EU ministers insist,
+                              despite kermlin opposition and
+                            </label>
+                          </Col>
+                        </Row>
+
+                        <Row className="text-border-bottom">
+                          <Col
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            className="dowjones-columns"
+                          >
+                            <label className="date-dj-jone">11:48</label>
+                            <img src={Tresmark} width={40} />
+                            <label className="dj-jones-text">
+                              DJ Interbank Foreign Exchange Rates At 01:50 EST /
+                              0650 GMT
+                            </label>
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
               </Row>
 
-              <div className="News-div-scroll">
-                <Row className="latest-date-row">
-                  <Col lg={12} md={12} sm={12}>
-                    <label className="latest-date">6-12-2022</label>
-                  </Col>
-                </Row>
+              {/* current table 1 2 3 ye sb filters ma set ki hoe hain hm yaha condition laga kr match krraha */}
+              {currentRightTable === 1 ? (
+                <>
+                  <div className="upper-div-button">
+                    <Button
+                      text="Tbills"
+                      className="table-upper-tbill-button"
+                      onClick={openRightTbill}
+                    />
+                    <Button
+                      text="PIBs"
+                      className="table-upper-PIB-button"
+                      onClick={openRightPib}
+                    />
+                    <Button
+                      text="PIB Floater"
+                      className="table-upper-Floater-button"
+                      onClick={openRightFloater}
+                    />
+                    <Button
+                      text="SUKUK"
+                      className="table-upper-SUKUK-button"
+                      onClick={openRightTbill}
+                    />
+                  </div>
+                </>
+              ) : null}
 
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={DowJones} width={40} onClick={openViewModal} />
-                    <label className="dj-jones-text">
-                      DJ Interbank Foreign Exchange Rates At 01:50 EST / 0650
-                      GMT
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={CNBC} width={40} />
-                    <label className="dj-jones-text">
-                      Russian oil Cap will work, EU ministers insist, despite
-                      kermlin opposition and
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={Tresmark} width={40} />
-                    <label className="dj-jones-text">
-                      DJ Interbank Foreign Exchange Rates At 01:50 EST / 0650
-                      GMT
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="latest-date-row">
-                  <Col lg={12} md={12} sm={12}>
-                    <label className="latest-date">5-12-2022</label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={DowJones} width={40} />
-                    <label className="dj-jones-text">
-                      DJ Interbank Foreign Exchange Rates At 01:50 EST / 0650
-                      GMT
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={CNBC} width={40} />
-                    <label className="dj-jones-text">
-                      Russian oil Cap will work, EU ministers insist, despite
-                      kermlin opposition and
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={CNBC} width={40} />
-                    <label className="dj-jones-text">
-                      Russian oil Cap will work, EU ministers insist, despite
-                      kermlin opposition and
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="text-border-bottom">
-                  <Col lg={12} md={12} sm={12} className="dowjones-columns">
-                    <label className="date-dj-jone">11:48</label>
-                    <img src={Tresmark} width={40} />
-                    <label className="dj-jones-text">
-                      DJ Interbank Foreign Exchange Rates At 01:50 EST / 0650
-                      GMT
-                    </label>
-                  </Col>
-                </Row>
-              </div>
+              {currentRightTable === 1 ? (
+                <>
+                  {isRightTbills ? (
+                    <>
+                      <Table
+                        column={columns}
+                        rows={rightFilter}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isRightPib ? (
+                    <>
+                      <Table
+                        column={Pibcolumns}
+                        rows={rightPibFilter}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isPibRightFloater ? (
+                    <>
+                      <Table
+                        column={PibFloatercolumns}
+                        rows={rightFloaterFilter}
+                        scroll={{ x: "max-content" }}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : isRightSukuk ? (
+                    <>
+                      <Table
+                        column={columns}
+                        rows={data}
+                        className="inside-table"
+                        pagination={false}
+                      />
+                    </>
+                  ) : null}
+                </>
+              ) : currentRightTable === 2 ? (
+                <>
+                  <Table
+                    column={PkrvPanelcolumns}
+                    rows={PkrvPaneldata}
+                    className="inside-pkrv-table"
+                    pagination={false}
+                  />
+                </>
+              ) : null}
             </div>
           </Col>
         </Row>
@@ -634,8 +2010,33 @@ const Client = () => {
               <label className="txn-summary">TXN Summary</label>
             </Col>
             <Col lg={10} md={10} sm={10} className="bottom-table-buttons">
-              <Button text="RFQ" icon={<ListUl />} className="rfq-bttom-btn" />
-              <Button text="Export" className="export-bttom-btn" />
+              <Button
+                text="RFQ"
+                icon={<i className="icon-list"></i>}
+                className="rfq-bttom-btn"
+                onClick={openModalHandler}
+              />
+
+              <Button
+                text="Export"
+                className="export-bttom-btn"
+                onClick={() => setIsExport(!isExport)}
+              />
+
+              {isExport ? (
+                <>
+                  <div className="bottom-div">
+                    <img src={PDF} alt="pdf" height={25} />
+                    <img src={Excel} alt="pdf" height={25} />
+                    <span className="col">
+                      <i className="icon-email2 fs-4 cursor-pointer"></i>
+                    </span>
+                    <span className="col">
+                      <i className="icon-screen fs-4 cursor-pointer"></i>
+                    </span>
+                  </div>
+                </>
+              ) : null}
             </Col>
           </Row>
           <Row>
@@ -643,6 +2044,8 @@ const Client = () => {
               <Table
                 column={columnsTwo}
                 rows={dataTwo}
+                // scroll={{ x: "max-content" }}
+                // scroll={{ x: 400 }}
                 className="bottom-inside-table"
                 pagination={false}
               />
@@ -659,6 +2062,7 @@ const Client = () => {
           setBuyModal();
           setSellModal();
         }}
+        // backdrop={true}
         modalHeaderClassName={
           viewModal === true ? "d-none" : "header-Video-Modal-close-btn"
         }
@@ -718,8 +2122,8 @@ const Client = () => {
                       <label className="position-label">Position*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                    <Col lg={4} md={4} sm={4} className="mt-4">
+                      <Select className="quoteShowModal" />
                     </Col>
 
                     <Col
@@ -745,8 +2149,8 @@ const Client = () => {
                       <label className="position-label">Security Type*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                    <Col lg={4} md={4} sm={4} className="mt-4">
+                      <Select className="quoteShowModal" />
                     </Col>
 
                     <Col
@@ -772,8 +2176,8 @@ const Client = () => {
                       <label className="position-label">Tenor*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                    <Col lg={4} md={4} sm={4} className="mt-4">
+                      <Select className="quoteShowModal" />
                     </Col>
 
                     <Col
@@ -1215,35 +2619,20 @@ const Client = () => {
             ) : viewModal ? (
               <>
                 <Row>
-                  <Col lg={12} md={12} sm={12} xs={12} className="social-icons-group text-right">
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="d-inline-block social-link"
-                      >
-                        <i className="icon-facebook"></i>
-                      </a>
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="d-inline-block social-link"
-                      >
-                        <i className="icon-linkedin"></i>
-                      </a>
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="d-inline-block social-link"
-                      >
-                        <i className="icon-twitter"></i>
-                      </a>
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="d-inline-block social-link"
-                      >
-                        <i className="icon-youtube "></i>
-                      </a>
+                  <Col
+                    lg={12}
+                    md={12}
+                    sm={12}
+                    xs={12}
+                    className="social-icons-group"
+                  >
+                    <i className="icon-facebook"></i>
+
+                    <i className="icon-linkedin"></i>
+
+                    <i className="icon-twitter"></i>
+
+                    <i className="icon-youtube "></i>
                     {/* <Facebook size={25} />
                     <Facebook size={25} />
                     <Facebook size={25} /> */}

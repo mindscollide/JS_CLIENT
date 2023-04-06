@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import "./assets/custom-icons/custom-icon.css"
 import Header from "./components/layout/Header/Header";
 import Client from "./container/client/Client";
 import Calculator from "./container/Calculator/Calculator";
@@ -10,6 +11,8 @@ function App() {
     <>
       <Sidebar />
       <Header />
+      <Calculator />
+      {/* <Client/> */}
       {/* <Calculator /> */}
       <Client/>
 
