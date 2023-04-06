@@ -13,11 +13,11 @@ const Calculator = () => {
           <Col lg={11} md={11} sm={11}>
             <Collapse
               size="small"
-              showArrow={false}
               expandIcon={false}
               className={styles["accodion-header-title"]}
             >
               <Panel
+                showArrow={false}
                 header={
                   <label className={styles["panel-header-text"]}>
                     TBill Calculator
@@ -485,6 +485,7 @@ const Calculator = () => {
               className={styles["accodion-header-title-two"]}
             >
               <Panel
+                showArrow={false}
                 header={
                   <label className={styles["panel-header-text"]}>
                     PIB Calculator

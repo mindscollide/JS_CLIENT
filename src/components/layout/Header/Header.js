@@ -55,7 +55,11 @@ const Header = () => {
                   {" "}
                   <Button
                     text="RFQ"
-                    icon={<i className="icon-list"></i>}
+                    icon={
+                      <>
+                        <i className="icon-list" />
+                      </>
+                    }
                     className="rfq-button"
                   />
                 </Nav.Link>

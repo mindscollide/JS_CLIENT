@@ -290,6 +290,39 @@ const Client = () => {
     setIsPibFloaterFilter(filtered);
   };
 
+  // for Tbills right filter
+  const [rightFilter, setRightFilter] = useState(data);
+
+  //for pib right filter
+  const [rightPibFilter, setRightPibFilter] = useState(Pibdata);
+
+  //for pib floater filter data
+  const [rightFloaterFilter, setRightFloaterFilter] = useState(PibFloaterdata);
+
+  // for tbills right filter handler
+  const handleRightFilter = (tenor) => {
+    const filtered = data.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightFilter(filtered);
+  };
+
+  // for pib right filter handler
+  const pibRightHandleFilter = (tenor) => {
+    const filtered = Pibdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightPibFilter(filtered);
+  };
+
+  // for pib right Floater filter handler
+  const pibRightFloaterHandleFilter = (tenor) => {
+    const filtered = PibFloaterdata.filter(
+      (item) => item.tenor.toLowerCase() === tenor.toLowerCase()
+    );
+    setRightFloaterFilter(filtered);
+  };
+
   // data for PKRV panel table columns for table
   const PkrvPanelcolumns = [
     {
@@ -1673,17 +1706,42 @@ const Client = () => {
                         <Col lg={4} md={4} sm={4} className="upper-3m-colum">
                           <Button
                             text="3M"
-                            onClick={() => handleFilter("3M")}
+                            onClick={() => handleRightFilter("3M")}
                             className="upper-3m-button"
                           />
                           <Button
                             text="6M"
-                            onClick={() => handleFilter("6M")}
+                            onClick={() => handleRightFilter("6M")}
                             className="upper-3m-button"
                           />
                           <Button
                             text="1Y"
-                            onClick={() => handleFilter("1Y")}
+                            onClick={() => handleRightFilter("1Y")}
+                            className="upper-3m-button"
+                          />
+                        </Col>
+                      </>
+                    ) : isPibRightFloater ? (
+                      <>
+                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                          <Button
+                            text="2Y"
+                            onClick={() => pibRightFloaterHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibRightFloaterHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibRightFloaterHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibRightFloaterHandleFilter("10Y")}
                             className="upper-3m-button"
                           />
                         </Col>
@@ -1691,10 +1749,26 @@ const Client = () => {
                     ) : (
                       <>
                         <Col lg={4} md={4} sm={4} className="upper-3m-colum">
-                          <Button text="2Y" className="upper-3m-button" />
-                          <Button text="3Y" className="upper-3m-button" />
-                          <Button text="5Y" className="upper-3m-button" />
-                          <Button text="10Y" className="upper-3m-button" />
+                          <Button
+                            text="2Y"
+                            onClick={() => pibRightHandleFilter("2Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="3Y"
+                            onClick={() => pibRightHandleFilter("3Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="5Y"
+                            onClick={() => pibRightHandleFilter("5Y")}
+                            className="upper-3m-button"
+                          />
+                          <Button
+                            text="10Y"
+                            onClick={() => pibRightHandleFilter("10Y")}
+                            className="upper-3m-button"
+                          />
                         </Col>
                       </>
                     )}
@@ -1879,7 +1953,7 @@ const Client = () => {
                     <>
                       <Table
                         column={columns}
-                        rows={filteredData}
+                        rows={rightFilter}
                         className="inside-table"
                         pagination={false}
                       />
@@ -1888,7 +1962,7 @@ const Client = () => {
                     <>
                       <Table
                         column={Pibcolumns}
-                        rows={Pibdata}
+                        rows={rightPibFilter}
                         className="inside-table"
                         pagination={false}
                       />
@@ -1897,7 +1971,7 @@ const Client = () => {
                     <>
                       <Table
                         column={PibFloatercolumns}
-                        rows={PibFloaterdata}
+                        rows={rightFloaterFilter}
                         scroll={{ x: "max-content" }}
                         className="inside-table"
                         pagination={false}
@@ -1952,8 +2026,8 @@ const Client = () => {
               {isExport ? (
                 <>
                   <div className="bottom-div">
-                    <img src={PDF} alt="pdf" height={25}/>
-                    <img src={Excel} alt="pdf" height={25}/>
+                    <img src={PDF} alt="pdf" height={25} />
+                    <img src={Excel} alt="pdf" height={25} />
                     <span className="col">
                       <i className="icon-email2 fs-4 cursor-pointer"></i>
                     </span>
