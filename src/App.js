@@ -16,6 +16,10 @@ function App() {
       {/* <Header /> */}
       {/* <Calculator /> */}
       {/* <Client/> */}
+      {/* <Calculator /> */}
+      <Client/>
+
+      <div className="App"></div>
     </>
   );
 }
