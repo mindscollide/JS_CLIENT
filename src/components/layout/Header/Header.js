@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Container, Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { Button, Modal } from "../../../components/elements";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
+import Calculator from "../../../container/Calculator/Calculator";
 import { Checkbox, Switch } from "antd";
 import {
   ListUl,
@@ -13,9 +16,9 @@ import "./Header.css";
 import JohnCater from "../../../assets/images/profile3.png";
 import JsLogo from "../../../assets/images/js-logo.png";
 
-const Header = () => {
+const Header = ({ show, setShow }) => {
   // for show modal state
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   //for user setting
   const [userSetting, setUserSetting] = useState(true);
@@ -23,9 +26,11 @@ const Header = () => {
   //for user passcode
   const [userPasscode, setUserPasscode] = useState(false);
 
+  const navigate = useNavigate();
+
   //for open setting show modal
   const openSettingModalHandler = async () => {
-    setShow(true);
+    setShowModal(true);
   };
 
   // for open usersetting
@@ -40,12 +45,21 @@ const Header = () => {
     setUserSetting(false);
   };
 
+  // for open calculator
+  const gotoCalculator = () => {
+    navigate("/calculator");
+  };
+
+  //for open another modal
+
+  const openRfqHandler = () => {};
+
   return (
     <>
       <Container fluid className="container-header">
         <Navbar collapseOnSelect expand="lg">
           <Container fluid>
-            <Navbar.Brand>
+            <Navbar.Brand to="/" as={Link}>
               <img src={JsLogo} width={220} height={50} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -57,14 +71,18 @@ const Header = () => {
                     text="RFQ"
                     icon={
                       <>
-                        <i className="icon-list" />
+                        <i className="icon-list rfq-btn-list-icon" />
                       </>
                     }
                     className="rfq-button"
                   />
                 </Nav.Link>
                 <Nav.Link>
-                  <Button text="Calculator" className="caluclator-button" />
+                  <Button
+                    text="Calculator"
+                    className="caluclator-button"
+                    onClick={gotoCalculator}
+                  />
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -79,19 +97,19 @@ const Header = () => {
               <Dropdown.Menu className="dropdown_menu">
                 <Dropdown.Item>
                   <Nav.Link onClick={openSettingModalHandler}>
-                    <Gear />
+                    <i className="icon-settings setting-icon"></i>
                     <label className="dropdown-select-labels">Setting</label>
                   </Nav.Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <QuestionCircle />
+                  <i className="icon-help-circle setting-icon"></i>
                   <label className="dropdown-select-labels">
                     Help & Support
                   </label>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Nav.Link>
-                    <BoxArrowRight />
+                    <i className="icon-logout setting-icon"></i>
                     <label className="dropdown-select-labels">Logout</label>
                   </Nav.Link>
                 </Dropdown.Item>
@@ -102,13 +120,13 @@ const Header = () => {
       </Container>
 
       <Modal
-        show={show}
-        setShow={setShow}
+        show={showModal}
+        setShow={setShowModal}
         size="lg"
         className="modaldialog modal-setting"
         modalHeaderClassName="header-Modal-setting"
         modalFooterClassName="modal-setting-footer"
-        onHide={() => setShow(false)}
+        onHide={() => setShowModal(false)}
         ModalBody={
           <>
             <Row>

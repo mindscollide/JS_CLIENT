@@ -1,0 +1,76 @@
+.header-Video-Modal-close-btn {
+  font-size: 11px;
+  border: none !important;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  font-size: 9px;
+}
+
+.showFooter {
+  width: 100% !important;
+  display: contents;
+}
+
+.request-quote-label {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #002650;
+}
+
+.text-field {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  gap: 25px;
+  padding: 10px 0px;
+}
+
+.modal-title-trade {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.text-field-size-modal {
+  width: 100% !important;
+  height: 27px;
+  border-radius: 4px;
+}
+
+.position-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+.quoteShowModal .ant-select-selector {
+  background: #ffffff !important;
+  border: 1px solid rgb(223, 222, 222) !important;
+  border-radius: 3px !important;
+  width: 222px !important;
+  height: 27px !important;
+  color: #002650 !important;
+  font-weight: 600 !important;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteShowModal .ant-select-arrow {
+  color: #002650 !important;
+}
+
+.modal-styles .modal-content {
+  position: absolute;
+  top: 0 !important;
+  height: 430px !important;
+  width: 800px !important;
+  background-color: #e6e8ff;
+  border-radius: 8px !important;
+  display: flex !important;
+  justify-content: center !important;
+  border: 1px solid #002650 !important;
+  padding: 30px 22px;
+}

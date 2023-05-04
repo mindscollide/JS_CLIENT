@@ -1,0 +1,45 @@
+.modal-sell-styles .modal-content {
+  position: absolute;
+  top: 0 !important;
+  height: 430px !important;
+  width: 800px !important;
+  background-color: #e6e8ff;
+  border-radius: 8px !important;
+  display: flex !important;
+  justify-content: center !important;
+  border: 1px solid #002650 !important;
+  padding: 30px 22px;
+}
+
+.header-Sell-Modal-close-btn {
+  font-size: 11px;
+  border: none !important;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  font-size: 9px;
+}
+
+.showSellFooter {
+  width: 100% !important;
+  display: contents;
+}
+
+.buy-quote-label {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #002650;
+}
+
+.Sell-position-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+.text-field-size-modal-sell {
+  width: 100% !important;
+  height: 27px;
+  border-radius: 4px;
+}

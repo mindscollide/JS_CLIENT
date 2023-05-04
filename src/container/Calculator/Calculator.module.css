@@ -55,23 +55,30 @@
 }
 
 .heading-paper {
-  padding: 10px 30px;
-  position: relative !important;
-  top: -6px;
+  /* padding: 10px 30px; */
+  /* position: relative !important; */
+  /* top: -6px; */
   background-color: white !important;
   /* box-shadow: 1px 1px 3px 3px rgb(236, 236, 236) !important; */
 }
 
 .select-field-calculator {
-  margin-top: 5px;
   width: 100%;
-  height: 27px !important;
+  color: #002650 !important;
+  /* height: 27px !important; */
+  text-align: start !important;
   border-radius: 4px;
 }
 
+
 .alltextfields-calculator {
   width: 100%;
+  font-weight: 500;
   height: 29px;
+  font-size: 11px;
+  color: #212529;
+  border: 1px solid #ccc !important;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 4px;
 }
 
@@ -81,15 +88,16 @@
 }
 
 .interpolated-text {
-  font-size: 16px !important;
-  font-weight: 600;
-  margin-left: 21%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px !important;
+  font-weight: 700;
+  margin-left: 30px;
 }
 
 .interpolated-text-bottom {
   font-size: 16px !important;
   font-weight: 600;
-  margin-left: 18%;
+  /* margin-right: 8%; */
 }
 
 .bottom-row-background {
@@ -123,24 +131,36 @@
 
 .yield-to-price-labels {
   font-size: 12px !important;
-  font-weight: 700 !important;
-  text-align: right !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  width: 90px !important;
+  text-align: end;
 }
 
 .PIB-labels {
   font-size: 12px !important;
-  font-weight: 700 !important;
-  text-align: right !important;
+  text-align: end !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .slect-bond-p-to-y {
   font-size: 12px !important;
-  font-weight: 700 !important;
-  text-align: right !important;
+  text-align: end !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .maturity-bond-p-to-y {
   font-size: 12px !important;
-  font-weight: 700 !important;
-  text-align: right !important;
+  text-align: end !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
+
+.select-bond-col{
+  display: flex !important;
+  justify-content: start !important;
+  gap: 0px !important;
+}
+

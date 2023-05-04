@@ -31,6 +31,29 @@ const Sidebar = () => {
   //for another chat box open
   const [chatBoxOpen, setChatBoxOpen] = useState(false);
 
+  //chat panel On Close
+  const closeHandler = () => {
+    setOpenChat(false);
+    setChatBoxOpen(false);
+  };
+
+  //close chat small bar
+  const closeChatHandler = () => {
+    setChatBoxOpen(false);
+  };
+
+  //loggin user panel close
+  const closeLoginPanel = () => {
+    setOpenLogIn(false);
+    setChatBoxOpen(false);
+  };
+
+  //invite User close panel
+  const closeInvitePanel = () => {
+    setOpenInvite(false);
+    setChatBoxOpen(false);
+  };
+
   return (
     <>
       <Row className={styles["sidebar-row"]}>
@@ -118,7 +141,7 @@ const Sidebar = () => {
               <Col lg={4} md={4} sm={4} className={styles["top-icons"]}>
                 <Search size={20} />
                 <ArrowsAngleExpand size={18} />
-                <X size={22} />
+                <X size={22} onClick={closeHandler} />
               </Col>
             </Row>
 
@@ -338,7 +361,7 @@ const Sidebar = () => {
               <Col lg={4} md={4} sm={4} className={styles["top-icons"]}>
                 <Search size={20} />
                 <ArrowsAngleExpand size={18} />
-                <X size={22} />
+                <X size={22} onClick={closeLoginPanel} />
               </Col>
             </Row>
 
@@ -673,7 +696,7 @@ const Sidebar = () => {
                 <label className={styles["recent-chat"]}>Invite Users</label>
               </Col>
               <Col lg={2} md={2} sm={2} className={styles["top-icons"]}>
-                <X size={22} />
+                <X size={22} onClick={closeInvitePanel} />
               </Col>
             </Row>
 
@@ -735,7 +758,7 @@ const Sidebar = () => {
                 <label className={styles["recent-chatBox"]}>John Carter</label>
               </Col>
               <Col lg={4} md={4} sm={4} className={styles["chatBox-top-icons"]}>
-                <X size={20} />
+                <X size={20} onClick={closeChatHandler} />
               </Col>
             </Row>
 
