@@ -8,26 +8,34 @@ import {
   ChatDots,
   Facebook,
 } from "react-bootstrap-icons";
+import DatePicker from "react-datepicker";
 import DowJones from "../../assets/images/dowjones.png";
 import CNBC from "../../assets/images/cnbc.png";
 import PDF from "../../assets/images/pdf.png";
 import Excel from "../../assets/images/excel.png";
 
 import { Select } from "antd";
+import ViewModal from "../ViewModal/ViewModal";
+import BuyModal from "../BuyModal/BuyModal";
+import SellModal from "../SellModal/SellModal";
 import Tresmark from "../../assets/images/tresmark.png";
 import "./Client.css";
 
 const Client = () => {
   const [show, setShow] = useState(false);
+  const [editFlag, setEditFlag] = useState(false);
+
+  // for date picker
+  const [startDate, setStartDate] = useState(new Date());
 
   //view modal for client
-  const [viewModal, setViewModal] = useState(false);
+  const [viewClientModal, setViewClientModal] = useState(false);
 
   //for buy modal for client
-  const [buyModal, setBuyModal] = useState(false);
+  const [buyClientModal, setBuyClientModal] = useState(false);
 
   //for sell modal for client
-  const [sellModal, setSellModal] = useState(false);
+  const [sellClientModal, setSellClientModal] = useState(false);
 
   //for left table option state
   const [currentTable, setCurrentTable] = useState(1);
@@ -47,6 +55,87 @@ const Client = () => {
   const [isPibRightFloater, setIsPibRightFloater] = useState(false);
   const [isRightSukuk, setIsRightSukuk] = useState(false);
 
+  // for Request quote states
+  const [isRequestModal, setIsRequestModal] = useState({
+    TradeDate: "",
+    NoOfDays: "",
+    settlementDays: "",
+    Position: "",
+    CouponRate: "",
+    SecuritType: "",
+    issuedate: "",
+    Tenor: "",
+    MaturiityDate: "",
+    AmountPKR: "",
+    Comment: "",
+  });
+
+  //for client state handler
+  const clientHandler = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name === "NoOfDays" && value !== "") {
+      let valueCheck = value.replace(/[^\d]/g, "");
+      if (valueCheck !== "") {
+        setIsRequestModal({
+          ...isRequestModal,
+          NoOfDays: valueCheck.trimStart(),
+        });
+      }
+    } else if (name === "NoOfDays" && value === "") {
+      setIsRequestModal({
+        ...isRequestModal,
+        NoOfDays: "",
+      });
+    }
+
+    if (name === "AmountPKR" && value !== "") {
+      let valueCheck = value.replace(/[^\d]/g, "");
+      if (valueCheck !== "") {
+        setIsRequestModal({
+          ...isRequestModal,
+          AmountPKR: valueCheck.trimStart(),
+        });
+      }
+    } else if (name === "AmountPKR" && value === "") {
+      setIsRequestModal({
+        ...isRequestModal,
+        AmountPKR: "",
+      });
+    }
+
+    if (name === "CouponRate" && value !== "") {
+      let valueCheck = value.replace(/[^\d]/g, "");
+      if (valueCheck !== "") {
+        setIsRequestModal({
+          ...isRequestModal,
+          CouponRate: valueCheck.trimStart(),
+        });
+      }
+    } else if (name === "CouponRate" && value === "") {
+      setIsRequestModal({
+        ...isRequestModal,
+        CouponRate: "",
+      });
+    }
+
+    if (name === "Comment" && value !== "") {
+      let valueCheck = value.replace(/[^\d]/g, "");
+      if (valueCheck !== "") {
+        setIsRequestModal({
+          ...isRequestModal,
+          Comment: valueCheck.trimStart(),
+        });
+      }
+    } else if (name === "Comment" && value === "") {
+      setIsRequestModal({
+        ...isRequestModal,
+        Comment: "",
+      });
+    }
+  };
+
   // for bottom button export file toggle
   const [isExport, setIsExport] = useState(false);
 
@@ -63,7 +152,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">12-01-2023</label>,
       tenor: "1Y",
-      bid: 232,
+      bid: 15.85,
       offer: 15.72,
       dtm: "ewew",
     },
@@ -72,7 +161,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">22-01-2023</label>,
       tenor: "3m",
-      bid: 232,
+      bid: 15.32,
       offer: 15.43,
       dtm: "ewew",
     },
@@ -81,7 +170,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">15-01-2023</label>,
       tenor: "3m",
-      bid: 232,
+      bid: 15.22,
       offer: 15.43,
       dtm: "ewew",
     },
@@ -90,7 +179,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">18-01-2023</label>,
       tenor: "6m",
-      bid: 232,
+      bid: 15.52,
       offer: 15.72,
       dtm: "ewew",
     },
@@ -99,7 +188,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">18-01-2023</label>,
       tenor: "1Y",
-      bid: 232,
+      bid: 15.72,
       offer: 15.72,
       dtm: "ewew",
     },
@@ -108,7 +197,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">18-01-2023</label>,
       tenor: "1Y",
-      bid: 232,
+      bid: 15.72,
       offer: 15.72,
       dtm: "ewew",
     },
@@ -121,7 +210,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">12-01-2023</label>,
       tenor: "2Y",
-      bid: 232,
+      bid: 15.42,
       offer: 15.72,
       dtm: "ewew",
       Coupon: 16,
@@ -131,7 +220,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">22-01-2023</label>,
       tenor: "3Y",
-      bid: 232,
+      bid: 15.32,
       offer: 15.43,
       dtm: "ewew",
       Coupon: 16,
@@ -141,7 +230,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">15-01-2023</label>,
       tenor: "5Y",
-      bid: 232,
+      bid: 15.82,
       offer: 15.43,
       dtm: "ewew",
       Coupon: 16,
@@ -151,7 +240,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">18-01-2023</label>,
       tenor: "10Y",
-      bid: 232,
+      bid: 15.32,
       offer: 15.72,
       dtm: "ewew",
       Coupon: 16,
@@ -161,7 +250,7 @@ const Client = () => {
       issuedate: <label className="column-boldness">19-10-2022</label>,
       maturity: <label className="column-boldness">18-01-2023</label>,
       tenor: "2Y",
-      bid: 232,
+      bid: 15.52,
       offer: 15.72,
       dtm: "ewew",
       Coupon: 16,
@@ -420,13 +509,6 @@ const Client = () => {
       dataIndex: "pkrv",
       key: "pkrv",
       width: "100px",
-      // render: (text) => (
-      //   <Button
-      //     text={text}
-      //     onClick={openSellModal}
-      //     className="offer-text-button"
-      //   />
-      // ),
     },
     {
       title: <label className="table-all-title">RFQ</label>,
@@ -748,7 +830,7 @@ const Client = () => {
       title: <label className="table-all-title">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "100px",
+      width: "150px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -777,7 +859,7 @@ const Client = () => {
       title: <label className="table-all-title">Maturity</label>,
       dataIndex: "maturity",
       key: "maturity",
-      width: "100px",
+      width: "150px",
       ellipsis: true,
       render: (text) => <label className="maturity-column">{text}</label>,
       filters: [
@@ -896,7 +978,7 @@ const Client = () => {
       title: <label className="table-all-title">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "100px",
+      width: "150px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -925,7 +1007,7 @@ const Client = () => {
       title: <label className="table-all-title">Maturity</label>,
       dataIndex: "maturity",
       key: "maturity",
-      width: "100px",
+      width: "150px",
       ellipsis: true,
       render: (text) => <label className="maturity-column">{text}</label>,
       filters: [
@@ -1088,7 +1170,7 @@ const Client = () => {
       key: "position",
       width: "100px",
       ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "BUY",
@@ -1103,7 +1185,7 @@ const Client = () => {
       key: "securitytype",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "TBILLS",
@@ -1140,7 +1222,7 @@ const Client = () => {
       key: "tenor",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "3M",
@@ -1155,7 +1237,7 @@ const Client = () => {
       key: "issuedate",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "3M",
@@ -1170,7 +1252,7 @@ const Client = () => {
       key: "maturitydate",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "3M",
@@ -1185,7 +1267,7 @@ const Client = () => {
       key: "tradedate",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "21-03-2023",
@@ -1200,7 +1282,7 @@ const Client = () => {
       key: "noofdays",
       width: "100px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "0",
@@ -1215,7 +1297,7 @@ const Client = () => {
       key: "settlement",
       width: "110px",
       // ellipsis: true,
-      render: (text) => <label className="issue-date-column">{text}</label>,
+      render: (text) => <label>{text}</label>,
       filters: [
         {
           text: "21-03-2023",
@@ -1289,17 +1371,17 @@ const Client = () => {
 
   //open view modal
   const openViewModal = async () => {
-    setViewModal(true);
+    setViewClientModal(true);
   };
 
   //open buy modal
   const openBuyModal = async () => {
-    setBuyModal(true);
+    setBuyClientModal(true);
   };
 
   //Open sell modal
   const openSellModal = async () => {
-    setSellModal(true);
+    setSellClientModal(true);
   };
 
   //open another Tbill table
@@ -1307,6 +1389,7 @@ const Client = () => {
     setIsTbills(true);
     setIsPib(false);
     setIsPibFloater(false);
+    setIsSukuk(false);
   };
 
   //open right tabe Tbill
@@ -1314,6 +1397,7 @@ const Client = () => {
     setIsRightTbills(true);
     setIsRightPib(false);
     setIsPibRightFloater(false);
+    setIsRightSukuk(false);
   };
 
   //open another Pib table
@@ -1321,6 +1405,7 @@ const Client = () => {
     setIsPib(true);
     setIsTbills(false);
     setIsPibFloater(false);
+    setIsSukuk(false);
   };
 
   //open right pib table
@@ -1328,6 +1413,7 @@ const Client = () => {
     setIsRightPib(true);
     setIsRightTbills(false);
     setIsPibRightFloater(false);
+    setIsRightSukuk(false);
   };
 
   //open another PibFoater table
@@ -1335,6 +1421,7 @@ const Client = () => {
     setIsPibFloater(true);
     setIsPib(false);
     setIsTbills(false);
+    setIsSukuk(false);
   };
 
   //open right pibfloater table
@@ -1342,12 +1429,23 @@ const Client = () => {
     setIsPibRightFloater(true);
     setIsRightPib(false);
     setIsRightTbills(false);
+    setIsRightSukuk(false);
   };
 
-  //open pkrv panel
-  const openPkrvPanel = () => {
-    setIsPkrv(true);
-    setIsRecent(false);
+  //open sukuk table
+  const openSukukTable = () => {
+    setIsSukuk(true);
+    setIsPibFloater(false);
+    setIsPib(false);
+    setIsTbills(false);
+  };
+
+  //open right sukuk table
+  const openRightSukuk = () => {
+    setIsRightSukuk(true);
+    setIsPibRightFloater(false);
+    setIsRightPib(false);
+    setIsRightTbills(false);
   };
 
   //for left table onchange handler
@@ -1361,9 +1459,14 @@ const Client = () => {
     setCurrentRightTable(e);
   };
 
-  // for bottom export button
-  const exportHandler = () => {
-    setIsExport(true);
+  // for close modal handler
+  const closeHandlerModals = () => {
+    setShow(false);
+  };
+
+  // for datePicker handler
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
   };
 
   return (
@@ -1401,31 +1504,6 @@ const Client = () => {
                           <Button
                             text="1Y"
                             onClick={() => handleFilter("1Y")}
-                            className="upper-3m-button"
-                          />
-                        </Col>
-                      </>
-                    ) : isPibFloater ? (
-                      <>
-                        <Col lg={4} md={4} sm={4} className="upper-3m-colum">
-                          <Button
-                            text="2Y"
-                            onClick={() => pibFloaterHandleFilter("2Y")}
-                            className="upper-3m-button"
-                          />
-                          <Button
-                            text="3Y"
-                            onClick={() => pibFloaterHandleFilter("3Y")}
-                            className="upper-3m-button"
-                          />
-                          <Button
-                            text="5Y"
-                            onClick={() => pibFloaterHandleFilter("5Y")}
-                            className="upper-3m-button"
-                          />
-                          <Button
-                            text="10Y"
-                            onClick={() => pibFloaterHandleFilter("10Y")}
                             className="upper-3m-button"
                           />
                         </Col>
@@ -1609,7 +1687,11 @@ const Client = () => {
                   <div className="upper-div-button">
                     <Button
                       text="Tbills"
-                      className={"table-upper-tbill-button"}
+                      className={
+                        isTbills
+                          ? "table-upper-tbill-button-active"
+                          : "table-upper-tbill-button-notActive"
+                      }
                       onClick={openTbillTable}
                     />
                     <Button
@@ -1625,7 +1707,7 @@ const Client = () => {
                     <Button
                       text="SUKUK"
                       className="table-upper-SUKUK-button"
-                      onClick={openTbillTable}
+                      onClick={openSukukTable}
                     />
                   </div>
                 </>
@@ -1925,7 +2007,11 @@ const Client = () => {
                   <div className="upper-div-button">
                     <Button
                       text="Tbills"
-                      className="table-upper-tbill-button"
+                      className={
+                        isRightTbills
+                          ? "table-upper-tbill-button-active"
+                          : "table-upper-tbill-button-notActive"
+                      }
                       onClick={openRightTbill}
                     />
                     <Button
@@ -1941,7 +2027,7 @@ const Client = () => {
                     <Button
                       text="SUKUK"
                       className="table-upper-SUKUK-button"
-                      onClick={openRightTbill}
+                      onClick={openRightSukuk}
                     />
                   </div>
                 </>
@@ -2012,7 +2098,7 @@ const Client = () => {
             <Col lg={10} md={10} sm={10} className="bottom-table-buttons">
               <Button
                 text="RFQ"
-                icon={<i className="icon-list"></i>}
+                icon={<i className="icon-list bottom-rfq-list-icon"></i>}
                 className="rfq-bttom-btn"
                 onClick={openModalHandler}
               />
@@ -2027,7 +2113,7 @@ const Client = () => {
                 <>
                   <div className="bottom-div">
                     <img src={PDF} alt="pdf" height={25} />
-                    <img src={Excel} alt="pdf" height={25} />
+                    <img src={Excel} alt="Excel" height={25} />
                     <span className="col">
                       <i className="icon-email2 fs-4 cursor-pointer"></i>
                     </span>
@@ -2054,31 +2140,42 @@ const Client = () => {
         </div>
       </Container>
 
+      {buyClientModal ? (
+        <BuyModal
+          modalBuy={buyClientModal}
+          setBuyModal={setBuyClientModal}
+          editFlag={editFlag}
+          setEditFlag={setEditFlag}
+        />
+      ) : null}
+
+      {sellClientModal ? (
+        <SellModal
+          modalSell={sellClientModal}
+          setSellModal={setSellClientModal}
+          editFlag={editFlag}
+          setEditFlag={setEditFlag}
+        />
+      ) : null}
+
+      {viewClientModal ? (
+        <ViewModal
+          viewModal={viewClientModal}
+          setViewModal={setViewClientModal}
+        />
+      ) : null}
+
       <Modal
-        show={show || viewModal || buyModal || sellModal}
+        show={show}
         setShow={() => {
           setShow();
-          setViewModal();
-          setBuyModal();
-          setSellModal();
         }}
         // backdrop={true}
-        modalHeaderClassName={
-          viewModal === true ? "d-none" : "header-Video-Modal-close-btn"
-        }
-        modalFooterClassName={viewModal === true ? "viewFooter" : "showFooter"}
-        className={
-          viewModal === true
-            ? "modaldialog modal-view"
-            : "modaldialog modal-styles"
-        }
+        modalHeaderClassName={"header-Video-Modal-close-btn"}
+        modalFooterClassName={"showFooter"}
+        className={"modaldialog modal-styles"}
         size={show === true ? "lg" : "lg"}
-        onHide={() => {
-          setShow(false);
-          setViewModal(false);
-          setBuyModal(false);
-          setSellModal(false);
-        }}
+        onHide={closeHandlerModals}
         ModalBody={
           <>
             {show ? (
@@ -2088,7 +2185,7 @@ const Client = () => {
                     lg={12}
                     md={12}
                     sm={12}
-                    className="d-flex justify-content-center"
+                    className="d-flex justify-content-center mb-4"
                   >
                     <label className="request-quote-label">
                       REQUEST FOR QUOTE
@@ -2097,17 +2194,45 @@ const Client = () => {
                 </Row>
                 <Row>
                   <Col lg={12} md={12} sm={12} className="text-field">
-                    <label className="modal-title-trade">Trade Date</label>
+                    <Row>
+                      <Col lg={1} md={1} sm={12}>
+                        <label className="modal-title-trade">Trade Date</label>
+                      </Col>
 
-                    <TextField className="text-field-size-modal" />
+                      <Col lg={3} md={3} sm={12}>
+                        <TextField
+                          className="text-field-size-modal"
+                          labelClass="d-none"
+                        />
+                      </Col>
 
-                    <label className="modal-title-trade">No. of Days</label>
+                      <Col lg={1} md={1} sm={12}>
+                        <label className="modal-title-trade">No. of Days</label>
+                      </Col>
 
-                    <TextField className="text-field-size-modal" />
+                      <Col lg={3} md={3} sm={12}>
+                        <TextField
+                          className="text-field-size-modal"
+                          labelClass="d-none"
+                          name={"NoOfDays"}
+                          onChange={clientHandler}
+                          value={isRequestModal.NoOfDays}
+                        />
+                      </Col>
 
-                    <label className="modal-title-trade">Settlement Date</label>
+                      <Col lg={1} md={1} sm={12}>
+                        <label className="modal-title-trade">
+                          Settlement Date
+                        </label>
+                      </Col>
 
-                    <TextField className="text-field-size-modal" />
+                      <Col lg={3} md={3} sm={12}>
+                        <TextField
+                          className="text-field-size-modal"
+                          labelClass="d-none"
+                        />
+                      </Col>
+                    </Row>
                   </Col>
                 </Row>
 
@@ -2130,12 +2255,17 @@ const Client = () => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-start mt-4"
                     >
                       <label className="position-label">Coupon Rate</label>
                     </Col>
                     <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                      <TextField
+                        className="text-field-size-modal"
+                        name={"CouponRate"}
+                        onChange={clientHandler}
+                        value={isRequestModal.CouponRate}
+                      />
                     </Col>
                   </Row>
 
@@ -2157,7 +2287,7 @@ const Client = () => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-start mt-4"
                     >
                       <label className="position-label">Issue date</label>
                     </Col>
@@ -2184,7 +2314,7 @@ const Client = () => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-start mt-4"
                     >
                       <label className="position-label">Maturity date</label>
                     </Col>
@@ -2204,395 +2334,29 @@ const Client = () => {
                     </Col>
 
                     <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                      <TextField
+                        className="text-field-size-modal"
+                        name={"AmountPKR"}
+                        onChange={clientHandler}
+                        value={isRequestModal.AmountPKR}
+                      />
                     </Col>
 
                     <Col
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-start mt-4"
                     >
                       <label className="position-label">Comment</label>
                     </Col>
                     <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-                </div>
-              </>
-            ) : viewModal ? (
-              <>
-                <Row>
-                  <Col lg={1} md={1} sm={12}>
-                    <img src={CNBC} width={40} />
-                  </Col>
-                  <Col lg={11} md={11} sm={12}>
-                    <label className="view-modal-light-label">
-                      18-Dec-2020 3:30 PM
-                    </label>
-                    <br />
-                    <label className="view-modal-bold-label">
-                      Stock futures little changed after the Dow notches a
-                      record close
-                    </label>
-                  </Col>
-                </Row>
-
-                <Row className="mt-4">
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="view-modal-height-scroll"
-                  >
-                    <label className="discription-text">
-                      Stock futures were mixed in early morning trading
-                      Wednesday after the Dow Jones Industrial Average notched a
-                      record close the previous day as investors flocked to
-                      shares that stand to benefit from an economic recovery.
-                      <br />
-                      <br />
-                      Futures on the blue-chip Dow rose 28 points. S&P 500
-                      futures were flat and Nasdaq 100 futures edged 0.2% lower.
-                      <br />
-                      <br />
-                      On Tuesday, while the Dow climbed 200 points to a new
-                      high, the tech-focused Nasdaq Composite suffered a
-                      sell-off, down 1.3%, amid a rapid rise in Treasury yields.
-                      The closely-watched benchmark 10-year Treasury yield was
-                      as high as 1.71% Tuesday, triggering selling in
-                      growth-oriented technology stocks.
-                      <br />
-                      <br />
-                      Megacap tech stocks underperformed the S&P 500 Tuesday as
-                      “investors reconsidered the value of such long-duration
-                      assets in the wake of higher rates,” Chris Hussey, a
-                      managing director at Goldman Sachs, said in a note.
-                      <br />
-                      <br />
-                      Stock futures were mixed in early morning trading
-                      Wednesday after the Dow Jones Industrial Average notched a
-                      record close the previous day as investors flocked to
-                      shares that stand to benefit from an economic recovery.
-                      <br />
-                      <br />
-                      Futures on the blue-chip Dow rose 28 points. S&P 500
-                      futures were flat and Nasdaq 100 futures edged 0.2% lower.
-                      <br />
-                      <br />
-                      On Tuesday, while the Dow climbed 200 points to a new
-                      high, the tech-focused Nasdaq Composite suffered a
-                      sell-off, down 1.3%, amid a rapid rise in Treasury yields.
-                      The closely-watched benchmark 10-year Treasury yield was
-                      as high as 1.71% Tuesday, triggering selling in
-                      growth-oriented technology stocks.
-                      <br />
-                      <br />
-                      Megacap tech stocks underperformed the S&P 500 Tuesday as
-                      “investors reconsidered the value of such long-duration
-                      assets in the wake of higher rates,” Chris Hussey, a
-                      managing director at Goldman Sachs, said in a note.
-                    </label>
-                  </Col>
-                </Row>
-              </>
-            ) : buyModal ? (
-              <>
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="d-flex justify-content-start"
-                  >
-                    <label className="buy-quote-label">SOMEONE BUY</label>
-                  </Col>
-                </Row>
-
-                <div className="heading-paper">
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Position*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Security Type*</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Amount (PKR)*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Tenor*</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Issue Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Maturity date</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Trade Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">No. of Days</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Settlement Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Comment</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-                </div>
-              </>
-            ) : sellModal ? (
-              <>
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="d-flex justify-content-start"
-                  >
-                    <label className="buy-quote-label">SOMEONE SELL</label>
-                  </Col>
-                </Row>
-
-                <div className="heading-paper">
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Position*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Security Type*</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Amount (PKR)*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Tenor*</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Issue Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Maturity date</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Trade Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">No. of Days</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Settlement Date</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-end mt-4"
-                    >
-                      <label className="position-label">Comment</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
+                      <TextField
+                        className="text-field-size-modal"
+                        name={"Comment"}
+                        onChange={clientHandler}
+                        value={isRequestModal.Comment}
+                      />
                     </Col>
                   </Row>
                 </div>
@@ -2611,57 +2375,6 @@ const Client = () => {
                     sm={12}
                     xs={12}
                     className="modal-footer-confirm"
-                  >
-                    <Button text="Confirm" className="conifrm-btn" />
-                  </Col>
-                </Row>
-              </>
-            ) : viewModal ? (
-              <>
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    xs={12}
-                    className="social-icons-group"
-                  >
-                    <i className="icon-facebook"></i>
-
-                    <i className="icon-linkedin"></i>
-
-                    <i className="icon-twitter"></i>
-
-                    <i className="icon-youtube "></i>
-                    {/* <Facebook size={25} />
-                    <Facebook size={25} />
-                    <Facebook size={25} /> */}
-                  </Col>
-                </Row>
-              </>
-            ) : buyModal ? (
-              <>
-                <Row className="showRow-top-line">
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    xs={12}
-                    className="buy-modal-footer-confirm"
-                  >
-                    <Button text="Confirm" className="conifrm-btn" />
-                  </Col>
-                </Row>
-              </>
-            ) : sellModal ? (
-              <>
-                <Row className="showRow-top-line">
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    xs={12}
-                    className="buy-modal-footer-confirm"
                   >
                     <Button text="Confirm" className="conifrm-btn" />
                   </Col>

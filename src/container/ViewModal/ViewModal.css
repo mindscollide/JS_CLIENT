@@ -1,0 +1,102 @@
+.viewFooter {
+  width: 100% !important;
+  display: contents;
+  border: none !important;
+}
+
+.modal-view .modal-content {
+  height: 460px !important;
+  width: 650px !important;
+  background-color: #ffffff;
+  border: none !important;
+  display: flex !important;
+  /* align-items: center !important; */
+  justify-content: center !important;
+  padding: 10px 15px;
+  margin-left: 10%;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 10%) !important ;
+}
+
+.view-modal-light-label {
+  font-size: 14px;
+  position: absolute;
+  top: 15px;
+}
+
+.view-modal-bold-label {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  position: absolute;
+  top: 32px;
+}
+
+.view-modal-height-scroll {
+  max-height: 43vh;
+  overflow: auto !important;
+  overflow-x: hidden !important;
+}
+
+.view-modal-height-scroll::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.view-modal-height-scroll::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: rgb(228, 228, 228);
+  margin-left: -15px;
+}
+
+.discription-text {
+  font-size: 14px !important;
+  color: #000 !important;
+}
+
+/*social icon group*/
+.social-icons-group {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  bottom: 20px;
+}
+.social-icons-group i {
+  width: 30px;
+  color: #2197d7;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  border-radius: 50%;
+  background-color: #d8e8ff;
+}
+.social-icons-group .social-link {
+  width: 30px;
+  height: 30px;
+  background: #d8e8ff;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 100%;
+  padding: 4px;
+}
+.social-icons-group .social-link > i.icon-facebook,
+.social-icons-group .social-link > i.icon-twitter {
+  transform: translate(0px, 1px);
+  -webkit-transform: translate(0px, 1px);
+  -moz-transform: translate(0px, 1px);
+  -o-transform: translate(0px, 1px);
+  -ms-transform: translate(0px, 1px);
+}
+.social-icons-group .social-link > i {
+  color: #d8e8ff;
+  vertical-align: middle;
+}
+.social-icons-group .social-link > i.icon-youtube {
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -moz-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  -ms-transform: translate(0px, 2px);
+}

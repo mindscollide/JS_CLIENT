@@ -35,23 +35,23 @@
 .issue-date-column {
   color: #002650 !important;
   font-weight: 600;
+  font-family: "Montserrat", sans-serif;
 }
 
 .maturity-column {
   color: #002650 !important;
   font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 .table-all-title {
-  font-size: 16px;
+  font-size: 14px;
   color: #002650 !important;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   display: flex;
-  justify-content: start;
-  align-items: start !important;
+  justify-content: center;
+  align-items: center !important;
 }
 
 .bid-text-button {
@@ -74,25 +74,24 @@
   border-radius: 2px !important;
 }
 
-.table-upper-tbill-button,
-.table-upper-tbill-button:hover {
+.table-upper-tbill-button-active {
+  padding: 4px 8px;
+  width: 90%;
+  border-radius: 3px;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%) !important;
+  color: white !important;
+  border: none;
+}
+
+.table-upper-tbill-button-notActive,
+.table-upper-tbill-button-notActive:hover {
   padding: 4px 8px;
   width: 90%;
   border-radius: 3px;
   font-weight: 600;
   background-color: #e5e8ff;
   color: #002650 !important;
-  border: none;
-}
-
-.table-upper-tbill-button:active,
-.table-upper-tbill-button:focus {
-  padding: 4px 8px;
-  width: 90%;
-  border-radius: 3px;
-  font-weight: 600;
-  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
-  color: white !important;
   border: none;
 }
 
@@ -172,9 +171,10 @@
 }
 
 .upper-3m-button {
-  padding: 4px 10px;
+  padding: 4px 8px;
   border-radius: 3px;
-  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   background-color: #e5e8ff;
   color: #002650 !important;
@@ -185,9 +185,10 @@
 .upper-3m-button:active,
 .upper-3m-button:hover,
 .upper-3m-button:focus {
-  padding: 4px 10px;
+  padding: 4px 8px;
   border-radius: 3px;
-  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   color: #ffffff !important;
@@ -219,14 +220,16 @@
   border-radius: 4px;
   height: 350px;
   overflow: scroll !important;
+  margin-left: 8px;
   padding: 2px;
   /* top: 20px; */
 }
 
 .latest-date {
   color: #002650;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
 .latest-date-row {
@@ -237,12 +240,14 @@
 
 .dj-jones-text {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .date-dj-jone {
   color: #888b8e !important;
   font-size: 13px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
@@ -311,17 +316,6 @@
   padding: 30px 22px;
 }
 
-.modal-view .modal-content {
-  height: 460px !important;
-  width: 700px !important;
-  background-color: #ffffff;
-  border: none !important;
-  display: flex !important;
-  /* align-items: center !important; */
-  justify-content: center !important;
-  padding: 10px 15px;
-  margin-left: 10%;
-}
 
 .modal-title-trade {
   font-size: 12px !important;
@@ -388,8 +382,9 @@
   height: 29px !important;
   color: #002650 !important;
   font-weight: 600 !important;
-  font-size: 14px;
+  font-size: 13px;
   margin-left: 10px;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .tableFilter .ant-select-arrow {
@@ -412,14 +407,6 @@
   background-color: #004990 !important;
   border-bottom: 1px solid #ccc !important;
 }
-
-/* .rc-virtual-list-holder:focus,
-.rc-virtual-list-holder:active,
-.rc-virtual-list-holder:focus-visible {
-  background-color: #2a38af !important;
-  color: white !important;
-  border-bottom: 1px solid #ccc !important;
-} */
 
 .NewsFilter .ant-select-selector {
   background: #ffe4ce !important;
@@ -481,9 +468,10 @@
 }
 
 .txn-summary {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700 !important;
   color: #002650 !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 .bottom-inside-table {
@@ -594,60 +582,8 @@
   margin-top: 10px;
 }
 
-.discription-text {
-  font-size: 14px !important;
-  color: #000 !important;
-}
-
-/*social icon group*/
-.social-icons-group {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-}
-.social-icons-group i {
-  width: 30px;
-  color: #2197d7;
-  height: 30px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center !important;
-  border-radius: 50%;
-  background-color: #d8e8ff;
-}
-.social-icons-group .social-link {
-  width: 30px;
-  height: 30px;
-  background: #d8e8ff;
-  margin-right: 10px;
-  text-align: center;
-  border-radius: 100%;
-  padding: 4px;
-}
-.social-icons-group .social-link > i.icon-facebook,
-.social-icons-group .social-link > i.icon-twitter {
-  transform: translate(0px, 1px);
-  -webkit-transform: translate(0px, 1px);
-  -moz-transform: translate(0px, 1px);
-  -o-transform: translate(0px, 1px);
-  -ms-transform: translate(0px, 1px);
-}
-.social-icons-group .social-link > i {
-  color: #d8e8ff;
-  vertical-align: middle;
-}
-.social-icons-group .social-link > i.icon-youtube {
-  transform: translate(0px, 2px);
-  -webkit-transform: translate(0px, 2px);
-  -moz-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
-  -ms-transform: translate(0px, 2px);
-}
-
 .chatIcon-inBotton-table {
-  padding: 0px 8px !important;
+  padding: 0px 14px !important;
   background-color: #feac78 !important;
   border: 1px solid #9e9e9e;
   font-size: 25px;
@@ -727,4 +663,38 @@
   position: absolute !important;
   top: 62px !important;
   gap: 10px;
+}
+
+.bottom-rfq-list-icon {
+  margin-right: 5px !important;
+}
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper
+  .ant-table-tbody
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper
+  .ant-table-tbody
+  > tr
+  > td,
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper tfoot > tr > th,
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper
+  tfoot
+  > tr
+  > td {
+  position: relative;
+  padding: 10px 16px;
+  overflow-wrap: break-word;
+}
+
+.datePicker-Client {
+  width: 100% !important;
+  height: 27px;
+  border-radius: 4px;
+  font-size: 13px;
+  padding: 0px 8px;
+  border: 1px solid #ccc !important;
 }

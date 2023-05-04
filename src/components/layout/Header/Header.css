@@ -14,11 +14,14 @@
   display: flex !important;
 }
 
+.rfq-btn-list-icon{
+  margin-right: 5px !important;
+}
+
 .rfq-button {
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border-radius: 4px !important;
-  padding: 7px 30px;
-  gap: 10px !important;
+  padding: 5px 27px;
   font-size: 16px;
   font-weight: 600;
   text-align: center !important;
@@ -27,9 +30,9 @@
 }
 
 .rfq-button:hover {
-  background: #e97225 !important;
+  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
   border-radius: 4px !important;
-  padding: 7px 30px;
+  padding: 5px 27px;
   font-size: 16px;
   font-weight: 600;
   text-align: center !important;
@@ -40,7 +43,7 @@
 .caluclator-button {
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border-radius: 4px !important;
-  padding: 7px 35px;
+  padding: 5px 30px;
   font-size: 15px;
   font-weight: 600;
   border: none;
@@ -49,9 +52,9 @@
 }
 
 .caluclator-button:hover {
-  background: #e97225 !important;
+  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
   border-radius: 4px !important;
-  padding: 7px 35px;
+  padding: 5px 30px;
   font-size: 15px;
   font-weight: 600;
   border: none;
@@ -62,7 +65,6 @@
 .nav-rfq-calculator {
   display: flex;
   justify-content: end !important;
-  gap: -20px !important;
 }
 
 .profilebtn-dropdown {
@@ -235,4 +237,6 @@
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
 
-
+.setting-icon{
+  font-size: 17px; 
+}
