@@ -15,12 +15,12 @@ import Dashboard from "../container/Pages/Dashboard/Dashboard";
 export const router = createHashRouter(
   createRoutesFromElements(
     <>
-    <Route exact path="SignUp" element={<SignUp />} />
-    <Route exact path="Signuprequest" element={<SignUpRequest />} />
-      <Route exact path="LogIn" element={<SignIn />} />
-      <Route exact path="/" element={<Dashboard />}>
+      <Route exact path="/" element={<SignIn />} />
+      <Route exact path="SignUp" element={<SignUp />} />
+      <Route exact path="Signuprequest" element={<SignUpRequest />} />
+      <Route exact path="/Js/" element={<Dashboard />}>
+        <Route path="Home" element={<Client />} />
         <Route path="" element={<Client />} />
-        <Route path="client" element={<Client />} />
         <Route path="calculator" element={<Calculator />} />
       </Route>
     </>

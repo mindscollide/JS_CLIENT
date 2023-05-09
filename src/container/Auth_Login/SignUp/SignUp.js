@@ -127,41 +127,7 @@ const SignUp = () => {
                       </Row>
                     </Col>
 
-                    <Col sm={12} md={12} lg={12} className="mt-1">
-                      <Row>
-                        <span className="fields-label">
-                          Transaction Type
-                          <span className="required-span">*</span>
-                        </span>
-                        <Col sm={12} md={12} lg={12}>
-                          <Select
-                            placeholder="Transaction ID"
-                            options={transactionOption}
-                            className="TransactionFilter"
-                            styles={CustomStyle}
-                          />
-                        </Col>
-                      </Row>
-                    </Col>
-
-                    <Col sm={12} md={12} lg={12} className="mt-3">
-                      <Row>
-                        <span className="fields-label">
-                          Region
-                          <span className="required-span">*</span>
-                        </span>
-                        <Col sm={12} md={12} lg={12}>
-                          <Select
-                            placeholder="Region"
-                            options={regionOption}
-                            className="TransactionFilter"
-                            styles={CustomStyle}
-                          />
-                        </Col>
-                      </Row>
-                    </Col>
-
-                    <Col sm={12} md={12} lg={12} className="mt-3">
+                    <Col sm={12} md={12} lg={12} className="mt-2">
                       <Row>
                         <span className="fields-label">
                           Role
@@ -181,7 +147,7 @@ const SignUp = () => {
                       sm={12}
                       md={12}
                       lg={12}
-                      className="goback-signup-btn-col mt-3"
+                      className="goback-signup-btn-col mt-5"
                     >
                       <Button text="Go Back" className="Goback-Signup-btn" />
                       <Button text="Signup" className="Proceed-btn" />

@@ -133,6 +133,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
       <Modal
         show={modalSell}
         setShow={setSellModal}
+        backdrop="static"
         className={"modaldialog modal-sell-styles"}
         modalHeaderClassName={"header-Sell-Modal-close-btn"}
         modalFooterClassName={"showSellFooter"}

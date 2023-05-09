@@ -624,7 +624,7 @@ const Calculator = () => {
   return (
     <>
       <Container fluid>
-        <Row className="mt-3">
+        <Row >
           <Col lg={11} md={11} sm={11}>
             <Collapse
               size="small"

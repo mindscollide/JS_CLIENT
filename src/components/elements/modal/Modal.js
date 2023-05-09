@@ -21,7 +21,7 @@ const CustomModal = ({
         <Modal
           show={show}
           onHide={onHide}
-          // backdrop={backdrop}
+          backdrop={backdrop}
           data-backdrop="true"
           size={size}
           centered={true}
