@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <Fragment>
       <Header />
-      {location.pathname === "/calculator" && <Sidebar />}
+      {location.pathname === "/Js/calculator" && <Sidebar />}
 
       <Outlet />
     </Fragment>

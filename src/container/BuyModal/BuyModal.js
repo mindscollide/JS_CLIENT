@@ -5,8 +5,6 @@ import { Table, Button, Modal, TextField } from "../../components/elements";
 import "./BuyModal.css";
 
 const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
-
-    
   // for date picker
   const [startDate, setStartDate] = useState(new Date());
 
@@ -135,6 +133,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
       <Modal
         show={modalBuy}
         setShow={setBuyModal}
+        backdrop="static"
         className={"modaldialog modal-styles"}
         modalHeaderClassName={"header-Video-Modal-close-btn"}
         modalFooterClassName={"showFooter"}

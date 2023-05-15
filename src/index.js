@@ -5,13 +5,16 @@ import App from "./App";
 import { RouterProvider, HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { router } from "./routes/Routes";
+import store from "./store/store";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <Provider store={store}>
     <Suspense>
       <RouterProvider router={router} />
     </Suspense>
+  </Provider>
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>

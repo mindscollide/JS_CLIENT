@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Container, Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { Button, Modal } from "../../../components/elements";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
+import RequestModal from "../../../container/RequestModal/RequestModal";
+import { signOut } from "../../../store/actions/Auth-Actions";
 import Calculator from "../../../container/Calculator/Calculator";
 import { Checkbox, Switch } from "antd";
 import {
@@ -17,6 +20,12 @@ import JohnCater from "../../../assets/images/profile3.png";
 import JsLogo from "../../../assets/images/js-logo.png";
 
 const Header = ({ show, setShow }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // Modal for request quote modal
+  const [requestQuoteModal, setRequestQuoteModal] = useState(false);
+
   // for show modal state
   const [showModal, setShowModal] = useState(false);
 
@@ -26,7 +35,10 @@ const Header = ({ show, setShow }) => {
   //for user passcode
   const [userPasscode, setUserPasscode] = useState(false);
 
-  const navigate = useNavigate();
+  //for open request quote modal
+  const openRequestModal = async () => {
+    setRequestQuoteModal(true);
+  };
 
   //for open setting show modal
   const openSettingModalHandler = async () => {
@@ -47,7 +59,7 @@ const Header = ({ show, setShow }) => {
 
   // for open calculator
   const gotoCalculator = () => {
-    navigate("/calculator");
+    navigate("/Js/calculator");
   };
 
   //for open another modal
@@ -69,6 +81,7 @@ const Header = ({ show, setShow }) => {
                   {" "}
                   <Button
                     text="RFQ"
+                    onClick={openRequestModal}
                     icon={
                       <>
                         <i className="icon-list rfq-btn-list-icon" />
@@ -110,7 +123,12 @@ const Header = ({ show, setShow }) => {
                 <Dropdown.Item>
                   <Nav.Link>
                     <i className="icon-logout setting-icon"></i>
-                    <label className="dropdown-select-labels">Logout</label>
+                    <label
+                      className="dropdown-select-labels"
+                      onClick={() => dispatch(signOut(navigate))}
+                    >
+                      Logout
+                    </label>
                   </Nav.Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
@@ -307,6 +325,13 @@ const Header = ({ show, setShow }) => {
           </>
         }
       />
+
+      {requestQuoteModal ? (
+        <RequestModal
+          modalRequest={requestQuoteModal}
+          setModalRequest={setRequestQuoteModal}
+        />
+      ) : null}
     </>
   );
 };

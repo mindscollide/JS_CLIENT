@@ -15,6 +15,7 @@ import PDF from "../../assets/images/pdf.png";
 import Excel from "../../assets/images/excel.png";
 
 import { Select } from "antd";
+import RequestModal from "../RequestModal/RequestModal";
 import ViewModal from "../ViewModal/ViewModal";
 import BuyModal from "../BuyModal/BuyModal";
 import SellModal from "../SellModal/SellModal";
@@ -27,6 +28,9 @@ const Client = () => {
 
   // for date picker
   const [startDate, setStartDate] = useState(new Date());
+
+  // request quote modal
+  const [requestQuoteModal, setRequestQuoteModal] = useState(false);
 
   //view modal for client
   const [viewClientModal, setViewClientModal] = useState(false);
@@ -55,86 +59,71 @@ const Client = () => {
   const [isPibRightFloater, setIsPibRightFloater] = useState(false);
   const [isRightSukuk, setIsRightSukuk] = useState(false);
 
-  // for Request quote states
-  const [isRequestModal, setIsRequestModal] = useState({
-    TradeDate: "",
-    NoOfDays: "",
-    settlementDays: "",
-    Position: "",
-    CouponRate: "",
-    SecuritType: "",
-    issuedate: "",
-    Tenor: "",
-    MaturiityDate: "",
-    AmountPKR: "",
-    Comment: "",
-  });
-
   //for client state handler
-  const clientHandler = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
+  // const clientHandler = (e) => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
 
-    if (name === "NoOfDays" && value !== "") {
-      let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setIsRequestModal({
-          ...isRequestModal,
-          NoOfDays: valueCheck.trimStart(),
-        });
-      }
-    } else if (name === "NoOfDays" && value === "") {
-      setIsRequestModal({
-        ...isRequestModal,
-        NoOfDays: "",
-      });
-    }
+  //   if (name === "NoOfDays" && value !== "") {
+  //     let valueCheck = value.replace(/[^\d]/g, "");
+  //     if (valueCheck !== "") {
+  //       setIsRequestModal({
+  //         ...isRequestModal,
+  //         NoOfDays: valueCheck.trimStart(),
+  //       });
+  //     }
+  //   } else if (name === "NoOfDays" && value === "") {
+  //     setIsRequestModal({
+  //       ...isRequestModal,
+  //       NoOfDays: "",
+  //     });
+  //   }
 
-    if (name === "AmountPKR" && value !== "") {
-      let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setIsRequestModal({
-          ...isRequestModal,
-          AmountPKR: valueCheck.trimStart(),
-        });
-      }
-    } else if (name === "AmountPKR" && value === "") {
-      setIsRequestModal({
-        ...isRequestModal,
-        AmountPKR: "",
-      });
-    }
+  //   if (name === "AmountPKR" && value !== "") {
+  //     let valueCheck = value.replace(/[^\d]/g, "");
+  //     if (valueCheck !== "") {
+  //       setIsRequestModal({
+  //         ...isRequestModal,
+  //         AmountPKR: valueCheck.trimStart(),
+  //       });
+  //     }
+  //   } else if (name === "AmountPKR" && value === "") {
+  //     setIsRequestModal({
+  //       ...isRequestModal,
+  //       AmountPKR: "",
+  //     });
+  //   }
 
-    if (name === "CouponRate" && value !== "") {
-      let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setIsRequestModal({
-          ...isRequestModal,
-          CouponRate: valueCheck.trimStart(),
-        });
-      }
-    } else if (name === "CouponRate" && value === "") {
-      setIsRequestModal({
-        ...isRequestModal,
-        CouponRate: "",
-      });
-    }
+  //   if (name === "CouponRate" && value !== "") {
+  //     let valueCheck = value.replace(/[^\d]/g, "");
+  //     if (valueCheck !== "") {
+  //       setIsRequestModal({
+  //         ...isRequestModal,
+  //         CouponRate: valueCheck.trimStart(),
+  //       });
+  //     }
+  //   } else if (name === "CouponRate" && value === "") {
+  //     setIsRequestModal({
+  //       ...isRequestModal,
+  //       CouponRate: "",
+  //     });
+  //   }
 
-    if (name === "Comment" && value !== "") {
-      let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setIsRequestModal({
-          ...isRequestModal,
-          Comment: valueCheck.trimStart(),
-        });
-      }
-    } else if (name === "Comment" && value === "") {
-      setIsRequestModal({
-        ...isRequestModal,
-        Comment: "",
-      });
-    }
-  };
+  //   if (name === "Comment" && value !== "") {
+  //     let valueCheck = value.replace(/[^\d]/g, "");
+  //     if (valueCheck !== "") {
+  //       setIsRequestModal({
+  //         ...isRequestModal,
+  //         Comment: valueCheck.trimStart(),
+  //       });
+  //     }
+  //   } else if (name === "Comment" && value === "") {
+  //     setIsRequestModal({
+  //       ...isRequestModal,
+  //       Comment: "",
+  //     });
+  //   }
+  // };
 
   // for bottom button export file toggle
   const [isExport, setIsExport] = useState(false);
@@ -1366,7 +1355,7 @@ const Client = () => {
 
   //open modal
   const openModalHandler = async () => {
-    setShow(true);
+    setRequestQuoteModal(true);
   };
 
   //open view modal
@@ -2165,7 +2154,14 @@ const Client = () => {
         />
       ) : null}
 
-      <Modal
+      {requestQuoteModal ? (
+        <RequestModal
+          modalRequest={requestQuoteModal}
+          setModalRequest={setRequestQuoteModal}
+        />
+      ) : null}
+
+      {/* <Modal
         show={show}
         setShow={() => {
           setShow();
@@ -2383,7 +2379,7 @@ const Client = () => {
             ) : null}
           </>
         }
-      />
+      /> */}
     </>
   );
 };

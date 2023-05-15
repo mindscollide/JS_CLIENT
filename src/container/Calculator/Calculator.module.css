@@ -5,8 +5,7 @@
   border: none !important;
 }
 
-.accodion-header-title:hover,
-.accodion-header-title:active {
+.accodion-header-title:is(:hover, :focus, :focus-visible, :focus-within) {
   text-align: center !important;
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
@@ -19,8 +18,7 @@
   margin-top: 10px;
 }
 
-.accodion-header-title-two:hover,
-.accodion-header-title-two:active {
+.accodion-header-title-two:is(:hover, :focus, :focus-visible, :focus-within) {
   text-align: center !important;
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
@@ -70,7 +68,6 @@
   border-radius: 4px;
 }
 
-
 .alltextfields-calculator {
   width: 100%;
   font-weight: 500;
@@ -78,7 +75,7 @@
   font-size: 11px;
   color: #212529;
   border: 1px solid #ccc !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-radius: 4px;
 }
 
@@ -88,7 +85,7 @@
 }
 
 .interpolated-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px !important;
   font-weight: 700;
   margin-left: 30px;
@@ -131,7 +128,7 @@
 
 .yield-to-price-labels {
   font-size: 12px !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   width: 90px !important;
   text-align: end;
@@ -140,27 +137,26 @@
 .PIB-labels {
   font-size: 12px !important;
   text-align: end !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
 .slect-bond-p-to-y {
   font-size: 12px !important;
   text-align: end !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
 .maturity-bond-p-to-y {
   font-size: 12px !important;
   text-align: end !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
-.select-bond-col{
+.select-bond-col {
   display: flex !important;
   justify-content: start !important;
   gap: 0px !important;
 }
-
