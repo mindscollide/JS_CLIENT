@@ -8,6 +8,7 @@ const CustomModal = ({
   show,
   onHide,
   size,
+  keyboard,
   backdrop,
   modalBodyClassName,
   modalParentClass,
@@ -22,6 +23,7 @@ const CustomModal = ({
           show={show}
           onHide={onHide}
           backdrop={backdrop}
+          keyboard={keyboard}
           data-backdrop="true"
           size={size}
           centered={true}

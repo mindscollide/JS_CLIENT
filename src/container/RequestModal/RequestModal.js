@@ -97,6 +97,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
         show={modalRequest}
         setShow={setModalRequest}
         backdrop="static"
+        keyboard={false}
         // backdrop={true}
         modalHeaderClassName={"header-Video-Modal-close-btn"}
         modalFooterClassName={"showFooter"}

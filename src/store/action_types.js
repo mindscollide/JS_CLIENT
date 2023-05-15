@@ -6,4 +6,8 @@ export const SIGN_UP_INIT = "SIGN_UP_INIT";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_UP_FAIL = "SIGN_UP_FAIL";
 
+export const USER_ROLE_INIT = "USER_ROLE_INIT";
+export const USER_ROLE_SUCCESS = "USER_ROLE_SUCCESS";
+export const USER_ROLE_FAIL = "USER_ROLE_FAIL";
+
 export const SIGN_OUT = "SIGN_UP_FAIL";

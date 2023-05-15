@@ -2,9 +2,57 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
 import { Button, TextField } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { allUserRoles } from "../../../store/actions/Auth-Actions";
 import Select from "react-select";
 import "./SignUp.css";
 const SignUp = () => {
+  const { auth } = useSelector((state) => state);
+  console.log(auth, "allUserRoles");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // roles states
+  const [userRoles, setUserRoles] = useState([]);
+
+  const [credentialsBio, setCredentialsBio] = useState({
+    email: "",
+    userName: "",
+    firstName: "",
+    lastName: "",
+    personalNumber: "",
+    roleID: 0,
+  });
+
+  const rolesChangeHandler = async (selectedOption) => {
+    console.log(selectedOption, "selectedOptionselectedOption");
+    setCredentialsBio({
+      ...credentialsBio,
+      roleID: selectedOption.value,
+    });
+  };
+
+  useEffect(() => {
+    if (Object.keys(auth.UserRoleList).length > 0) {
+      let tem = [];
+      auth.UserRoleList.map((data, index) => {
+        console.log(data, "datadatadatadata");
+        tem.push({
+          label: data.roleName,
+          value: data.roleID,
+        });
+      });
+      setUserRoles(tem);
+      // setRoleValue(tem);
+    }
+  }, [auth.UserRoleList]);
+
+  useEffect(() => {
+    // on page refresh
+    dispatch(allUserRoles());
+  }, []);
+
   const transactionOption = [
     { label: "Transaction type1", value: 1 },
     {
@@ -135,8 +183,11 @@ const SignUp = () => {
                         </span>
                         <Col sm={12} md={12} lg={12}>
                           <Select
+                            name="roleID"
                             placeholder="Role"
-                            options={roleOption}
+                            options={userRoles}
+                            // options={roleOption}
+                            onChange={rolesChangeHandler}
                             className="TransactionFilter"
                             styles={CustomStyle}
                           />
