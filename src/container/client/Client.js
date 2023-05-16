@@ -1475,6 +1475,7 @@ const Client = () => {
         } else {
           console.log("clickclick", arr);
           setIsExport(false);
+          setIsExport(true);
         }
       }
     });
