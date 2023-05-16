@@ -283,6 +283,16 @@
   color: white;
 }
 
+.rfq-bttom-btn:active,
+.rfq-bttom-btn:hover,
+.rfq-bttom-btn:focus {
+  padding: 5px 25px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  border: none;
+  color: white;
+}
+
 .export-bttom-btn {
   padding: 5px 30px;
   border-radius: 4px;
@@ -291,12 +301,19 @@
   color: white;
 }
 
+.export-bttom-btn:hover,
+.export-bttom-btn:active,
+.export-bttom-btn:focus {
+  padding: 5px 30px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  border: none;
+  color: white;
+}
+
 .date-insde {
   padding: 10px 20px;
 }
-
-
-
 
 .buy-modal-footer-confirm {
   display: flex !important;
@@ -304,8 +321,6 @@
   align-items: center !important;
   margin-top: 20px;
 }
-
-
 
 .buy-quote-label {
   font-size: 18px;
@@ -505,9 +520,6 @@
   gap: 10px;
   margin-bottom: 10px !important;
 }
-
-
-
 
 .chatIcon-inBotton-table {
   padding: 0px 14px !important;
