@@ -23,6 +23,9 @@ const Header = ({ show, setShow }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //when Clicked on calculater Button One button add Upload
+  const [showuploadbtn, setShowuploadbtn] = useState(false);
+
   // Modal for request quote modal
   const [requestQuoteModal, setRequestQuoteModal] = useState(false);
 
@@ -60,8 +63,13 @@ const Header = ({ show, setShow }) => {
   // for open calculator
   const gotoCalculator = () => {
     navigate("/Js/calculator");
+    setShowuploadbtn(true);
   };
 
+  //Route to client Main page and make the condition false for upload rate button
+  const handleLogoClick = () => {
+    setShowuploadbtn(false);
+  };
   //for open another modal
 
   const openRfqHandler = () => {};
@@ -71,24 +79,36 @@ const Header = ({ show, setShow }) => {
       <Container fluid className="container-header">
         <Navbar collapseOnSelect expand="lg">
           <Container fluid>
-            <Navbar.Brand to="/" as={Link}>
-              <img src={JsLogo} width={220} height={50} />
+            <Navbar.Brand to="Home" as={Link}>
+              <img
+                src={JsLogo}
+                width={220}
+                height={50}
+                onClick={handleLogoClick}
+              />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="nav-rfq-calculator ms-auto">
                 <Nav.Link>
-                  {" "}
-                  <Button
-                    text="RFQ"
-                    onClick={openRequestModal}
-                    icon={
-                      <>
-                        <i className="icon-list rfq-btn-list-icon" />
-                      </>
-                    }
-                    className="rfq-button"
-                  />
+                  {showuploadbtn ? (
+                    <>
+                      <Button text="Upload Rates" className="rfq-button" />
+                    </>
+                  ) : (
+                    <>
+                      <Button
+                        text="RFQ"
+                        onClick={openRequestModal}
+                        icon={
+                          <>
+                            <i className="icon-list rfq-btn-list-icon" />
+                          </>
+                        }
+                        className="rfq-button"
+                      />
+                    </>
+                  )}
                 </Nav.Link>
                 <Nav.Link>
                   <Button

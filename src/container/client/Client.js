@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Table, Button, Modal, TextField } from "../../components/elements";
 import {
@@ -1458,6 +1458,29 @@ const Client = () => {
     console.log(date, dateString);
   };
 
+  //on Clicking on screen making a state false
+  useEffect(() => {
+    console.log("click");
+    window.addEventListener("click", function (e) {
+      console.log("eeeeeeeee", e.target.className);
+      var clsname = e.target.className;
+      let arr = clsname && clsname.split("_");
+      console.log("click", typeof arr);
+      console.log("click", arr != "");
+      console.log("click", arr.length);
+      if (arr != undefined && arr.length > 0) {
+        if (arr[1] === "export-bttom-btn " && arr[1] === "btn-primary") {
+          console.log("click", arr);
+          setIsExport(false);
+        } else {
+          console.log("clickclick", arr);
+          setIsExport(false);
+          setIsExport(true);
+        }
+      }
+    });
+  }, []);
+
   return (
     <>
       <Container fluid className="table-content-div">
@@ -2095,7 +2118,7 @@ const Client = () => {
               <Button
                 text="Export"
                 className="export-bttom-btn"
-                onClick={() => setIsExport(!isExport)}
+                // onClick={() => setIsExport(true)}
               />
 
               {isExport ? (
