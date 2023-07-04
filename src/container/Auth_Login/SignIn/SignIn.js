@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
 import { Button, TextField, Loader } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
-import { logIn } from "../../../store/actions/Auth-Actions";
+import { LoginUser, logIn } from "../../../store/actions/Auth-Actions";
 import PasswordHideEyeIcon from "../../../assets/images/password_hide.svg";
 import PasswordEyeIcon from "../../../assets/images/password.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,6 +28,8 @@ const SignIn = () => {
   const [clientCredentials, setClientCredentials] = useState({
     UserName: "",
     Password: "",
+    DeviceID: null,
+    Device: null,
     fakePassword: "",
   });
 
@@ -59,7 +61,7 @@ const SignIn = () => {
       clientCredentials.UserName !== "" &&
       clientCredentials.Password !== ""
     ) {
-      dispatch(logIn(clientCredentials, navigate));
+      dispatch(LoginUser(clientCredentials, navigate));
     } else {
       setOpen({
         ...open,

@@ -1,12 +1,14 @@
 import * as actions from "../action_types";
 import axios from "axios";
 import {
+  CorporateUserLoggedIn,
   authenticationLogIn,
   authenticationSignUp,
   authenticationUserRole,
 } from "../../assets/common/apis/Api_config";
 import { authenticationAPI } from "../../assets/common/apis/Api_ends_points";
 import { message } from "antd";
+import { type } from "@testing-library/user-event/dist/type";
 
 const logininit = () => {
   return {
@@ -270,6 +272,215 @@ const logIn = (UserData, navigate) => {
   };
 };
 
+//Sign_In_Corporate
+const CoprporateUserSignINinit = () => {
+  return {
+    type: actions.SIGN_IN_USER_INIT,
+  };
+};
+
+const CorporateUuserSignINSuccess = (action, response) => {
+  return {
+    type: actions.SIGN_IN_USER_SUCCESS,
+    action: action,
+    response: response,
+  };
+};
+
+const CorporateUuserSignINFailed = (response) => {
+  return {
+    type: actions.SIGN_IN_USER_FAIL,
+    response: response,
+  };
+};
+
+const LoginUser = (UserData, navigate) => {
+  console.log("logincredentials", UserData);
+  var min = 10000;
+  var max = 90000;
+  var id = min + Math.random() * (max - min);
+  let Data = {
+    Email: UserData.UserName,
+    Password: UserData.Password,
+    DeviceID: id.toString(),
+    Device: "browser",
+  };
+  console.log("logincredentials", Data);
+  return (dispatch) => {
+    dispatch(logininit());
+    let form = new FormData();
+    form.append("RequestMethod", CorporateUserLoggedIn.RequestMethod);
+    form.append("RequestData", JSON.stringify(Data));
+    axios({
+      method: "post",
+      url: authenticationAPI,
+      data: form,
+    })
+      .then(async (response) => {
+        console.log("responseresponseresponse", response);
+        if (response.data.responseCode === 200) {
+          if (response.data.responseResult.isExecuted === true) {
+            if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_01"
+            ) {
+              dispatch(CorporateUuserSignINFailed("Device does not exists"));
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_02"
+            ) {
+              dispatch(CorporateUuserSignINFailed("Device ID does not exists"));
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_03"
+            ) {
+              if (response.data.responseResult.roleID === 2) {
+                localStorage.setItem(
+                  "userID",
+                  response.data.responseResult.userID
+                );
+                localStorage.setItem(
+                  "firstName",
+                  response.data.responseResult.firstName
+                );
+                localStorage.setItem(
+                  "lastName",
+                  response.data.responseResult.lastName
+                );
+                localStorage.setItem(
+                  "userName",
+                  response.data.responseResult.userName
+                );
+                localStorage.setItem(
+                  "roleID",
+                  response.data.responseResult.roleID
+                );
+                localStorage.setItem(
+                  "token",
+                  response.data.responseResult.token
+                );
+                localStorage.setItem(
+                  "refreshToken",
+                  response.data.responseResult.refreshToken
+                );
+                navigate("/Js/");
+                dispatch(CorporateUuserSignINSuccess("Successfully Logged In"));
+              } else if (response.data.responseResult.roleID === 4) {
+                localStorage.setItem(
+                  "userID",
+                  response.data.responseResult.userID
+                );
+                localStorage.setItem(
+                  "firstName",
+                  response.data.responseResult.firstName
+                );
+                localStorage.setItem(
+                  "lastName",
+                  response.data.responseResult.lastName
+                );
+                localStorage.setItem(
+                  "userName",
+                  response.data.responseResult.userName
+                );
+                localStorage.setItem(
+                  "roleID",
+                  response.data.responseResult.roleID
+                );
+                localStorage.setItem(
+                  "token",
+                  response.data.responseResult.token
+                );
+                localStorage.setItem(
+                  "refreshToken",
+                  response.data.responseResult.refreshToken
+                );
+                navigate("/AdminDashboard/");
+                dispatch(CorporateUuserSignINSuccess("Successfully Logged In"));
+              } else {
+                dispatch(
+                  CorporateUuserSignINFailed(
+                    "This user is not authorise for this domain"
+                  )
+                );
+              }
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_04"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed(
+                  "Invalid credentials. Please enter correct password."
+                )
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_05"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed("Your account has been locked.")
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_06"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed("Your account has been disabled.")
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_07"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed("Your account has been closed")
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_08"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed(
+                  "Account set to dormant due to Inactivity."
+                )
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_09"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed("User could not be Verified")
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_10"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed(
+                  "Not a valid user. Please login with valid user."
+                )
+              );
+            } else if (
+              response.data.responseResult.responseMessage ===
+              "ERM_AuthService_AuthManager_CorporateUserLogin_11"
+            ) {
+              dispatch(
+                CorporateUuserSignINFailed("Exception something went wrong")
+              );
+            }
+          } else {
+            dispatch(CorporateUuserSignINFailed("something went wrong"));
+            console.log("something went wrong");
+          }
+        } else {
+          dispatch(CorporateUuserSignINFailed("something went wrong"));
+          console.log("something went wrong");
+        }
+      })
+      .catch((response) => {
+        dispatch(CorporateUuserSignINFailed("something went wrong"));
+      });
+  };
+};
+
 // getAllUserRoles API Function
 const allUserRoles = () => {
   return (dispatch) => {
@@ -474,4 +685,4 @@ const signUp = (UserData, navigate) => {
   };
 };
 
-export { logIn, signUp, signOut, allUserRoles };
+export { logIn, signUp, signOut, allUserRoles, LoginUser };
