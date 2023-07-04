@@ -148,7 +148,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                     lg={12}
                     md={12}
                     sm={12}
-                    className="d-flex justify-content-start"
+                    className="d-flex justify-content-start mt-4"
                   >
                     <label className="buy-quote-label">SOMEONE SELL</label>
                   </Col>
@@ -160,7 +160,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="Sell-position-label">Position*</label>
                     </Col>
@@ -178,7 +178,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className="Sell-position-label">
                         Security Type*
@@ -199,7 +199,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="Sell-position-label">
                         Amount (PKR)*
@@ -219,7 +219,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className="Sell-position-label">Tenor*</label>
                     </Col>
@@ -238,7 +238,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="Sell-position-label">Issue Date</label>
                     </Col>
@@ -257,13 +257,13 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className="Sell-position-label">
                         Maturity date
                       </label>
                     </Col>
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <DatePicker
                         name="MaturityDate"
                         selected={startDate}
@@ -279,7 +279,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="Sell-position-label">Trade Date</label>
                     </Col>
@@ -298,7 +298,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className="Sell-position-label">No. of Days</label>
                     </Col>
@@ -317,14 +317,14 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="Sell-position-label">
                         Settlement Date
                       </label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <DatePicker
                         name="SettlementDate"
                         selected={startDate}
@@ -338,17 +338,32 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-end mt-4"
+                      className="d-flex justify-content-end mt-3"
                     >
                       <label className="Sell-position-label">Comment</label>
                     </Col>
                     <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal-sell" />
+                      <TextField type="text" as={"textarea"} rows="1" />
                     </Col>
                   </Row>
                 </div>
               </>
             ) : null}
+          </>
+        }
+        ModalFooter={
+          <>
+            <Row className="showRow-top-line mb-5">
+              <Col
+                lg={12}
+                md={12}
+                sm={12}
+                xs={12}
+                className="buy-modal-footer-confirm"
+              >
+                <Button text="Confirm" className="conifrm-btn" />
+              </Col>
+            </Row>
           </>
         }
       />

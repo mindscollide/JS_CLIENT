@@ -23,6 +23,10 @@
   top: 23px !important;
 }
 
+.Text-area-small {
+  height: 39px !important;
+}
+
 .form-control3 {
   border-radius: 4px !important;
   border-color: #ccc !important;
