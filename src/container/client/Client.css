@@ -35,6 +35,7 @@
 .issue-date-column {
   color: #002650 !important;
   font-weight: 600;
+  font-size: 14px !important;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -230,6 +231,11 @@
   justify-content: end;
   align-items: center;
   gap: 0px;
+}
+
+.Fontssize {
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .filter-chevron-icon-client {
@@ -480,13 +486,14 @@
 
 .bottom-inside-table th.ant-table-cell {
   color: #ffffff !important;
+  padding: 10px 5px !important;
   border-radius: 0% !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%) !important;
 }
 
 .filtericon-bottom {
   color: #ffffff !important;
-  float: center !important;
+  /* float: center !important; */
 }
 
 .column-boldness {
@@ -499,6 +506,7 @@
 
 .bottom-table-header {
   font-weight: 700 !important;
+  font-size: 14px !important;
 }
 
 .remove-gutterx-space {
