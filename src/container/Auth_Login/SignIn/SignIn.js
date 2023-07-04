@@ -3,12 +3,15 @@ import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
 import { Button, TextField, Loader } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
 import { logIn } from "../../../store/actions/Auth-Actions";
+import PasswordHideEyeIcon from "../../../assets/images/password_hide.svg";
+import PasswordEyeIcon from "../../../assets/images/password.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Ubuntu } from "react-bootstrap-icons";
 import "./SignIn.css";
 const SignIn = () => {
   const { auth } = useSelector((state) => state);
+  const [showNewPasswordIcon, setShowNewPasswordIcon] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -16,6 +19,10 @@ const SignIn = () => {
     open: false,
     message: "",
   });
+
+  const showNewPassowrd = () => {
+    setShowNewPasswordIcon(!showNewPasswordIcon);
+  };
 
   // state for client Login
   const [clientCredentials, setClientCredentials] = useState({
@@ -107,11 +114,25 @@ const SignIn = () => {
                         <Form.Control
                           name="Password"
                           onChange={setCredentialHandler}
-                          className="form-comtrol-textfield-password"
+                          className={
+                            showNewPasswordIcon
+                              ? "form-comtrol-textfield-password-Show"
+                              : "form-comtrol-textfield-password"
+                          }
                           placeholder="Password"
                           aria-label="Username"
                           aria-describedby="basic-addon1"
                         />
+                        <span
+                          className="passwordIcon"
+                          onClick={showNewPassowrd}
+                        >
+                          {showNewPasswordIcon ? (
+                            <img src={PasswordHideEyeIcon} />
+                          ) : (
+                            <img src={PasswordEyeIcon} />
+                          )}
+                        </span>
                       </InputGroup>
                       {/* <TextField
                         placeholder="User Password"
