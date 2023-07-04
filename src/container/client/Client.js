@@ -407,7 +407,7 @@ const Client = () => {
       title: <label className="table-all-title">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "100px",
+      width: "125px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -436,7 +436,7 @@ const Client = () => {
       title: <label className="table-all-title">Maturity</label>,
       dataIndex: "maturity",
       key: "maturity",
-      width: "100px",
+      width: "110px",
       ellipsis: true,
       render: (text) => <label className="maturity-column">{text}</label>,
       filters: [
@@ -466,7 +466,7 @@ const Client = () => {
       dataIndex: "tenor",
       key: "tenor",
       align: "center",
-      width: "100px",
+      width: "90px",
       ellipsis: true,
       filters: [
         {
@@ -490,20 +490,20 @@ const Client = () => {
       title: <label className="table-all-title">Instrument</label>,
       dataIndex: "instrument",
       key: "instrument",
-      width: "100px",
+      width: "90px",
       ellipsis: true,
     },
     {
       title: <label className="table-all-title">PKRV</label>,
       dataIndex: "pkrv",
       key: "pkrv",
-      width: "100px",
+      width: "50px",
     },
     {
       title: <label className="table-all-title">RFQ</label>,
       dataIndex: "rfq",
       key: "rfq",
-      width: "100px",
+      width: "79px",
       ellipsis: true,
       render: (text) => (
         <Button
@@ -539,31 +539,96 @@ const Client = () => {
       title: <label className="table-all-title">DTM</label>,
       dataIndex: "dtm",
       key: "dtm",
-      width: "100px",
+      width: "70px",
+      filters: [
+        {
+          text: "3m",
+          value: "1",
+        },
+        {
+          text: "6m",
+          value: "2",
+        },
+        {
+          text: "1Y",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
     },
     {
       title: <label className="table-all-title">Coupon</label>,
       dataIndex: "Coupon",
       key: "Coupon",
-      width: "100px",
+      width: "60px",
     },
     {
-      title: <label className="table-all-title">Coupon Frequency</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Coupon</span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Frequency</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "couponfrequency",
       key: "couponfrequency",
-      width: "100px",
+      width: "85px",
     },
     {
-      title: <label className="table-all-title">Bid Spread</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Bid</span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Spread</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "bidspread",
       key: "bidspread",
-      width: "100px",
+      width: "55px",
     },
     {
-      title: <label className="table-all-title">Offer Spread</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Offer </span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Spread</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "offerspread",
       key: "offerspread",
-      width: "100px",
+      width: "80px",
     },
   ];
 
@@ -780,7 +845,7 @@ const Client = () => {
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -921,7 +986,7 @@ const Client = () => {
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -1069,7 +1134,7 @@ const Client = () => {
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -1549,7 +1614,7 @@ const Client = () => {
                   </>
                 ) : currentTable === 2 ? (
                   <>
-                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                    <Col lg={4} md={4} sm={4}>
                       <TextField
                         placeholder="search"
                         className="pkrv-search-textfield"
@@ -1869,7 +1934,7 @@ const Client = () => {
                   </>
                 ) : currentRightTable === 2 ? (
                   <>
-                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                    <Col lg={4} md={4} sm={4}>
                       <TextField
                         placeholder="search"
                         className="pkrv-search-textfield"
