@@ -1446,7 +1446,7 @@ const Client = () => {
       ),
       dataIndex: "status",
       key: "status",
-      width: "80px",
+      width: "87px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
