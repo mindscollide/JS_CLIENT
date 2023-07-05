@@ -368,13 +368,18 @@
   background: #ffe4ce !important;
   border: none !important;
   border-radius: 3px !important;
-  width: 180px !important;
+  width: 200px !important;
   height: 29px !important;
   color: #002650 !important;
   font-weight: 600 !important;
   font-size: 13px;
   margin-left: 10px;
   font-family: "Montserrat", sans-serif !important;
+}
+
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-select-dropdown {
+  padding: 0px !important;
+  border-radius: 0;
 }
 
 .tableFilter .ant-select-arrow {
