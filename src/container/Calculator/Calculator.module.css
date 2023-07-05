@@ -155,10 +155,12 @@
 }
 
 .PIB-labels {
-  font-size: 12px !important;
-  text-align: end !important;
+  font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  width: 112px !important;
+  text-align: end;
+  margin-left: 30px !important;
 }
 
 .slect-bond-p-to-y {

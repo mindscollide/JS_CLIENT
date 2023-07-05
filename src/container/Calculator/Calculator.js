@@ -1191,15 +1191,15 @@ const Calculator = () => {
 
                 <div className={styles["heading-paper"]}>
                   <Row>
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col lg={2} md={2} sm={12} className="mt-3">
+                        <Col lg={3} md={3} sm={12} className="mt-3">
                           <label className={styles["yield-to-price-labels"]}>
                             Approximate Price Change
                           </label>
                         </Col>
 
-                        <Col lg={10} md={10} sm={12} className="mt-3">
+                        <Col lg={9} md={9} sm={12} className="mt-3">
                           <Select
                             className={styles["select-field-calculator"]}
                             value="PIB3M15122022"
@@ -1208,7 +1208,7 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
                         <Col lg={3} md={3} sm={12} className="mt-3">
                           <label className={styles["yield-to-price-labels"]}>
@@ -1248,15 +1248,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Settlement Date
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
@@ -1268,13 +1268,13 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>Price</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             className={styles["alltextfields-calculator"]}
                             placeholder="93.7443"
@@ -1289,15 +1289,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Maturity Date
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
@@ -1308,15 +1308,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Life Remaning
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             className={styles["alltextfields-calculator"]}
                             placeholder="253"
@@ -1331,15 +1331,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Coupon Rate %
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="7"
                             className={styles["alltextfields-calculator"]}
@@ -1352,13 +1352,13 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>PVBP</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.06"
                             className={styles["alltextfields-calculator"]}
@@ -1373,13 +1373,13 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>Tenor</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="3 Years"
                             className={styles["alltextfields-calculator"]}
@@ -1392,15 +1392,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.67821"
                             className={styles["alltextfields-calculator"]}
@@ -1415,15 +1415,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Day Count
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <Select
                             className={styles["select-field-calculator"]}
                             value="Actual/365"
@@ -1432,15 +1432,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             M Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.67821"
                             className={styles["alltextfields-calculator"]}
@@ -1455,15 +1455,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Yield To Maturity %
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="16.8462"
                             className={styles["alltextfields-calculator"]}
@@ -1476,15 +1476,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Effective Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="44.66548"
                             className={styles["alltextfields-calculator"]}
@@ -1512,13 +1512,13 @@ const Calculator = () => {
 
                     <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Approximate Price Change
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="44.66548"
                             className={styles["alltextfields-calculator"]}
@@ -1622,15 +1622,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Settlement Date
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
@@ -1641,15 +1641,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Yield To Maturity %
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             className={styles["alltextfields-calculator"]}
                             placeholder="93.7443"
@@ -1664,15 +1664,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Maturity Date
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
@@ -1683,15 +1683,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Life Remaning
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             className={styles["alltextfields-calculator"]}
                             placeholder="253"
@@ -1706,15 +1706,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Coupon Rate %
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="7"
                             className={styles["alltextfields-calculator"]}
@@ -1727,13 +1727,13 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>PVBP</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.06"
                             className={styles["alltextfields-calculator"]}
@@ -1748,13 +1748,13 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-3">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>Tenor</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="3 Years"
                             className={styles["alltextfields-calculator"]}
@@ -1767,15 +1767,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.67821"
                             className={styles["alltextfields-calculator"]}
@@ -1790,15 +1790,15 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Day Count
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <Select
                             className={styles["select-field-calculator"]}
                             value="Actual/365"
@@ -1807,15 +1807,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             M Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="0.67821"
                             className={styles["alltextfields-calculator"]}
@@ -1830,13 +1830,13 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>Price</label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="16.8462"
                             className={styles["alltextfields-calculator"]}
@@ -1849,15 +1849,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Effective Duration
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="44.66548"
                             className={styles["alltextfields-calculator"]}
@@ -1878,15 +1878,15 @@ const Calculator = () => {
                       </Row>
                     </Col>
 
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={2} md={2} lg={2}>
+                        <Col xs={12} sm={3} md={3} lg={3}>
                           <label className={styles["PIB-labels"]}>
                             Approximate Price Change
                           </label>
                         </Col>
 
-                        <Col xs={12} sm={10} md={10} lg={10}>
+                        <Col xs={12} sm={9} md={9} lg={9}>
                           <TextField
                             placeholder="44.66548"
                             className={styles["alltextfields-calculator"]}
