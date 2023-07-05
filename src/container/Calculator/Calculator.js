@@ -864,18 +864,17 @@ const Calculator = () => {
                       </Col>
                     </Row>
 
-                    <Row className="mt-4">
+                    <Row className="mt-2">
                       <Col
-                        lg={4}
-                        md={4}
-                        sm={4}
-                        className="d-flex justify-content-center"
+                        lg={5}
+                        md={5}
+                        sm={5}
+                        className="d-flex justify-content-center m-0 p-0"
                       >
                         <p className={styles["interpolated-text"]}>
                           Interpolated PKRV Rates = 16.06
                         </p>
                       </Col>
-                      <Col lg={8} md={8} sm={8} />
                     </Row>
                   </span>
 
@@ -1499,14 +1498,20 @@ const Calculator = () => {
                   </Row>
 
                   <Row className="mt-4 mb-4">
-                    <Col xs={12} sm={12} md={6} lg={6} className="text-center">
+                    <Col xs={12} sm={12} md={6} lg={6}>
                       <Row>
-                        <Col xs={12} sm={9} md={9} lg={9}>
-                          <label className={styles["interpolated-text-bottom"]}>
+                        <Col
+                          xs={12}
+                          sm={10}
+                          md={10}
+                          lg={10}
+                          className="m-0 p-0"
+                        >
+                          <p className={styles["interpolated-text-bottom"]}>
                             Interpolated PKRV Rates = 16.06
-                          </label>
+                          </p>
                         </Col>
-                        <Col xs={12} sm={3} md={3} lg={3} />
+                        <Col xs={12} sm={2} md={2} lg={2} />
                       </Row>
                     </Col>
 
