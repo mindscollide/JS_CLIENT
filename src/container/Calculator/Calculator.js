@@ -624,8 +624,8 @@ const Calculator = () => {
   return (
     <>
       <Container fluid>
-        <Row >
-          <Col lg={11} md={11} sm={11}>
+        <Row>
+          <Col lg={12} md={12} sm={12}>
             <Collapse
               size="small"
               expandIcon={false}

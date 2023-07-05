@@ -4,6 +4,7 @@ import Header from "../../../components/layout/Header/Header";
 import Client from "../../client/Client";
 import Calculator from "../../Calculator/Calculator";
 import Sidebar from "../../../components/layout/Sidebar/Sidebar";
+import { Col, Row } from "react-bootstrap";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -12,9 +13,12 @@ const Dashboard = () => {
   return (
     <Fragment>
       <Header />
-      {location.pathname === "/Js/calculator" && <Sidebar />}
-
-      <Outlet />
+      <Row>
+        <Col lg={12} md={12} sm={12} className="d-flex gap-5">
+          <Outlet />
+          {location.pathname === "/Js/calculator" && <Sidebar />}
+        </Col>
+      </Row>
     </Fragment>
   );
 };

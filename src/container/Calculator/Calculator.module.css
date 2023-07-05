@@ -1,5 +1,5 @@
 .accodion-header-title {
-  width: 103%;
+  width: 100%;
   text-align: center !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border: none !important;
@@ -11,7 +11,7 @@
 }
 
 .accodion-header-title-two {
-  width: 103%;
+  width: 100%;
   text-align: center !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border: none !important;
@@ -25,7 +25,6 @@
 
 .panel-header-text {
   width: 100% !important;
-
   font-size: 17px !important;
   color: white !important;
   font-weight: 700 !important;

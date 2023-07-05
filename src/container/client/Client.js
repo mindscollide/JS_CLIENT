@@ -507,7 +507,7 @@ const Client = () => {
       ellipsis: true,
       render: (text) => (
         <Button
-          icon={<ListUl size={22} />}
+          // icon={content}
           text={text}
           onClick={openModalHandler}
           className="offer-text-button"
@@ -1501,7 +1501,7 @@ const Client = () => {
       ),
       dataIndex: "chat",
       key: "chat",
-      width: "45px",
+      width: "65px",
       render: (text) => (
         <Button text={text} className="chatIcon-inBotton-table" />
       ),
