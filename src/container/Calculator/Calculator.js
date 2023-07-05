@@ -653,7 +653,7 @@ const Calculator = () => {
                     <Row>
                       <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={3} md={3} sm={12} className="text-center">
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Select Bond
                             </label>
@@ -1567,13 +1567,13 @@ const Calculator = () => {
                   <Row className="mt-3">
                     <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                       <Row>
-                        <Col lg={2} md={2} sm={12}>
+                        <Col lg={3} md={3} sm={12}>
                           <label className={styles["yield-to-price-labels"]}>
                             Select Bond
                           </label>
                         </Col>
 
-                        <Col lg={10} md={10} sm={12}>
+                        <Col lg={9} md={9} sm={12}>
                           <Select
                             className={styles["select-field-calculator"]}
                             value="PIB3M15122022"

@@ -154,6 +154,13 @@
   margin-left: 30px !important;
 }
 
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-select-single:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  height: 25px !important;
+}
+
 .PIB-labels {
   font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
