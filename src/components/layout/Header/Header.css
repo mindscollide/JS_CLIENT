@@ -14,7 +14,7 @@
   display: flex !important;
 }
 
-.rfq-btn-list-icon{
+.rfq-btn-list-icon {
   margin-right: 5px !important;
 }
 
@@ -27,6 +27,12 @@
   text-align: center !important;
   border: none;
   align-items: center;
+}
+
+.JsBankLogo {
+  max-width: 100% !important;
+  width: 230px !important;
+  height: auto !important;
 }
 
 .rfq-button:hover {
@@ -64,18 +70,19 @@
 
 .nav-rfq-calculator {
   display: flex;
-  justify-content: end !important;
+  justify-content: center !important;
 }
 
 .profilebtn-dropdown {
-  max-width: 240px;
+  max-width: 230px;
+  /* padding: 5px 8px !important; */
 }
 
 .dropdown-toggle {
   margin: 0;
-  padding: 5px 14px;
+  padding: 2px 10px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   background-color: white !important;
   color: #000;
@@ -85,19 +92,20 @@
 .image-john {
   padding: 2px;
   border-radius: 50%;
-  width: 40px !important;
-  height: 40px !important;
   display: flex;
-  justify-content: center;
+  justify-content: start !important;
+  margin-right: 20px !important;
   align-items: center;
 }
-
+.dropdown-toggle::after {
+  margin-right: 5px !important;
+}
 .user-name {
   margin: 0;
-  padding: 0px 6px;
-  max-width: 140px;
-  font-size: 14px;
+  max-width: 110px;
   color: #002650 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   font-weight: 700;
   text-overflow: ellipsis !important;
   overflow: hidden;
@@ -237,6 +245,6 @@
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
 
-.setting-icon{
-  font-size: 17px; 
+.setting-icon {
+  font-size: 17px;
 }

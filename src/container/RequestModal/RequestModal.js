@@ -154,7 +154,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                           <Col lg={12} md={12} sm={12}>
                             <Row>
                               <Col lg={5} md={5} sm={5}>
-                                <span className="modal-title-trade m-0 p-0 d-flex justify-content-end align-items-center">
+                                <span className="modal-title-trade m-0 p-0 d-flex justify-content-end">
                                   No. of Days
                                 </span>
                               </Col>
