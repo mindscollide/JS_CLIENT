@@ -111,7 +111,7 @@ const Header = ({ show, setShow }) => {
                 </Nav.Link>
                 <Nav.Link>
                   <Button
-                    text="Calculator"
+                    text="Calculators"
                     className="caluclator-button"
                     onClick={gotoCalculator}
                   />
