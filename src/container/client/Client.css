@@ -62,10 +62,12 @@
   background: linear-gradient(to bottom, #64c0ef 0%, #087f99 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64c0ef', endColorstr='#087f99',GradientType=0 );
   color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
   display: inline-block;
   padding: 2px 3px;
   border: none !important;
-  font-size: 14px !important;
   border-radius: 2px;
   width: 50px;
   cursor: pointer;
@@ -82,7 +84,8 @@
   display: inline-block;
   padding: 3px 6px;
   border: none !important;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   border-radius: 4px;
   /* width: 50px; */
   cursor: pointer;
@@ -97,8 +100,10 @@
   color: #ffffff;
   display: inline-block;
   padding: 2px 3px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   border: none !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   border-radius: 2px;
   width: 50px;
   cursor: pointer;
@@ -364,11 +369,29 @@
   color: #002650;
 }
 
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-dropdown
+  .ant-table-filter-dropdown
+  .ant-checkbox-wrapper
+  + span,
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-table-filter-dropdown-submenu
+  .ant-checkbox-wrapper
+  + span {
+  color: #212529;
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-dropdown
+  .ant-table-filter-dropdown
+  .ant-dropdown-menu {
+  width: 190px !important;
+}
+
 .tableFilter .ant-select-selector {
   background: #ffe4ce !important;
   border: none !important;
   border-radius: 3px !important;
-  width: 200px !important;
+  width: 180px !important;
   height: 29px !important;
   color: #002650 !important;
   font-weight: 600 !important;

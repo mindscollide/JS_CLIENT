@@ -29,8 +29,8 @@
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
   margin-bottom: 0;
-  font-size: inherit;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .text-field {
@@ -42,9 +42,9 @@
 }
 
 .modal-title-trade {
-  font-size: 13px !important;
-  /* font-size: inherit; */
+  font-size: 13.8px !important;
   padding-top: calc(0.375rem + 1px);
+  font-family: "Montserrat", sans-serif;
   padding-bottom: calc(0.375rem + 1px);
   font-weight: 600;
   margin-bottom: 0;

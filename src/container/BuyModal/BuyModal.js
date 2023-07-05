@@ -150,7 +150,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     sm={12}
                     className="d-flex justify-content-start"
                   >
-                    <label className="buy-quote-label">SOMEONE BUY</label>
+                    <label className="buy-quote-label">GUL AHMED BUY</label>
                   </Col>
                 </Row>
 

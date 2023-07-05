@@ -12,12 +12,12 @@
   display: contents;
 }
 
-.request-quote-label {
+/* .request-quote-label {
   font-size: 22px;
   letter-spacing: 1px;
   font-weight: 600;
   color: #002650;
-}
+} */
 
 .text-field {
   display: flex;
@@ -27,23 +27,28 @@
   padding: 10px 0px;
 }
 
-.modal-title-trade {
+/* .modal-title-trade {
   font-size: 12px !important;
   font-weight: 600 !important;
-}
+} */
 
 .text-field-size-modal {
   width: 100% !important;
   height: 27px;
   border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
 .buy-quote-label {
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
   margin-bottom: 0;
   font-size: inherit;
-  line-height: 1.5;
-  font-weight: 600;
+  font-size: 20px !important;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 .position-label {
@@ -51,7 +56,20 @@
   padding-bottom: calc(0.375rem + 1px);
   font-weight: 600;
   margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12.8px !important;
+}
+.position-label-Settlement {
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: calc(0.375rem + 1px);
+  font-weight: 600;
+  margin-bottom: 0;
   font-size: 14px !important;
+}
+
+.datePicker-Client {
+  flex: 0 0 auto;
+  width: 93.33333333%;
 }
 
 .quoteShowModal .ant-select-selector {

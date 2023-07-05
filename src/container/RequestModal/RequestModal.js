@@ -108,16 +108,14 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
           <>
             {modalRequest ? (
               <>
-                <Row>
+                <Row className="mx-0">
                   <Col
                     lg={12}
                     md={12}
                     sm={12}
                     className="d-flex justify-content-center mb-4"
                   >
-                    <label className="request-quote-label">
-                      REQUEST FOR QUOTE
-                    </label>
+                    <h5 className="request-quote-label">REQUEST FOR QUOTE</h5>
                   </Col>
                 </Row>
                 <Row>
@@ -127,7 +125,12 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                         <Row>
                           <Col lg={12} md={12} sm={12} className="d-flex">
                             <Row>
-                              <Col lg={5} md={5} sm={5}>
+                              <Col
+                                lg={5}
+                                md={5}
+                                sm={5}
+                                // className="d-flex justify-content-end align-items-center "
+                              >
                                 <span className="modal-title-trade">
                                   Trade Date
                                 </span>
@@ -141,7 +144,6 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                                 <TextField
                                   className="text-field-size-modal"
                                   labelClass="d-none"
-                                  width={"600px"}
                                 />
                               </Col>
                             </Row>
@@ -177,16 +179,16 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                           <Col lg={12} md={12} sm={12}>
                             <Row>
                               <Col
-                                lg={6}
-                                md={6}
-                                sm={6}
+                                lg={7}
+                                md={7}
+                                sm={7}
                                 className="d-flex justify-content-end"
                               >
-                                <p className="modal-title-trade m-0 p-0 d-flex justify-content-end align-items-center ">
+                                <p className="modal-title-trade m-0 p-0 d-flex justify-content-center align-items-center ">
                                   Settlement Date
                                 </p>
                               </Col>
-                              <Col lg={6} md={6} sm={6} className="m-0 p-0">
+                              <Col lg={5} md={5} sm={5} className="m-0 p-0">
                                 <TextField
                                   className="text-field-size-modal"
                                   labelClass="d-none"
@@ -326,7 +328,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                         value={isRequestModal.Comment}
                         type="text"
                         as={"textarea"}
-                        rows="1"
+                        rows="3"
                       />
                     </Col>
                   </Row>
