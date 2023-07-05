@@ -2,26 +2,14 @@
   margin: 0 !important;
 }
 
-.new_sidebar {
-  display: flex;
-  align-items: center;
-  min-height: 50vh;
-  width: 100vh !important;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  align-items: center;
-  flex-direction: column;
-}
-
 .js-sidebar {
   margin: 0 !important;
   background-color: #2a38af !important;
   position: absolute;
   overflow: hidden !important;
   right: 0 !important;
-  height: 90vh;
+  padding: 0;
+  height: 100vh;
   width: 75px !important;
   top: 75px;
   text-align: center;
@@ -33,8 +21,11 @@
 .sidebar-text {
   cursor: pointer !important;
   color: white !important;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 /* for chat panel */

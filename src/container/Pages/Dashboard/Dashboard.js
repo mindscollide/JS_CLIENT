@@ -13,12 +13,16 @@ const Dashboard = () => {
   return (
     <Fragment>
       <Header />
-      <Row>
-        <Col lg={12} md={12} sm={12} className="d-flex gap-5">
-          <Outlet />
-          {location.pathname === "/Js/calculator" && <Sidebar />}
+      <Outlet />
+      {location.pathname === "/Js/calculator" && <Sidebar />}
+      {/* <Row>
+        <Col lg={11} md={11} sm={11}>
+       
         </Col>
-      </Row>
+        <Col lg={1} md={1} sm={1}>
+     
+        </Col>
+      </Row> */}
     </Fragment>
   );
 };

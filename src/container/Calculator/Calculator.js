@@ -623,7 +623,7 @@ const Calculator = () => {
   };
   return (
     <>
-      <Container fluid>
+      <section className={styles["ContainerSection"]}>
         <Row>
           <Col lg={12} md={12} sm={12}>
             <Collapse
@@ -1920,7 +1920,7 @@ const Calculator = () => {
           </Col>
           <Col lg={1} md={1} sm={1} />
         </Row>
-      </Container>
+      </section>
     </>
   );
 };
