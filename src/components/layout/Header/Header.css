@@ -52,6 +52,7 @@
   padding: 5px 30px;
   font-size: 15px;
   font-weight: 600;
+  margin-left: -10px !important;
   border: none;
   text-align: center !important;
   align-items: center;
