@@ -85,6 +85,8 @@
   height: 25px;
   font-size: 11px;
   color: #212529;
+  display: flex !important;
+  align-items: center !important;
   border: 1px solid #ccc !important;
   font-family: "Montserrat", sans-serif;
   border-radius: 4px;
@@ -122,7 +124,10 @@
   color: white !important;
   border: none;
   border-radius: 4px !important;
-  padding: 7px 15px;
+  font-size: 14px !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 3px 15px;
   position: relative;
   left: 10px;
 }
@@ -132,6 +137,9 @@
   color: white !important;
   border: none;
   border-radius: 4px !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px !important;
   padding: 7px 15px;
   position: relative;
   right: 10px;
@@ -141,10 +149,9 @@
   font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  width: 120px !important;
+  width: 112px !important;
   text-align: end;
   margin-left: 30px !important;
-  /* padding-right: 8px !important; */
 }
 
 .PIB-labels {

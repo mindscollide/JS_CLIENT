@@ -911,15 +911,15 @@ const Calculator = () => {
 
                   <div className={styles["heading-paper"]}>
                     <Row>
-                      <Col xs={12} sm={12} md={6} lg={6} className="">
+                      <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12} className="text-end">
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Select Bond
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12} className="">
+                          <Col lg={9} md={9} sm={12}>
                             <Select
                               className={styles["select-field-calculator"]}
                               value="TBill3M15122022"
@@ -929,12 +929,12 @@ const Calculator = () => {
                       </Col>
                       <Col xs={12} sm={6} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12} className="text-end">
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Yield To Maturity %
                             </label>
                           </Col>
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               className={styles["alltextfields-calculator"]}
                               placeholder="6.06"
@@ -948,15 +948,15 @@ const Calculator = () => {
                       </Col>
                     </Row>
                     <Row className="mt-3">
-                      <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                      <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12} className="">
+                          <Col lg={3} md={3} sm={12} className="">
                             <label className={styles["yield-to-price-labels"]}>
                               Settlement Date
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12} className="">
+                          <Col lg={9} md={9} sm={12}>
                             <DatePicker
                               selected={startDate}
                               onChange={(date) => setStartDate(date)}
@@ -968,12 +968,12 @@ const Calculator = () => {
                       </Col>
                       <Col xs={12} sm={6} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12} className="text-end">
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Price
                             </label>
                           </Col>
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               className={styles["alltextfields-calculator"]}
                               placeholder="99.7805"
@@ -988,15 +988,15 @@ const Calculator = () => {
                     </Row>
 
                     <Row className="mt-3">
-                      <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                      <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Life Remaning
                             </label>
                           </Col>
 
-                          <Col xs={12} sm={10} md={10} lg={10}>
+                          <Col xs={12} sm={9} md={9} lg={9}>
                             <TextField
                               className={styles["alltextfields-calculator"]}
                               placeholder="5"
@@ -1009,15 +1009,15 @@ const Calculator = () => {
                         </Row>
                       </Col>
 
-                      <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                      <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12} className="text-end">
+                          <Col lg={3} md={3} sm={12} className="text-end">
                             <label className={styles["yield-to-price-labels"]}>
                               Maturity Date
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <DatePicker
                               selected={startDate}
                               onChange={(date) => setStartDate(date)}
@@ -1031,15 +1031,15 @@ const Calculator = () => {
                     </Row>
 
                     <Row className="mt-3">
-                      <Col xs={12} sm={12} md={6} lg={6} className="text-end">
+                      <Col xs={12} sm={12} md={6} lg={6}>
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               PVBP
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               className={styles["alltextfields-calculator"]}
                               placeholder="15.9999"
@@ -1054,13 +1054,13 @@ const Calculator = () => {
 
                       <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Purchased Yield %
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               className={styles["alltextfields-calculator"]}
                               placeholder="15.9999"
@@ -1077,13 +1077,13 @@ const Calculator = () => {
                     <Row className="mt-3">
                       <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Approximate Price Change
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               placeholder="-0.20303"
                               className={styles["alltextfields-calculator"]}
@@ -1100,13 +1100,13 @@ const Calculator = () => {
 
                       <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Tenor
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               placeholder="3 month"
                               className={styles["alltextfields-calculator"]}
@@ -1123,13 +1123,13 @@ const Calculator = () => {
                     <Row className="mt-3 mb-4">
                       <Col xs={12} sm={12} md={6} lg={6} className="text-end">
                         <Row>
-                          <Col lg={2} md={2} sm={12}>
+                          <Col lg={3} md={3} sm={12}>
                             <label className={styles["yield-to-price-labels"]}>
                               Price
                             </label>
                           </Col>
 
-                          <Col lg={10} md={10} sm={12}>
+                          <Col lg={9} md={9} sm={12}>
                             <TextField
                               value="6.06"
                               className={styles["alltextfields-calculator"]}
