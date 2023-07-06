@@ -195,12 +195,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-3"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="Sell-position-label">
                         Amount (PKR)*
                       </label>
@@ -313,12 +308,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-3"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="Sell-position-label">
                         Settlement Date
                       </label>
@@ -353,7 +343,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
         }
         ModalFooter={
           <>
-            <Row className="showRow-top-line mb-5">
+            <Row className="d-flex m-0 p-0 justify-content-end  mb-3">
               <Col
                 lg={12}
                 md={12}
@@ -361,7 +351,7 @@ const SellModal = ({ ModalTitle, modalSell, setSellModal }) => {
                 xs={12}
                 className="buy-modal-footer-confirm"
               >
-                <Button text="Confirm" className="conifrm-btn" />
+                <Button text="Confirm" className="conifrm-btn-Sell-Modal" />
               </Col>
             </Row>
           </>

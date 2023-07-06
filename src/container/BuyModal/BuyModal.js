@@ -193,12 +193,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-3"
-                    >
+                    <Col lg={2} md={2} sm={2} className=" mt-3">
                       <label className="position-label">Amount (PKR)*</label>
                     </Col>
 
@@ -309,12 +304,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-3"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="position-label">Settlement Date</label>
                     </Col>
 
@@ -356,7 +346,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
           <>
             {modalBuy ? (
               <>
-                <Row className="showRow-top-line mb-3">
+                <Row className="d-flex m-0 p-0 justify-content-end  mb-3">
                   <Col
                     lg={12}
                     md={12}
@@ -364,7 +354,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     xs={12}
                     className="buy-modal-footer-confirm"
                   >
-                    <Button text="Confirm" className="conifrm-btn" />
+                    <Button text="Confirm" className="conifrm-btn-Buy-Modal" />
                   </Col>
                 </Row>
               </>
