@@ -121,7 +121,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                 <Row>
                   <Col lg={12} md={12} sm={12}>
                     <Row>
-                      <Col lg={4} md={4} sm={12} className="d-flex">
+                      <Col lg={4} md={4} sm={12}>
                         <Row>
                           <Col lg={12} md={12} sm={12} className="d-flex">
                             <Row>
@@ -151,16 +151,21 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                         </Row>
                       </Col>
 
-                      <Col lg={4} md={4} sm={12} className="d-flex">
+                      <Col lg={4} md={4} sm={12}>
                         <Row>
                           <Col lg={12} md={12} sm={12}>
                             <Row>
-                              <Col lg={5} md={5} sm={5}>
-                                <span className="modal-title-trade m-0 p-0 d-flex justify-content-end">
+                              <Col lg={4} md={4} sm={4}>
+                                <span className="modal-title-trade d-flex justify-content-start align-items-center">
                                   No. of Days
                                 </span>
                               </Col>
-                              <Col lg={7} md={7} sm={7} className="m-0 p-0">
+                              <Col
+                                lg={8}
+                                md={8}
+                                sm={8}
+                                className=" d-flex justify-content-start"
+                              >
                                 <TextField
                                   className="text-field-size-modal"
                                   labelClass="d-none"
@@ -174,7 +179,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                         </Row>
                       </Col>
 
-                      <Col lg={4} md={4} sm={12} className="d-flex">
+                      <Col lg={4} md={4} sm={12}>
                         <Row>
                           <Col lg={12} md={12} sm={12}>
                             <Row>
@@ -294,12 +299,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-3"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="position-label">Amount (PKR)*</label>
                     </Col>
 
@@ -347,7 +347,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                     md={12}
                     sm={12}
                     xs={12}
-                    className="modal-footer-confirm"
+                    className="modal-footer-confirm d-flex justify-content-center mt-4"
                   >
                     <Button text="Confirm" className="conifrm-btn" />
                   </Col>

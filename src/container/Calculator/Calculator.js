@@ -5,6 +5,10 @@ import DatePicker from "react-datepicker";
 import { Table, Button, Accordian, TextField } from "../../components/elements";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Calculator.module.css";
+import {
+  forNumbersOnly,
+  numberformatgerWithFourDecimalValues,
+} from "../../assets/common/functions/numberFormatters";
 
 const Calculator = () => {
   const { Panel } = Collapse;
@@ -76,11 +80,13 @@ const Calculator = () => {
 
     if (name === "Price" && value !== "") {
       let valueCheck = value.replace(/[^\d.]/g, "");
-      if (valueCheck !== "") {
-        setYieldPriceState({
-          ...yieldPriceState,
-          Price: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setYieldPriceState({
+            ...yieldPriceState,
+            Price: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "Price" && value === "") {
       setYieldPriceState({
@@ -202,11 +208,13 @@ const Calculator = () => {
 
     if (name === "Price" && value !== "") {
       let valueCheck = value.replace(/[^\d.]/g, "");
-      if (valueCheck !== "") {
-        setPriceYieldState({
-          ...priceYieldState,
-          Price: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPriceYieldState({
+            ...priceYieldState,
+            Price: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "Price" && value === "") {
       setPriceYieldState({
@@ -232,11 +240,13 @@ const Calculator = () => {
 
     if (name === "Pvbp" && value !== "") {
       let valueCheck = value.replace(/[^\d.]/g, "");
-      if (valueCheck !== "") {
-        setPriceYieldState({
-          ...priceYieldState,
-          Pvbp: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPriceYieldState({
+            ...priceYieldState,
+            Pvbp: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "Pvbp" && value === "") {
       setPriceYieldState({
@@ -247,11 +257,15 @@ const Calculator = () => {
 
     if (name === "PurchasedYield" && value !== "") {
       let valueCheck = value.replace(/[^\d.]/g, "");
-      if (valueCheck !== "") {
-        setPriceYieldState({
-          ...priceYieldState,
-          PurchasedYield: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPriceYieldState({
+            ...priceYieldState,
+            PurchasedYield: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "PurchasedYield" && value === "") {
       setPriceYieldState({
@@ -298,11 +312,13 @@ const Calculator = () => {
 
     if (name === "PricePIB" && value !== "") {
       let valueCheck = value.replace(/[^\d.]/g, "");
-      if (valueCheck !== "") {
-        setPibPriceState({
-          ...pibPriceState,
-          PricePIB: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibPriceState({
+            ...pibPriceState,
+            PricePIB: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "PricePIB" && value === "") {
       setPibPriceState({
@@ -403,11 +419,13 @@ const Calculator = () => {
 
     if (name === "PricePIB" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibPriceState({
-          ...pibPriceState,
-          PricePIB: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibPriceState({
+            ...pibPriceState,
+            PricePIB: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "PricePIB" && value === "") {
       setPibPriceState({
@@ -418,11 +436,15 @@ const Calculator = () => {
 
     if (name === "YieldMaturityPIB" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibPriceState({
-          ...pibPriceState,
-          YieldMaturityPIB: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibPriceState({
+            ...pibPriceState,
+            YieldMaturityPIB: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "YieldMaturityPIB" && value === "") {
       setPibPriceState({
@@ -433,11 +455,15 @@ const Calculator = () => {
 
     if (name === "EffectiveDuration" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibPriceState({
-          ...pibPriceState,
-          EffectiveDuration: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibPriceState({
+            ...pibPriceState,
+            EffectiveDuration: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "EffectiveDuration" && value === "") {
       setPibPriceState({
@@ -448,11 +474,15 @@ const Calculator = () => {
 
     if (name === "ApproximatePricePIB" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibPriceState({
-          ...pibPriceState,
-          ApproximatePricePIB: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibPriceState({
+            ...pibPriceState,
+            ApproximatePricePIB: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "ApproximatePricePIB" && value === "") {
       setPibPriceState({
@@ -574,11 +604,13 @@ const Calculator = () => {
 
     if (name === "PriceYield" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibYieldState({
-          ...pibYieldState,
-          PriceYield: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibYieldState({
+            ...pibYieldState,
+            PriceYield: numberformatgerWithFourDecimalValues(value.trimStart()),
+          });
+        }
       }
     } else if (name === "PriceYield" && value === "") {
       setPibYieldState({
@@ -589,11 +621,15 @@ const Calculator = () => {
 
     if (name === "EffectiveDurationYield" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibYieldState({
-          ...pibYieldState,
-          EffectiveDurationYield: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibYieldState({
+            ...pibYieldState,
+            EffectiveDurationYield: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "EffectiveDurationYield" && value === "") {
       setPibYieldState({
@@ -604,11 +640,15 @@ const Calculator = () => {
 
     if (name === "ApproximateYield" && value !== "") {
       let valueCheck = value.replace(/[^\d]/g, "");
-      if (valueCheck !== "") {
-        setPibYieldState({
-          ...pibYieldState,
-          ApproximateYield: valueCheck.trimStart(),
-        });
+      if (forNumbersOnly(value.trimStart()) !== "") {
+        if (numberformatgerWithFourDecimalValues(value.trimStart())) {
+          setPibYieldState({
+            ...pibYieldState,
+            ApproximateYield: numberformatgerWithFourDecimalValues(
+              value.trimStart()
+            ),
+          });
+        }
       }
     } else if (name === "ApproximateYield" && value === "") {
       setPibYieldState({

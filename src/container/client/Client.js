@@ -1299,7 +1299,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Amount</label>,
       dataIndex: "amount",
       key: "amount",
-      width: "77px",
+      width: "80px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
