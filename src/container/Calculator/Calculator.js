@@ -881,22 +881,15 @@ const Calculator = () => {
                   <div>
                     <Row className={styles["bottom-row-background"]}>
                       <Col
-                        lg={6}
-                        md={6}
-                        sm={6}
-                        className="d-flex justify-content-end"
+                        lg={12}
+                        md={12}
+                        sm={12}
+                        className="d-flex justify-content-center gap-2"
                       >
                         <Button
                           text="Calculate"
                           className={styles["calculate-btn"]}
                         />
-                      </Col>
-                      <Col
-                        lg={6}
-                        md={6}
-                        sm={6}
-                        className="d-flex justify-content-start"
-                      >
                         <Button text="Reset" className={styles["reset-btn"]} />
                       </Col>
                     </Row>
@@ -1145,22 +1138,15 @@ const Calculator = () => {
                   <div>
                     <Row className={styles["bottom-row-background"]}>
                       <Col
-                        lg={6}
-                        md={6}
-                        sm={6}
-                        className="d-flex justify-content-end"
+                        lg={12}
+                        md={12}
+                        sm={12}
+                        className="d-flex justify-content-center gap-2"
                       >
                         <Button
                           text="Calculate"
                           className={styles["calculate-btn"]}
                         />
-                      </Col>
-                      <Col
-                        lg={6}
-                        md={6}
-                        sm={6}
-                        className="d-flex justify-content-start"
-                      >
                         <Button text="Reset" className={styles["reset-btn"]} />
                       </Col>
                     </Row>
@@ -1541,22 +1527,15 @@ const Calculator = () => {
                 <div>
                   <Row className={styles["bottom-row-background"]}>
                     <Col
-                      lg={6}
-                      md={6}
-                      sm={6}
-                      className="d-flex justify-content-end"
+                      lg={12}
+                      md={12}
+                      sm={12}
+                      className="d-flex justify-content-center gap-2"
                     >
                       <Button
                         text="Calculate"
                         className={styles["calculate-btn"]}
                       />
-                    </Col>
-                    <Col
-                      lg={6}
-                      md={6}
-                      sm={6}
-                      className="d-flex justify-content-start"
-                    >
                       <Button text="Reset" className={styles["reset-btn"]} />
                     </Col>
                   </Row>
@@ -1909,22 +1888,15 @@ const Calculator = () => {
                 <div>
                   <Row className={styles["bottom-row-background"]}>
                     <Col
-                      lg={6}
-                      md={6}
-                      sm={6}
-                      className="d-flex justify-content-end"
+                      lg={12}
+                      md={12}
+                      sm={12}
+                      className="d-flex justify-content-center gap-2"
                     >
                       <Button
                         text="Calculate"
                         className={styles["calculate-btn"]}
                       />
-                    </Col>
-                    <Col
-                      lg={6}
-                      md={6}
-                      sm={6}
-                      className="d-flex justify-content-start"
-                    >
                       <Button text="Reset" className={styles["reset-btn"]} />
                     </Col>
                   </Row>
