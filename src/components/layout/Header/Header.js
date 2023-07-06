@@ -92,7 +92,10 @@ const Header = ({ show, setShow }) => {
                 <Nav.Link>
                   {showuploadbtn ? (
                     <>
-                      <Button text="Upload Rates" className="rfq-button" />
+                      <Button
+                        text="Upload Rates"
+                        className="UploadRate-button"
+                      />
                     </>
                   ) : (
                     <>
