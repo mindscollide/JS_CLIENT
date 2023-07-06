@@ -69,17 +69,9 @@
   font-weight: 700;
 }
 
-.top-icons {
-  display: flex;
-  justify-content: end;
-  gap: 15px;
-
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
-}
-
 .recent-chat-row-bottom {
   padding: 10px 10px !important;
-  border-bottom: 1px solid #eff3f5;
+  /* border-bottom: 1px solid #eff3f5; */
 }
 
 .image-john {
@@ -158,27 +150,77 @@
 }
 
 .user-login-label-heading {
-  font-size: 13px;
   color: #002650 !important;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .login-date-and-time {
-  font-size: 12px;
-  display: flex;
-  justify-content: start;
-  align-items: center !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+.Credentials_below_line {
+  margin-top: 4px !important;
 }
 
 .chat-button-loggin {
+  background: #feac78;
+  background: -moz-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: -webkit-linear-gradient(top, #feac78 0%, #e97225 100%);
   background: linear-gradient(to bottom, #feac78 0%, #e97225 100%);
-  padding: 3px 8px !important;
-  border: none !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feac78', endColorstr='#e97225',GradientType=0 );
+  border-color: #feac78;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+
+.chat-button-loggin:hover {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  background: #5b67cd;
+  background: -moz-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: -webkit-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b67cd', endColorstr='#2a38af',GradientType=0 );
+  border-color: #5b67cd;
+}
+
+.chat-button-loggin:before {
+  content: "\e9b3";
+  font-family: "custom-icon" !important;
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .login-row-bottom-line {
-  margin-top: 15px;
-  border-bottom: 1px solid rgb(231, 231, 231) !important;
+  /* margin-top: 15px; */
+  /* border-bottom: 1px solid rgb(231, 231, 231) !important; */
+}
+
+.Line_bottom_loggedin_user {
+  border: 1px solid rgb(231, 231, 231) !important;
+  margin-top: 10px;
 }
 
 /* for invite user panel */
@@ -225,7 +267,7 @@
   bottom: 0px;
   cursor: pointer !important;
   height: 45vh !important;
-  width: 23% !important;
+  width: 25% !important;
   background-color: #f3fbff;
   border-radius: 0px;
   border: none !important;

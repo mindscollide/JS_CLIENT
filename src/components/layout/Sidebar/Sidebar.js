@@ -460,337 +460,430 @@ const Sidebar = () => {
         <>
           <div className={styles["openChat-panel"]}>
             <Row className={styles["recent-chat-row-bottom"]}>
-              <Col lg={8} md={8} sm={8} className={styles["label-col"]}>
+              <Col lg={8} md={8} sm={8}>
                 <label className={styles["recent-chat"]}>Logged In Users</label>
               </Col>
-              <Col lg={4} md={4} sm={4} className={styles["top-icons"]}>
-                <Search size={20} />
+              <Col
+                lg={4}
+                md={4}
+                sm={4}
+                className="d-flex align-items-center gap-2 justify-content-end"
+              >
+                <Search size={18} />
                 <ArrowsAngleExpand size={18} />
                 <X size={22} onClick={closeLoginPanel} />
               </Col>
+              <hr className={styles["Line_bottom_loggedin_user"]} />
             </Row>
 
             {/* for login images, text and time */}
-            <div className={styles["login-main-div"]}>
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    onClick={() => setChatBoxOpen(!chatBoxOpen)}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-              <Row className={styles["login-row-bottom-line"]}>
-                <Col lg={1} md={1} sm={1}>
-                  <i className={styles["user-available"]}></i>
-                </Col>
-                <Col lg={4} md={4} sm={4}>
-                  <label className={styles["user-login-label-heading"]}>
-                    John Carter Gul Ahmed
-                  </label>
-                </Col>
-                <Col
-                  lg={3}
-                  md={3}
-                  sm={3}
-                  className="d-flex justify-content-start"
-                >
-                  <label className={styles["login-date-and-time"]}>
-                    10-10-2022 01:00
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <label className={styles["login-date-and-time"]}>
-                    00:05:06
-                  </label>
-                </Col>
-                <Col lg={2} md={2} sm={2}>
-                  <Button
-                    icon={<ChatDots />}
-                    className={styles["chat-button-loggin"]}
-                  />
-                </Col>
-              </Row>
-            </div>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
+            <Row className={styles["login-main-div"]}>
+              <Col lg={12} md={12} sm={12}>
+                <Row>
+                  <Col lg={1} md={1} sm={1} className="align-items-center">
+                    <i className={styles["user-available"]}></i>
+                  </Col>
+                  <Col lg={4} md={4} sm={4}>
+                    <label className={styles["user-login-label-heading"]}>
+                      John Carter Gul Ahmed
+                    </label>
+                  </Col>
+                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
+                    <label className={styles["login-date-and-time"]}>
+                      10-10-2022 01:00
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex align-items-center m-0 p-0"
+                  >
+                    <span className={styles["login-date-and-time"]}>
+                      00:05:06
+                    </span>
+                  </Col>
+                  <Col lg={2} md={2} sm={2}>
+                    <Button
+                      // icon={<ChatDots />}
+                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
+                      className={styles["chat-button-loggin"]}
+                    />
+                  </Col>
+                </Row>
+                <hr className={styles["Credentials_below_line"]} />
+              </Col>
+            </Row>
           </div>
         </>
       ) : openInvite ? (
