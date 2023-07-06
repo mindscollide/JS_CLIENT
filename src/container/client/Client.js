@@ -1205,7 +1205,7 @@ const Client = () => {
       ),
       dataIndex: "txnid",
       key: "txnid",
-      width: "90px",
+      width: "110px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [

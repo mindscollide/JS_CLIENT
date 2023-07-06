@@ -182,7 +182,7 @@
 .table-upper-PIB-button,
 .table-upper-PIB-button:hover {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background-color: #e5e8ff;
@@ -193,7 +193,7 @@
 .table-upper-PIB-button:active,
 .table-upper-PIB-button:focus {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
@@ -204,7 +204,7 @@
 .table-upper-Floater-button,
 .table-upper-Floater-button:hover {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background-color: #e5e8ff;
@@ -215,7 +215,7 @@
 .table-upper-Floater-button:active,
 .table-upper-Floater-button:focus {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
@@ -226,7 +226,7 @@
 .table-upper-SUKUK-button,
 .table-upper-SUKUK-button:hover {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background-color: #e5e8ff;
@@ -237,7 +237,7 @@
 .table-upper-SUKUK-button:active,
 .table-upper-SUKUK-button:focus {
   padding: 4px 8px;
-  width: 90%;
+  width: 97%;
   border-radius: 3px;
   font-weight: 600;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
@@ -636,6 +636,7 @@
 .bottom-inside-table th.ant-table-cell {
   color: #ffffff !important;
   padding: 10px 5px !important;
+
   border-radius: 0% !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%) !important;
 }
