@@ -847,54 +847,28 @@ const Sidebar = () => {
                 <hr className={styles["Credentials_below_line"]} />
               </Col>
             </Row>
-            <Row className={styles["login-main-div"]}>
-              <Col lg={12} md={12} sm={12}>
-                <Row>
-                  <Col lg={1} md={1} sm={1} className="align-items-center">
-                    <i className={styles["user-available"]}></i>
-                  </Col>
-                  <Col lg={4} md={4} sm={4}>
-                    <label className={styles["user-login-label-heading"]}>
-                      John Carter Gul Ahmed
-                    </label>
-                  </Col>
-                  <Col lg={3} md={3} sm={3} className="m-0 p-0">
-                    <label className={styles["login-date-and-time"]}>
-                      10-10-2022 01:00
-                    </label>
-                  </Col>
-                  <Col
-                    lg={2}
-                    md={2}
-                    sm={2}
-                    className="d-flex align-items-center m-0 p-0"
-                  >
-                    <span className={styles["login-date-and-time"]}>
-                      00:05:06
-                    </span>
-                  </Col>
-                  <Col lg={2} md={2} sm={2}>
-                    <Button
-                      // icon={<ChatDots />}
-                      onClick={() => setChatBoxOpen(!chatBoxOpen)}
-                      className={styles["chat-button-loggin"]}
-                    />
-                  </Col>
-                </Row>
-                <hr className={styles["Credentials_below_line"]} />
-              </Col>
-            </Row>
           </div>
         </>
       ) : openInvite ? (
         <>
           <div className={styles["openChat-panel"]}>
             <Row className={styles["recent-chat-row-bottom"]}>
-              <Col lg={10} md={10} sm={10} className={styles["label-col"]}>
-                <label className={styles["recent-chat"]}>Invite Users</label>
-              </Col>
-              <Col lg={2} md={2} sm={2} className={styles["top-icons"]}>
-                <X size={22} onClick={closeInvitePanel} />
+              <Col lg={12} md={12} sm={12} className={styles["Bottom_line"]}>
+                <Row className={styles["padding"]}>
+                  <Col lg={10} md={10} sm={10}>
+                    <label className={styles["recent-chat"]}>
+                      Invite Users
+                    </label>
+                  </Col>
+                  <Col
+                    lg={2}
+                    md={2}
+                    sm={2}
+                    className="d-flex justify-content-end align-items-center"
+                  >
+                    <X size={22} onClick={closeInvitePanel} />
+                  </Col>
+                </Row>
               </Col>
             </Row>
 
@@ -908,6 +882,7 @@ const Sidebar = () => {
               >
                 <TextField
                   className={styles["invite-textfield"]}
+                  labelClass={"d-none"}
                   placeholder="Enter Email"
                 />
               </Col>
@@ -926,18 +901,16 @@ const Sidebar = () => {
             </Row>
 
             <Row className={styles["bottom-button-invite"]}>
-              <Col lg={7} md={7} sm={7} className="d-flex justify-content-end">
+              <Col
+                lg={12}
+                md={12}
+                sm={12}
+                className="d-flex justify-content-center gap-2"
+              >
                 <Button
                   text="Send Invitation"
                   className={styles["sendInvite-btn"]}
                 />
-              </Col>
-              <Col
-                lg={5}
-                md={5}
-                sm={5}
-                className="d-flex justify-content-start"
-              >
                 <Button text="Close" className={styles["closeInvite-btn"]} />
               </Col>
             </Row>
