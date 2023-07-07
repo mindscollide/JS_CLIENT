@@ -82,8 +82,7 @@ const Header = ({ show, setShow }) => {
             <Navbar.Brand to="Home" as={Link}>
               <img
                 src={JsLogo}
-                width={220}
-                height={50}
+                className="JsBankLogo"
                 onClick={handleLogoClick}
               />
             </Navbar.Brand>
@@ -93,7 +92,10 @@ const Header = ({ show, setShow }) => {
                 <Nav.Link>
                   {showuploadbtn ? (
                     <>
-                      <Button text="Upload Rates" className="rfq-button" />
+                      <Button
+                        text="Upload Rates"
+                        className="UploadRate-button"
+                      />
                     </>
                   ) : (
                     <>
@@ -112,7 +114,7 @@ const Header = ({ show, setShow }) => {
                 </Nav.Link>
                 <Nav.Link>
                   <Button
-                    text="Calculator"
+                    text="Calculators"
                     className="caluclator-button"
                     onClick={gotoCalculator}
                   />
@@ -122,7 +124,7 @@ const Header = ({ show, setShow }) => {
 
             <Dropdown className="profilebtn-dropdown">
               <Dropdown.Toggle className="dropdown-toggle">
-                <img src={JohnCater} className="image-john" />
+                <img src={JohnCater} width={44} className="image-john" />
 
                 <p className="user-name">Michael Hawk</p>
               </Dropdown.Toggle>

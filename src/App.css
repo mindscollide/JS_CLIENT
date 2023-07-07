@@ -1,5 +1,5 @@
-body{
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -8,7 +8,6 @@ body::-webkit-scrollbar {
   height: 0.5rem;
   border-radius: 20px;
   background-color: #ffffff;
-
 }
 
 body::-webkit-scrollbar-thumb {

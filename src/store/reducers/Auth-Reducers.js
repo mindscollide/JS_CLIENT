@@ -2,6 +2,7 @@ import * as actions from "../action_types";
 
 const initialState = {
   UserDetails: null,
+  SignInUserDetails: null,
   isLoggedIn: false,
   Loading: false,
   ResponseMessage: "",
@@ -37,7 +38,31 @@ const authReducer = (state = initialState, action) => {
         Token: "",
         Refresh: "",
       };
+    case actions.SIGN_IN_USER_INIT:
+      return {
+        ...state,
+        Loading: true,
+      };
 
+    case actions.SIGN_IN_USER_SUCCESS:
+      return {
+        ...state,
+        SignInUserDetails: action.response,
+        ResponseMessage: action.message,
+        Loading: false,
+        Token: action.response.token,
+        Refresh: action.response.refreshToken,
+      };
+
+    case actions.SIGN_IN_USER_FAIL:
+      return {
+        ...state,
+        SignInUserDetails: action.response,
+        ResponseMessage: action.message,
+        Loading: false,
+        Token: "",
+        Refresh: "",
+      };
     case actions.SIGN_UP_INIT:
       return { ...state, Loading: true };
 

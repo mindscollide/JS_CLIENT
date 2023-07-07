@@ -150,7 +150,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     sm={12}
                     className="d-flex justify-content-start"
                   >
-                    <label className="buy-quote-label">SOMEONE BUY</label>
+                    <label className="buy-quote-label">GUL AHMED BUY</label>
                   </Col>
                 </Row>
 
@@ -160,7 +160,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Position*</label>
                     </Col>
@@ -178,7 +178,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start  mt-3"
                     >
                       <label className="position-label">Security Type*</label>
                     </Col>
@@ -193,12 +193,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
+                    <Col lg={2} md={2} sm={2} className=" mt-3">
                       <label className="position-label">Amount (PKR)*</label>
                     </Col>
 
@@ -215,7 +210,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Tenor*</label>
                     </Col>
@@ -234,12 +229,12 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Issue Date</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       {/* <TextField className="text-field-size-modal" /> */}
 
                       <DatePicker
@@ -255,7 +250,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Maturity date</label>
                     </Col>
@@ -275,12 +270,12 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Trade Date</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <DatePicker
                         name="TradeDate"
                         selected={startDate}
@@ -294,7 +289,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">No. of Days</label>
                     </Col>
@@ -309,12 +304,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="position-label">Settlement Date</label>
                     </Col>
 
@@ -341,7 +331,9 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                         name="Comment"
                         onChange={clientHandler}
                         value={clientBuyModal.Comment}
-                        className="text-field-size-modal"
+                        type="text"
+                        as={"textarea"}
+                        rows="1"
                       />
                     </Col>
                   </Row>
@@ -354,7 +346,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
           <>
             {modalBuy ? (
               <>
-                <Row className="showRow-top-line">
+                <Row className="d-flex m-0 p-0 justify-content-end  mb-3">
                   <Col
                     lg={12}
                     md={12}
@@ -362,7 +354,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     xs={12}
                     className="buy-modal-footer-confirm"
                   >
-                    <Button text="Confirm" className="conifrm-btn" />
+                    <Button text="Confirm" className="conifrm-btn-Buy-Modal" />
                   </Col>
                 </Row>
               </>

@@ -2,26 +2,14 @@
   margin: 0 !important;
 }
 
-.new_sidebar {
-  display: flex;
-  align-items: center;
-  min-height: 50vh;
-  width: 100vh !important;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  align-items: center;
-  flex-direction: column;
-}
-
 .js-sidebar {
   margin: 0 !important;
   background-color: #2a38af !important;
   position: absolute;
   overflow: hidden !important;
   right: 0 !important;
-  height: 90vh;
+  padding: 0;
+  height: 100vh;
   width: 75px !important;
   top: 75px;
   text-align: center;
@@ -33,8 +21,11 @@
 .sidebar-text {
   cursor: pointer !important;
   color: white !important;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 /* for chat panel */
@@ -53,25 +44,34 @@
 }
 
 .recent-chat {
-  font-size: 18px;
+  font-size: 16px;
+  color: #002650;
   font-weight: 600;
-  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.top-icons {
-  display: flex;
-  justify-content: end;
-  gap: 15px;
-  margin-top: 5px;
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
+.ExpandIcon:hover {
+  color: #002650;
 }
 
-.label-col {
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
+.BracketName {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  width: 120px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ParticipantName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 .recent-chat-row-bottom {
   padding: 10px 10px !important;
+  /* border-bottom: 1px solid #eff3f5; */
 }
 
 .image-john {
@@ -92,9 +92,12 @@
 }
 
 .label-image-time {
-  font-size: 11px;
-  margin-top: 10px;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  width: 120px !important;
+
+  margin-left: -20px !important;
 }
 
 .chat-inside-scroll {
@@ -147,33 +150,90 @@
 }
 
 .user-login-label-heading {
-  font-size: 13px;
   color: #002650 !important;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .login-date-and-time {
-  font-size: 12px;
-  display: flex;
-  justify-content: start;
-  align-items: center !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+.Credentials_below_line {
+  margin-top: 4px !important;
 }
 
 .chat-button-loggin {
+  background: #feac78;
+  background: -moz-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: -webkit-linear-gradient(top, #feac78 0%, #e97225 100%);
   background: linear-gradient(to bottom, #feac78 0%, #e97225 100%);
-  padding: 3px 8px !important;
-  border: none !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feac78', endColorstr='#e97225',GradientType=0 );
+  border-color: #feac78;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+
+.chat-button-loggin:hover {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  background: #5b67cd;
+  background: -moz-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: -webkit-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b67cd', endColorstr='#2a38af',GradientType=0 );
+  border-color: #5b67cd;
+}
+
+.chat-button-loggin:before {
+  content: "\e9b3";
+  font-family: "custom-icon" !important;
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .login-row-bottom-line {
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  /* border-bottom: 1px solid rgb(231, 231, 231) !important; */
+}
+
+.Line_bottom_loggedin_user {
+  border: 1px solid rgb(231, 231, 231) !important;
+  margin-top: 10px;
+}
+
+.Bottom_line {
   border-bottom: 1px solid rgb(231, 231, 231) !important;
+}
+
+.padding {
+  padding: 7px 7px !important;
 }
 
 /* for invite user panel */
 
 .invite-textfield {
-  margin-top: -25px;
   height: 30px;
   font-size: 12px;
 }
@@ -183,9 +243,11 @@
 }
 
 .add-another-text {
-  font-size: 14px !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   font-weight: 700;
   color: #002650 !important;
+  /* text-align: right; */
   margin-right: 10px;
 }
 
@@ -194,15 +256,43 @@
 }
 
 .sendInvite-btn {
-  padding: 5px 15px;
-  border: none;
+  background: #5b67cd;
+  background: -moz-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: -webkit-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b67cd', endColorstr='#2a38af',GradientType=0 );
+  border-color: #5b67cd;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  position: relative;
+  cursor: pointer;
 }
 
 .closeInvite-btn {
-  padding: 5px 15px;
-  border: none;
+  background: #feac78;
+  background: -moz-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: -webkit-linear-gradient(top, #feac78 0%, #e97225 100%);
   background: linear-gradient(to bottom, #feac78 0%, #e97225 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feac78', endColorstr='#e97225',GradientType=0 );
+  border-color: #feac78;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  font-family: "Montserrat", sans-serif;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  position: relative;
 }
 
 /* for open new chat box */
@@ -210,71 +300,57 @@
 .openNew-Chat {
   z-index: 1;
   position: fixed !important;
-  right: 412px;
+  right: 426px;
   bottom: 0px;
   cursor: pointer !important;
   height: 45vh !important;
-  width: 23% !important;
+  width: 25% !important;
   background-color: #f3fbff;
   border-radius: 0px;
   border: none !important;
 }
 
 .chatbox-row-bottom {
-  padding: 0px 2px !important;
-  margin: 0% !important;
+  padding: 7px 7px !important;
   background-color: #e5e8ff !important;
-}
-
-.chatBox-top-icons {
-  display: flex;
-  justify-content: end;
-  gap: 15px;
-  margin-top: 15px;
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
 }
 
 .chatBox-image-john {
-  padding: 10px;
+  height: 30px !important;
+  width: 30px !important;
   border-radius: 50%;
-  width: 60px !important;
-  height: 60px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position: relative !important; */
-  /* margin-bottom: 10px; */
 }
-
+.Gul-Ahmed-Class {
+  font-weight: 500 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  width: 120px !important;
+}
 .recent-chatBox {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 15px;
+  font-weight: 700 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  width: 120px !important;
 }
 
 .bottom-chat-box {
-  /* padding: 0px !important; */
-  /* margin: 0px !important; */
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 10px 10px !important;
   background-color: #e5e8ff !important;
 }
 
-.textfield-chatbox {
-  margin-top: -15px;
-  margin-left: 12px;
-  align-items: center !important;
-  margin-right: 10px;
-  width: 100%;
-  height: 30px;
+.PaperClip {
+  transform: rotate(32deg);
 }
 
-.btm-icons {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 8px;
+.Send {
+  transform: rotate(-11deg);
+}
+
+.textfield-chatbox {
+  height: 30px;
 }
 
 .sidebar-icons-color {

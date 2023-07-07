@@ -11,3 +11,7 @@ export const USER_ROLE_SUCCESS = "USER_ROLE_SUCCESS";
 export const USER_ROLE_FAIL = "USER_ROLE_FAIL";
 
 export const SIGN_OUT = "SIGN_UP_FAIL";
+
+export const SIGN_IN_USER_INIT = "SIGN_IN_USER_INIT";
+export const SIGN_IN_USER_SUCCESS = "SIGN_IN_USER_SUCCESS";
+export const SIGN_IN_USER_FAIL = "SIGN_IN_USER_FAIL";

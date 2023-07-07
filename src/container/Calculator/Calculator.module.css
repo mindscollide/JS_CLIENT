@@ -1,21 +1,30 @@
 .accodion-header-title {
-  width: 103%;
+  width: 100%;
+  height: auto !important;
+  margin: 0px 0px 0px 10px !important;
   text-align: center !important;
+  border-radius: 7 !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border: none !important;
 }
 
 .accodion-header-title:is(:hover, :focus, :focus-visible, :focus-within) {
   text-align: center !important;
+  border-radius: 4px !important;
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
 
 .accodion-header-title-two {
-  width: 103%;
+  width: 100%;
+  height: auto !important;
+  border-radius: 7 !important;
+  margin: 10px !important;
   text-align: center !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
   border: none !important;
-  margin-top: 10px;
+}
+.SectionContainerCalculater {
+  width: 100% !important;
 }
 
 .accodion-header-title-two:is(:hover, :focus, :focus-visible, :focus-within) {
@@ -25,7 +34,6 @@
 
 .panel-header-text {
   width: 100% !important;
-
   font-size: 17px !important;
   color: white !important;
   font-weight: 700 !important;
@@ -37,33 +45,37 @@
   font-size: 14px;
   padding: 8px 10px;
   margin-top: -12px;
-  font-weight: 600 !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
   text-align: center !important;
   box-shadow: 0px 0px 0px 0px rgb(236, 236, 236) !important;
+}
+
+.ContainerSection {
+  width: 100%;
+  padding-right: 90px !important;
 }
 
 .heading-price-to-yield {
   background-color: #fafafa;
   color: black;
-  font-size: 14px;
   padding: 8px 10px;
-  font-weight: 600 !important;
+  font-size: 13px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700;
   text-align: center !important;
   box-shadow: 0px 0px 0px 0px rgb(236, 236, 236) !important;
 }
 
 .heading-paper {
-  /* padding: 10px 30px; */
-  /* position: relative !important; */
-  /* top: -6px; */
   background-color: white !important;
-  /* box-shadow: 1px 1px 3px 3px rgb(236, 236, 236) !important; */
 }
 
 .select-field-calculator {
   width: 100%;
   color: #002650 !important;
-  /* height: 27px !important; */
+  display: flex;
+  justify-content: start !important;
   text-align: start !important;
   border-radius: 4px;
 }
@@ -71,9 +83,11 @@
 .alltextfields-calculator {
   width: 100%;
   font-weight: 500;
-  height: 29px;
+  height: 25px;
   font-size: 11px;
   color: #212529;
+  display: flex !important;
+  align-items: center !important;
   border: 1px solid #ccc !important;
   font-family: "Montserrat", sans-serif;
   border-radius: 4px;
@@ -88,13 +102,14 @@
   font-family: "Montserrat", sans-serif;
   font-size: 13px !important;
   font-weight: 700;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .interpolated-text-bottom {
-  font-size: 16px !important;
-  font-weight: 600;
-  /* margin-right: 8%; */
+  font-size: 13px !important;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 20px;
 }
 
 .bottom-row-background {
@@ -107,38 +122,85 @@
 }
 
 .calculate-btn {
+  background: #5b67cd;
+  background: -moz-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
+  background: -webkit-linear-gradient(top, #5b67cd 0%, #2a38af 100%);
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%);
-  color: white !important;
-  border: none;
-  border-radius: 4px !important;
-  padding: 7px 15px;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b67cd', endColorstr='#2a38af',GradientType=0 );
+  border-color: #5b67cd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
   position: relative;
-  left: 10px;
+  cursor: pointer;
 }
 
-.reset-btn {
-  background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
-  color: white !important;
-  border: none;
-  border-radius: 4px !important;
-  padding: 7px 15px;
+/* .calculate-btn:hover {
+  background: #feac78;
+  background: -moz-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: -webkit-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: linear-gradient(to bottom, #feac78 0%, #e97225 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feac78', endColorstr='#e97225',GradientType=0 );
+  border-color: #feac78;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
   position: relative;
-  right: 10px;
+} */
+
+.reset-btn {
+  background: #feac78;
+  background: -moz-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: -webkit-linear-gradient(top, #feac78 0%, #e97225 100%);
+  background: linear-gradient(to bottom, #feac78 0%, #e97225 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feac78', endColorstr='#e97225',GradientType=0 );
+  border-color: #feac78;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
 }
 
 .yield-to-price-labels {
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  width: 90px !important;
+  width: 112px !important;
   text-align: end;
 }
 
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-select-single:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  height: 25px !important;
+}
+
 .PIB-labels {
-  font-size: 12px !important;
-  text-align: end !important;
+  font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  width: 112px !important;
+  text-align: end;
+  /* margin-left: 30px !important; */
 }
 
 .slect-bond-p-to-y {

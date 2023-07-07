@@ -407,7 +407,7 @@ const Client = () => {
       title: <label className="table-all-title">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "100px",
+      width: "125px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -436,7 +436,7 @@ const Client = () => {
       title: <label className="table-all-title">Maturity</label>,
       dataIndex: "maturity",
       key: "maturity",
-      width: "100px",
+      width: "110px",
       ellipsis: true,
       render: (text) => <label className="maturity-column">{text}</label>,
       filters: [
@@ -490,24 +490,24 @@ const Client = () => {
       title: <label className="table-all-title">Instrument</label>,
       dataIndex: "instrument",
       key: "instrument",
-      width: "100px",
+      width: "90px",
       ellipsis: true,
     },
     {
       title: <label className="table-all-title">PKRV</label>,
       dataIndex: "pkrv",
       key: "pkrv",
-      width: "100px",
+      width: "50px",
     },
     {
       title: <label className="table-all-title">RFQ</label>,
       dataIndex: "rfq",
       key: "rfq",
-      width: "100px",
+      width: "79px",
       ellipsis: true,
       render: (text) => (
         <Button
-          icon={<ListUl size={22} />}
+          // icon={content}
           text={text}
           onClick={openModalHandler}
           className="offer-text-button"
@@ -539,31 +539,96 @@ const Client = () => {
       title: <label className="table-all-title">DTM</label>,
       dataIndex: "dtm",
       key: "dtm",
-      width: "100px",
+      width: "70px",
+      filters: [
+        {
+          text: "3m",
+          value: "1",
+        },
+        {
+          text: "6m",
+          value: "2",
+        },
+        {
+          text: "1Y",
+          value: "3",
+        },
+      ],
+      filterIcon: (filtered) => (
+        <CaretDownFill className="filter-chevron-icon-client" />
+      ),
     },
     {
       title: <label className="table-all-title">Coupon</label>,
       dataIndex: "Coupon",
       key: "Coupon",
-      width: "100px",
+      width: "60px",
     },
     {
-      title: <label className="table-all-title">Coupon Frequency</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Coupon</span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Frequency</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "couponfrequency",
       key: "couponfrequency",
-      width: "100px",
+      width: "85px",
     },
     {
-      title: <label className="table-all-title">Bid Spread</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Bid</span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Spread</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "bidspread",
       key: "bidspread",
-      width: "100px",
+      width: "55px",
     },
     {
-      title: <label className="table-all-title">Offer Spread</label>,
+      title: (
+        <label className="table-all-title">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Offer </span>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <span>Spread</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "offerspread",
       key: "offerspread",
-      width: "100px",
+      width: "80px",
     },
   ];
 
@@ -740,6 +805,7 @@ const Client = () => {
       dataIndex: "tenor",
       key: "tenor",
       align: "center",
+      width: "100px",
       ellipsis: true,
       filters: [
         {
@@ -764,6 +830,7 @@ const Client = () => {
       dataIndex: "bid",
       key: "bid",
       ellipsis: true,
+      width: "100px",
       render: (text) => (
         <Button
           text={text}
@@ -776,11 +843,12 @@ const Client = () => {
       title: <label className="table-all-title">Offer</label>,
       dataIndex: "offer",
       key: "offer",
+      width: "100px",
       render: (text) => (
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -788,6 +856,7 @@ const Client = () => {
       title: <label className="table-all-title">DTM</label>,
       dataIndex: "dtm",
       key: "dtm",
+      width: "100px",
       ellipsis: true,
       filters: [
         {
@@ -921,7 +990,7 @@ const Client = () => {
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -1069,7 +1138,7 @@ const Client = () => {
         <Button
           text={text}
           onClick={openSellModal}
-          className="offer-text-button"
+          className="offer-text-button-Recent-quotes"
         />
       ),
     },
@@ -1124,10 +1193,23 @@ const Client = () => {
   // data for columns for second table
   const columnsTwo = [
     {
-      title: <label className="bottom-table-header">TXN ID</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center m-2"
+            >
+              <span>TXN ID</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "txnid",
       key: "txnid",
-      width: "100px",
+      width: "110px",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1139,10 +1221,23 @@ const Client = () => {
       filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
     },
     {
-      title: <label className="bottom-table-header">Bank</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center m-2"
+            >
+              <span>Bank</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "bank",
       key: "bank",
-      width: "100px",
+      width: "75px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1157,7 +1252,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Position</label>,
       dataIndex: "position",
       key: "position",
-      width: "100px",
+      width: "78px",
       ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1169,7 +1264,28 @@ const Client = () => {
       filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
     },
     {
-      title: <label className="bottom-table-header">Security Type</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Security</span>
+            </Col>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Type</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "securitytype",
       key: "securitytype",
       width: "100px",
@@ -1202,7 +1318,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Rate</label>,
       dataIndex: "rate",
       key: "rate",
-      width: "80px",
+      width: "60px",
       ellipsis: true,
     },
     {
@@ -1239,7 +1355,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Maturity Date</label>,
       dataIndex: "maturitydate",
       key: "maturitydate",
-      width: "100px",
+      width: "120px",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1269,7 +1385,7 @@ const Client = () => {
       title: <label className="bottom-table-header">No of Days</label>,
       dataIndex: "noofdays",
       key: "noofdays",
-      width: "100px",
+      width: "70px",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1281,7 +1397,28 @@ const Client = () => {
       filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
     },
     {
-      title: <label className="bottom-table-header">Settlement Date</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Settlement</span>
+            </Col>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Date</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "settlement",
       key: "settlement",
       width: "110px",
@@ -1296,10 +1433,24 @@ const Client = () => {
       filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
     },
     {
-      title: <label className="bottom-table-header">Status</label>,
+      title: (
+        <label className="bottom-table-header">
+          {" "}
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center m-2"
+            >
+              <span>Status</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "status",
       key: "status",
-      width: "100px",
+      width: "87px",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1311,24 +1462,50 @@ const Client = () => {
       filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
     },
     {
-      title: <label className="bottom-table-header">Action</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center m-2"
+            >
+              <span>Action</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "action",
       key: "action",
-      width: "100px",
+      width: "90px",
       // ellipsis: true,
     },
     {
       title: <label className="bottom-table-header">Comment</label>,
       dataIndex: "comment",
       key: "comment",
-      width: "100px",
+      width: "80px",
       // ellipsis: true,
     },
     {
-      title: <label className="bottom-table-header">Chat</label>,
+      title: (
+        <label className="bottom-table-header">
+          <Row>
+            <Col
+              lg={12}
+              md={12}
+              sm={12}
+              className="d-flex justify-content-center"
+            >
+              <span>Chat</span>
+            </Col>
+          </Row>
+        </label>
+      ),
       dataIndex: "chat",
       key: "chat",
-      width: "100px",
+      width: "65px",
       render: (text) => (
         <Button text={text} className="chatIcon-inBotton-table" />
       ),
@@ -1549,7 +1726,7 @@ const Client = () => {
                   </>
                 ) : currentTable === 2 ? (
                   <>
-                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                    <Col lg={4} md={4} sm={4}>
                       <TextField
                         placeholder="search"
                         className="pkrv-search-textfield"
@@ -1869,7 +2046,7 @@ const Client = () => {
                   </>
                 ) : currentRightTable === 2 ? (
                   <>
-                    <Col lg={4} md={4} sm={4} className="upper-3m-colum">
+                    <Col lg={4} md={4} sm={4}>
                       <TextField
                         placeholder="search"
                         className="pkrv-search-textfield"

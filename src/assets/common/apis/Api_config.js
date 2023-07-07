@@ -12,4 +12,13 @@ const authenticationUserRole = {
   RequestMethod: "ServiceManager.RoleList",
 };
 
-export { authenticationLogIn, authenticationSignUp, authenticationUserRole };
+const CorporateUserLoggedIn = {
+  RequestMethod: "ServiceManager.CorporateUserLogin",
+};
+
+export {
+  authenticationLogIn,
+  authenticationSignUp,
+  authenticationUserRole,
+  CorporateUserLoggedIn,
+};

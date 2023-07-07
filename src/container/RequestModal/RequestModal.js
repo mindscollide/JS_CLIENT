@@ -108,58 +108,105 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
           <>
             {modalRequest ? (
               <>
-                <Row>
+                <Row className="mx-0">
                   <Col
                     lg={12}
                     md={12}
                     sm={12}
                     className="d-flex justify-content-center mb-4"
                   >
-                    <label className="request-quote-label">
-                      REQUEST FOR QUOTE
-                    </label>
+                    <h5 className="request-quote-label">REQUEST FOR QUOTE</h5>
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg={12} md={12} sm={12} className="text-field">
+                  <Col lg={12} md={12} sm={12}>
                     <Row>
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">Trade Date</label>
+                      <Col lg={4} md={4} sm={12}>
+                        <Row>
+                          <Col lg={12} md={12} sm={12} className="d-flex">
+                            <Row>
+                              <Col
+                                lg={5}
+                                md={5}
+                                sm={5}
+                                // className="d-flex justify-content-end align-items-center "
+                              >
+                                <span className="modal-title-trade">
+                                  Trade Date
+                                </span>
+                              </Col>
+                              <Col
+                                lg={7}
+                                md={7}
+                                sm={7}
+                                className="m-0 p-0 d-flex justify-content-start"
+                              >
+                                <TextField
+                                  className="text-field-size-modal"
+                                  labelClass="d-none"
+                                />
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
                       </Col>
 
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                        />
+                      <Col lg={4} md={4} sm={12}>
+                        <Row>
+                          <Col lg={12} md={12} sm={12}>
+                            <Row>
+                              <Col lg={4} md={4} sm={4}>
+                                <span className="modal-title-trade d-flex justify-content-start align-items-center">
+                                  No. of Days
+                                </span>
+                              </Col>
+                              <Col
+                                lg={8}
+                                md={8}
+                                sm={8}
+                                className=" d-flex justify-content-start"
+                              >
+                                <TextField
+                                  className="text-field-size-modal"
+                                  labelClass="d-none"
+                                  name={"NoOfDays"}
+                                  onChange={clientHandler}
+                                  value={isRequestModal.NoOfDays}
+                                />
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
                       </Col>
 
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">No. of Days</label>
+                      <Col lg={4} md={4} sm={12}>
+                        <Row>
+                          <Col lg={12} md={12} sm={12}>
+                            <Row>
+                              <Col
+                                lg={7}
+                                md={7}
+                                sm={7}
+                                className="d-flex justify-content-end"
+                              >
+                                <p className="modal-title-trade m-0 p-0 d-flex justify-content-center align-items-center ">
+                                  Settlement Date
+                                </p>
+                              </Col>
+                              <Col lg={5} md={5} sm={5} className="m-0 p-0">
+                                <TextField
+                                  className="text-field-size-modal"
+                                  labelClass="d-none"
+                                />
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
                       </Col>
 
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                          name={"NoOfDays"}
-                          onChange={clientHandler}
-                          value={isRequestModal.NoOfDays}
-                        />
-                      </Col>
+                      <Col lg={1} md={1} sm={12}></Col>
 
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">
-                          Settlement Date
-                        </label>
-                      </Col>
-
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                        />
-                      </Col>
+                      <Col lg={3} md={3} sm={12}></Col>
                     </Row>
                   </Col>
                 </Row>
@@ -170,12 +217,12 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Position*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <Select className="quoteShowModal" />
                     </Col>
 
@@ -183,7 +230,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Coupon Rate</label>
                     </Col>
@@ -202,12 +249,12 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Security Type*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <Select className="quoteShowModal" />
                     </Col>
 
@@ -215,7 +262,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Issue date</label>
                     </Col>
@@ -229,12 +276,12 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Tenor*</label>
                     </Col>
 
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <Select className="quoteShowModal" />
                     </Col>
 
@@ -242,7 +289,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Maturity date</label>
                     </Col>
@@ -252,12 +299,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                   </Row>
 
                   <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
+                    <Col lg={2} md={2} sm={2} className="mt-3">
                       <label className="position-label">Amount (PKR)*</label>
                     </Col>
 
@@ -274,7 +316,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                       lg={2}
                       md={2}
                       sm={2}
-                      className="d-flex justify-content-start mt-4"
+                      className="d-flex justify-content-start mt-3"
                     >
                       <label className="position-label">Comment</label>
                     </Col>
@@ -284,6 +326,9 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                         name={"Comment"}
                         onChange={clientHandler}
                         value={isRequestModal.Comment}
+                        type="text"
+                        as={"textarea"}
+                        rows="3"
                       />
                     </Col>
                   </Row>
@@ -302,7 +347,7 @@ const RequestModal = ({ modalRequest, setModalRequest }) => {
                     md={12}
                     sm={12}
                     xs={12}
-                    className="modal-footer-confirm"
+                    className="modal-footer-confirm d-flex justify-content-center mt-4"
                   >
                     <Button text="Confirm" className="conifrm-btn" />
                   </Col>
