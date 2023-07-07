@@ -466,7 +466,7 @@ const Client = () => {
       dataIndex: "tenor",
       key: "tenor",
       align: "center",
-      width: "90px",
+      width: "100px",
       ellipsis: true,
       filters: [
         {
@@ -805,6 +805,7 @@ const Client = () => {
       dataIndex: "tenor",
       key: "tenor",
       align: "center",
+      width: "100px",
       ellipsis: true,
       filters: [
         {
@@ -829,6 +830,7 @@ const Client = () => {
       dataIndex: "bid",
       key: "bid",
       ellipsis: true,
+      width: "100px",
       render: (text) => (
         <Button
           text={text}
@@ -841,6 +843,7 @@ const Client = () => {
       title: <label className="table-all-title">Offer</label>,
       dataIndex: "offer",
       key: "offer",
+      width: "100px",
       render: (text) => (
         <Button
           text={text}
@@ -853,6 +856,7 @@ const Client = () => {
       title: <label className="table-all-title">DTM</label>,
       dataIndex: "dtm",
       key: "dtm",
+      width: "100px",
       ellipsis: true,
       filters: [
         {
@@ -1321,7 +1325,7 @@ const Client = () => {
       title: <label className="bottom-table-header">Tenor</label>,
       dataIndex: "tenor",
       key: "tenor",
-      width: "60px",
+      width: "100px",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
