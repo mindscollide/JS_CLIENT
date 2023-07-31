@@ -211,10 +211,11 @@
 /* for modal setting */
 
 .modal-setting .modal-content {
-  margin-top: -2%;
-  height: 86vh !important;
+  margin-top: -10px;
+  height: 91vh !important;
   width: 48vw !important;
   background-color: #ffffff;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 15%) !important ;
   border: none !important;
   display: flex !important;
   /* align-items: center !important; */
@@ -319,15 +320,68 @@
   border-bottom: 1px solid rgb(230, 228, 228) !important;
 }
 
+.setting-icon {
+  font-size: 17px;
+}
+
 .change-password-btn {
-  padding: 5px 16px;
+  padding: 7px 18px !important;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px !important;
+  font-weight: 500 !important;
   color: #ffffff;
   border: none !important;
   background: linear-gradient(to bottom, #f8ae58 0%, #f76729 100%);
 }
 
-.setting-icon {
-  font-size: 17px;
+.change-password-label {
+  font-size: 14px;
+  font-weight: 400 !important;
+}
+
+.passwordIcon-setting {
+  position: absolute !important;
+  right: 27px !important;
+  top: 303px;
+  cursor: pointer;
+}
+
+.passwordIcon-newPass-setting {
+  position: absolute !important;
+  right: 27px;
+  top: 260px;
+  cursor: pointer;
+}
+
+.form-comtrol-textfield-password-Show-eyeIcon {
+  height: 27px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+  background: #ffffff !important;
+  font-size: 13px !important;
+  color: #002650 !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+.form-comtrol-textfield-password-eyeIcon {
+  height: 27px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+  background: #ffffff !important;
+  font-size: 13px !important;
+  color: #002650 !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+  -webkit-text-security: disc !important;
+}
+
+.change-password-textfield {
+  height: 27px !important;
+  border-radius: 4px !important;
+  font-size: 13px;
+  -webkit-text-security: disc !important;
+}
+
+.passwordTextHandler-setting .bSdOrC {
+  margin-top: 8px !important;
 }

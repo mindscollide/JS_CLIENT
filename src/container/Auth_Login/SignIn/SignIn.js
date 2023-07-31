@@ -125,7 +125,7 @@ const SignIn = () => {
                           aria-label="Username"
                           aria-describedby="basic-addon1"
                         />
-                        <span
+                        {/* <span
                           className="passwordIcon"
                           onClick={showNewPassowrd}
                         >
@@ -134,7 +134,7 @@ const SignIn = () => {
                           ) : (
                             <img src={PasswordEyeIcon} />
                           )}
-                        </span>
+                        </span> */}
                       </InputGroup>
                       {/* <TextField
                         placeholder="User Password"

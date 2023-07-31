@@ -1,12 +1,23 @@
 import { useState } from "react";
-import { Container, Row, Col, Nav, Dropdown } from "react-bootstrap";
-import { Button, Modal } from "../../../components/elements";
+import {
+  Container,
+  Row,
+  Col,
+  Nav,
+  Dropdown,
+  InputGroup,
+  Form,
+} from "react-bootstrap";
+import { Button, Modal, TextField } from "../../../components/elements";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import RequestModal from "../../../container/RequestModal/RequestModal";
 import { signOut } from "../../../store/actions/Auth-Actions";
+import PasswordChecklist from "react-password-checklist";
+import PasswordHideEyeIcon from "../../../assets/images/password_hide.svg";
+import PasswordEyeIcon from "../../../assets/images/password.svg";
 import Calculator from "../../../container/Calculator/Calculator";
 import { Checkbox, Switch } from "antd";
 import {
@@ -23,6 +34,19 @@ const Header = ({ show, setShow }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [passwordDetails, setPasswordDetails] = useState({
+    Password: "",
+    ConfirmNewPassword: "",
+  });
+  const [errorBar, setErrorBar] = useState(false);
+  const [password, setPassword] = useState("");
+  const [remeberPassword, SetRememberPassword] = useState(false);
+
+  const [showPasswordIcon, setShowPasswordIcon] = useState(false);
+  const [showConfirmNewPasswordIcon, setShowConfirmNewPasswordIcon] =
+    useState(false);
+  const [isPasswordStrong, setPasswordStrong] = useState(false);
+
   //when Clicked on calculater Button One button add Upload
   const [showuploadbtn, setShowuploadbtn] = useState(false);
 
@@ -37,6 +61,17 @@ const Header = ({ show, setShow }) => {
 
   //for user passcode
   const [userPasscode, setUserPasscode] = useState(false);
+
+  // for change password field state
+  const [changePassField, setChangePassField] = useState(false);
+
+  const showNewPassowrd = () => {
+    setShowPasswordIcon(!showPasswordIcon);
+  };
+
+  const showConfirmPassowrd = () => {
+    setShowConfirmNewPasswordIcon(!showConfirmNewPasswordIcon);
+  };
 
   //for open request quote modal
   const openRequestModal = async () => {
@@ -70,9 +105,54 @@ const Header = ({ show, setShow }) => {
   const handleLogoClick = () => {
     setShowuploadbtn(false);
   };
-  //for open another modal
 
-  const openRfqHandler = () => {};
+  const encryptPassword = (password) => {
+    let encryptedPassword = "";
+    for (let i = 0; i < password.length; i++) {
+      const charCode = password.charCodeAt(i);
+      encryptedPassword += String.fromCharCode(charCode + 1);
+    }
+    return encryptedPassword;
+  };
+
+  const passwordChangeHandler = (e) => {
+    setErrorBar(false);
+    let value = e.target.value;
+    let name = e.target.name;
+    var valueCheck = value.replace(/\s+/g, "");
+    if (valueCheck === "") {
+      console.log("packageDetailpackageDetailpackageDetailpackageDetail");
+      setPassword("");
+      setPasswordDetails({
+        ...passwordDetails,
+        [name]: "",
+      });
+      setErrorBar(true);
+    } else if (valueCheck !== "") {
+      console.log("packageDetailpackageDetailpackageDetailpackageDetail");
+
+      if (remeberPassword === true) {
+        setPasswordDetails({
+          ...passwordDetails,
+          [name]: value,
+        });
+        // setPassword(value);
+        let newPassword = encryptPassword(value);
+        localStorage.setItem("rememberPasswordValue", newPassword);
+      } else {
+        setPasswordDetails({
+          ...passwordDetails,
+          [name]: value,
+        });
+        // setPassword(value);
+        setErrorBar(false);
+      }
+    } else if (value === "") {
+      console.log("packageDetailpackageDetailpackageDetailpackageDetail");
+
+      setErrorBar(false);
+    }
+  };
 
   return (
     <>
@@ -169,7 +249,7 @@ const Header = ({ show, setShow }) => {
         onHide={() => setShowModal(false)}
         ModalBody={
           <>
-            <Row>
+            {/* <Row>
               <Col lg={12} md={12} sm={12} className="top-button-setting-modal">
                 <Button
                   text="User Settings"
@@ -182,19 +262,28 @@ const Header = ({ show, setShow }) => {
                   onClick={openPasscodeSetting}
                 />
               </Col>
-            </Row>
+            </Row> */}
 
             {userSetting ? (
               <>
-                <Row>
+                <Row className="border-line-passcode ">
                   <Col
-                    lg={12}
-                    md={12}
+                    lg={6}
+                    md={6}
                     sm={12}
-                    className="modal-setting-checkbox-col mt-5"
+                    className="d-flex justify-content-start mt-5"
                   >
-                    <Checkbox />
-                    <p className="modal-setting-para">Chat Panel Overlap</p>
+                    <p className="modal-setting-para">
+                      Two Factor Authentication
+                    </p>
+                  </Col>
+                  <Col
+                    lg={6}
+                    md={6}
+                    sm={12}
+                    className="d-flex justify-content-end mt-5"
+                  >
+                    <Switch />
                   </Col>
                 </Row>
 
@@ -203,12 +292,10 @@ const Header = ({ show, setShow }) => {
                     lg={12}
                     md={12}
                     sm={12}
-                    className="modal-setting-checkbox-col mt-2"
+                    className="modal-setting-checkbox-col mt-1"
                   >
                     <Checkbox />
-                    <p className="modal-setting-para">
-                      Sound on every personal message
-                    </p>
+                    <p className="modal-setting-para">Sound on every message</p>
                   </Col>
                 </Row>
 
@@ -217,74 +304,139 @@ const Header = ({ show, setShow }) => {
                     lg={12}
                     md={12}
                     sm={12}
-                    className="modal-setting-checkbox-col mt-2"
+                    className="modal-setting-checkbox-col mt-1"
                   >
                     <Checkbox />
                     <p className="modal-setting-para">
-                      Sound on every personal message
+                      Email on new message while offline
                     </p>
                   </Col>
                 </Row>
 
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="modal-setting-checkbox-col mt-2"
-                  >
-                    <Checkbox />
-                    <p className="modal-setting-para">
-                      Sound on every group message
-                    </p>
-                  </Col>
-                </Row>
+                <Row className="mt-2">
+                  <Col lg={12} md={12} sm={12}>
+                    <Button
+                      text="Change password"
+                      className="change-password-btn"
+                      onClick={() => setChangePassField(!changePassField)}
+                    />
 
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="modal-setting-checkbox-col mt-2"
-                  >
-                    <Checkbox />
-                    <p className="modal-setting-para">
-                      Sound on chat room message
-                    </p>
-                  </Col>
-                </Row>
+                    {changePassField ? (
+                      <>
+                        <Row className="mt-3">
+                          <Col lg={12} md={12} sm={12}>
+                            <Row>
+                              <Col lg={4} md={4} sm={12}>
+                                <span className="change-password-label">
+                                  Enter New Password *
+                                </span>
+                              </Col>
+                              <Col lg={8} md={8} sm={12}>
+                                <TextField
+                                  name="Password"
+                                  className={
+                                    showPasswordIcon
+                                      ? "form-comtrol-textfield-password-Show-eyeIcon"
+                                      : "form-comtrol-textfield-password-eyeIcon"
+                                  }
+                                  value={passwordDetails.Password || ""}
+                                  onChange={passwordChangeHandler}
+                                  placeholder="Password"
+                                  labelClass="d-none"
+                                  aria-label="Username"
+                                  iconClassName="IconStyle"
+                                  aria-describedby="basic-addon1"
+                                />
+                                <span
+                                  className="passwordIcon-newPass-setting"
+                                  onClick={showNewPassowrd}
+                                >
+                                  {showPasswordIcon ? (
+                                    <img src={PasswordHideEyeIcon} />
+                                  ) : (
+                                    <img src={PasswordEyeIcon} />
+                                  )}
+                                </span>
+                              </Col>
+                            </Row>
 
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="modal-setting-checkbox-col mt-2"
-                  >
-                    <Checkbox />
-                    <p className="modal-setting-para">
-                      Email on new personal message while offline
-                    </p>
-                  </Col>
-                </Row>
+                            <Row className="mt-3">
+                              <Col lg={4} md={4} sm={12}>
+                                <span className="change-password-label">
+                                  Confirm New Password *
+                                </span>
+                              </Col>
+                              <Col lg={8} md={8} sm={12}>
+                                <TextField
+                                  name="ConfirmNewPassword"
+                                  value={
+                                    passwordDetails.ConfirmNewPassword || ""
+                                  }
+                                  onChange={passwordChangeHandler}
+                                  className={
+                                    showConfirmNewPasswordIcon
+                                      ? "form-comtrol-textfield-password-Show-eyeIcon"
+                                      : "form-comtrol-textfield-password-eyeIcon"
+                                  }
+                                  placeholder="New Password"
+                                  labelClass="d-none"
+                                  aria-label="Username"
+                                  iconClassName="IconStyle"
+                                  aria-describedby="basic-addon1"
+                                />
+                                <span
+                                  className="passwordIcon-setting"
+                                  onClick={showConfirmPassowrd}
+                                >
+                                  {showConfirmNewPasswordIcon ? (
+                                    <img src={PasswordHideEyeIcon} />
+                                  ) : (
+                                    <img src={PasswordEyeIcon} />
+                                  )}
+                                </span>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
 
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="modal-setting-checkbox-col mt-2"
-                  >
-                    <Checkbox />
-                    <p className="modal-setting-para">
-                      Email on new group message while offline
-                    </p>
+                        <Col sm={12} md={12} lg={12} className="mt-2">
+                          <p className="ConfirmPassword_heading">
+                            Password must have
+                          </p>
+                          <PasswordChecklist
+                            rules={[
+                              "minLength",
+                              "specialChar",
+                              "letter",
+                              "match",
+                            ]}
+                            minLength={8}
+                            className={"passwordTextHandler-setting"}
+                            value={passwordDetails.Password}
+                            valueAgain={passwordDetails.ConfirmNewPassword}
+                            autoComplete="false"
+                            onChange={(isValid) => {
+                              setPasswordStrong(isValid);
+                            }}
+                            // invalidColor="#ff0000"
+                            // validColor="#6172D6"
+                            iconSize={"14px"}
+                            messages={{
+                              minLength: "Password has atleast 8 characters",
+                              specialChar: "Password has special characters",
+                              letter: "Password has a letter",
+                              match: "Passwords match",
+                            }}
+                          />
+                        </Col>
+                      </>
+                    ) : null}
                   </Col>
                 </Row>
               </>
             ) : userPasscode ? (
               <>
-                <Row className="border-line-passcode">
+                {/* <Row className="border-line-passcode">
                   <Col
                     lg={6}
                     md={6}
@@ -310,7 +462,7 @@ const Header = ({ show, setShow }) => {
                       className="change-password-btn"
                     />
                   </Col>
-                </Row>
+                </Row> */}
               </>
             ) : null}
           </>

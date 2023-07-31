@@ -7,8 +7,6 @@ import {
   authenticationUserRole,
 } from "../../assets/common/apis/Api_config";
 import { authenticationAPI } from "../../assets/common/apis/Api_ends_points";
-import { message } from "antd";
-import { type } from "@testing-library/user-event/dist/type";
 
 const logininit = () => {
   return {
