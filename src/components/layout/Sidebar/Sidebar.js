@@ -1,21 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Nav, Container, Navbar, NavDropdown } from "react-bootstrap";
-import Chat from "../../../assets/images/Comment-Icon.png";
-import {
-  Gear,
-  ChatLeft,
-  People,
-  Search,
-  ArrowsAngleExpand,
-  X,
-  ChatDots,
-  Send,
-  Paperclip,
-} from "react-bootstrap-icons";
+import { Row, Col, Nav } from "react-bootstrap";
 import JohnCater from "../../../assets/images/profile3.png";
 import { Button, TextField } from "../../../components/elements";
-import Users from "../../../assets/images/Assignees-Icon.png";
-import Broadcast from "../../../assets/images/6.png";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
@@ -144,9 +130,14 @@ const Sidebar = () => {
                 sm={4}
                 className="d-flex justify-content-end gap-2 align-items-center"
               >
-                <Search size={17} />
-                <ArrowsAngleExpand size={17} className={styles["ExpandIcon"]} />
-                <X size={25} onClick={closeHandler} />
+                <i className={`${"icon-search"} ${styles["ExpandIcon"]}`}></i>
+                <i
+                  className={`${"icon-maximize1"} ${styles["ExpandIcon"]}`}
+                ></i>
+                <i
+                  className={`${"icon-close"} ${styles["ExpandIcon"]}`}
+                  onClick={closeHandler}
+                ></i>
               </Col>
             </Row>
 
@@ -469,9 +460,14 @@ const Sidebar = () => {
                 sm={4}
                 className="d-flex align-items-center gap-2 justify-content-end"
               >
-                <Search size={18} />
-                <ArrowsAngleExpand size={18} />
-                <X size={22} onClick={closeLoginPanel} />
+                <i className={`${"icon-search"} ${styles["ExpandIcon"]}`}></i>
+                <i
+                  className={`${"icon-maximize1"} ${styles["ExpandIcon"]}`}
+                ></i>
+                <i
+                  className={`${"icon-close"} ${styles["ExpandIcon"]}`}
+                  onClick={closeLoginPanel}
+                ></i>
               </Col>
               <hr className={styles["Line_bottom_loggedin_user"]} />
             </Row>
@@ -866,7 +862,10 @@ const Sidebar = () => {
                     sm={2}
                     className="d-flex justify-content-end align-items-center"
                   >
-                    <X size={22} onClick={closeInvitePanel} />
+                    <i
+                      className={`${"icon-close"} ${styles["ExpandIcon"]}`}
+                      onClick={closeInvitePanel}
+                    ></i>
                   </Col>
                 </Row>
               </Col>
@@ -943,7 +942,10 @@ const Sidebar = () => {
                   </span>
                 </Col>
                 <Col lg={1} md={1} sm={1}>
-                  <X size={20} onClick={closeChatHandler} />
+                  <i
+                    className={`${"icon-close"} ${styles["ExpandIcon"]}`}
+                    onClick={closeChatHandler}
+                  ></i>
                 </Col>
               </Row>
 
@@ -955,7 +957,7 @@ const Sidebar = () => {
                   className={styles["bottom-chat-box"]}
                 >
                   <Row>
-                    <Col lg={10} md={10} sm={10}>
+                    <Col lg={10} md={10} sm={12}>
                       <TextField
                         labelClass={"d-none"}
                         className={styles["textfield-chatbox"]}
@@ -964,11 +966,17 @@ const Sidebar = () => {
                     <Col
                       lg={2}
                       md={2}
-                      sm={2}
-                      className="d-flex justify-content-end  align-items-center"
+                      sm={12}
+                      className="d-flex justify-content-start  align-items-center"
                     >
-                      <Send className={styles["Send"]} size={22} />
-                      <Paperclip className={styles["PaperClip"]} size={22} />
+                      <i className={`${styles["Send"]} ${"icon-send"}`}></i>
+                      <i
+                        className={`${
+                          styles["PaperClip"]
+                        } ${"icon-clip-attachment"}`}
+                      ></i>
+                      {/* <Send className={styles["Send"]} size={22} /> */}
+                      {/* <Paperclip className={styles["PaperClip"]} size={22} /> */}
                     </Col>
                   </Row>
                 </Col>

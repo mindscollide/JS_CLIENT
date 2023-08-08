@@ -151,21 +151,14 @@
 }
 
 .profilebtn-dropdown {
-  background: #ffffff;
-  border-radius: 4px;
-  height: 48px;
-  padding: 1px 0px;
-  padding-left: 0.5rem !important;
-  position: relative;
-  box-sizing: border-box;
+  max-width: 150px;
 }
 
 .dropdown-toggle {
   margin: 0;
-  padding: 2px 8px;
+  padding: 5px 5px;
   display: flex;
-  justify-content: start;
-  border-radius: 4px !important;
+  justify-content: center;
   align-items: center;
   background-color: white !important;
   color: #000;
@@ -177,18 +170,17 @@
   border-radius: 50%;
   display: flex;
   justify-content: start !important;
-  margin-right: 20px !important;
   align-items: center;
 }
 .dropdown-toggle::after {
-  margin-right: 5px !important;
+  margin-right: 0px !important;
+  display: none !important;
 }
 .user-name {
   margin: 0;
-  max-width: 110px;
+  width: 108px;
+  font-size: 14px;
   color: #002650 !important;
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
   font-weight: 700;
   text-overflow: ellipsis !important;
   overflow: hidden;
@@ -340,36 +332,44 @@
 }
 
 .passwordIcon-setting {
-  position: absolute !important;
-  right: 27px !important;
-  top: 303px;
+  /* position: absolute !important; */
+  /* right: 27px !important; */
+  /* top: 307px; */
+  display: flex;
+  justify-content: end !important;
+  margin: -20px 10px !important;
   cursor: pointer;
+  user-select: none !important;
 }
 
 .passwordIcon-newPass-setting {
-  position: absolute !important;
-  right: 27px;
-  top: 260px;
+  /* position: absolute !important; */
+  /* right: 27px; */
+  /* top: 270px; */
+  display: flex;
+  justify-content: end !important;
+  margin: -20px 10px !important;
   cursor: pointer;
+  user-select: none !important;
 }
 
 .form-comtrol-textfield-password-Show-eyeIcon {
-  height: 27px !important;
+  height: 30px !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
   background: #ffffff !important;
   font-size: 13px !important;
-  color: #002650 !important;
+  color: #000000 !important;
   box-shadow: none !important;
   border-radius: 4px !important;
 }
 .form-comtrol-textfield-password-eyeIcon {
-  height: 27px !important;
+  height: 30px !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
   background: #ffffff !important;
   font-size: 13px !important;
-  color: #002650 !important;
+  color: #000000 !important;
   box-shadow: none !important;
   border-radius: 4px !important;
   -webkit-text-security: disc !important;
@@ -384,4 +384,8 @@
 
 .passwordTextHandler-setting .bSdOrC {
   margin-top: 8px !important;
+}
+
+.div-span-change-password {
+  transition: background-color 0.3s ease !important;
 }

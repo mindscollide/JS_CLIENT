@@ -9,6 +9,8 @@ const initialState = {
   isSignUp: false,
   UserRoleList: [],
   SessionExpeireResponseMessage: "",
+  corporatePassword: "",
+  emailResetPassword: "",
   roles: null,
   Token: "",
   Refresh: "",
@@ -38,6 +40,7 @@ const authReducer = (state = initialState, action) => {
         Token: "",
         Refresh: "",
       };
+
     case actions.SIGN_IN_USER_INIT:
       return {
         ...state,
@@ -110,6 +113,44 @@ const authReducer = (state = initialState, action) => {
         ...state,
         Loading: false,
         UserRoleList: [],
+        ResponseMessage: action.message,
+      };
+
+    case actions.CREATE_CORPORATE_USER_INIT:
+      return { ...state, Loading: true };
+
+    case actions.CREATE_CORPORATE_USER_SUCCESS:
+      return {
+        ...state,
+        Loading: false,
+        corporatePassword: action.response,
+        ResponseMessage: action.message,
+      };
+
+    case actions.CREATE_CORPORATE_USER_FAIL:
+      return {
+        ...state,
+        Loading: false,
+        corporatePassword: "",
+        ResponseMessage: action.message,
+      };
+
+    case actions.SEND_EMAIL_RESET_PASSWORD_INIT:
+      return { ...state, Loading: true };
+
+    case actions.SEND_EMAIL_RESET_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        Loading: false,
+        emailResetPassword: action.response,
+        ResponseMessage: action.message,
+      };
+
+    case actions.SEND_EMAIL_RESET_PASSWORD_FAIL:
+      return {
+        ...state,
+        Loading: false,
+        emailResetPassword: "",
         ResponseMessage: action.message,
       };
 

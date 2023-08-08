@@ -50,8 +50,8 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.ExpandIcon:hover {
-  color: #002650;
+.ExpandIcon {
+  font-size: 18px !important;
 }
 
 .BracketName {
@@ -342,11 +342,15 @@
 }
 
 .PaperClip {
-  transform: rotate(32deg);
+  transform: rotate(120deg);
+  margin: 0px 15px !important;
+  font-size: 16px !important;
 }
 
 .Send {
   transform: rotate(-11deg);
+  margin: 0px -5px !important;
+  font-size: 16px !important;
 }
 
 .textfield-chatbox {

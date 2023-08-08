@@ -115,7 +115,8 @@
 .modal-styles .modal-content {
   position: absolute;
   top: 0 !important;
-  height: 430px !important;
+  max-height: 430px !important;
+  overflow: hidden !important;
   width: 800px !important;
   background-color: #e6e8ff;
   border-radius: 8px !important;
