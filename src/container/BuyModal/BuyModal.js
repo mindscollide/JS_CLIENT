@@ -254,7 +254,7 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     >
                       <label className="position-label">Maturity date</label>
                     </Col>
-                    <Col lg={4} md={4} sm={4} className="mt-4">
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <DatePicker
                         name="MaturityDate"
                         selected={startDate}
@@ -293,9 +293,10 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     >
                       <label className="position-label">No. of Days</label>
                     </Col>
-                    <Col lg={4} md={4} sm={4}>
+                    <Col lg={4} md={4} sm={4} className="mt-3">
                       <TextField
                         name="NoOfDays"
+                        labelClass="d-none"
                         onChange={clientHandler}
                         value={clientBuyModal.NoOfDays}
                         className="text-field-size-modal"
@@ -326,13 +327,14 @@ const BuyModal = ({ ModalTitle, modalBuy, setBuyModal }) => {
                     >
                       <label className="position-label">Comment</label>
                     </Col>
-                    <Col lg={4} md={4} sm={4}>
+                    <Col lg={4} md={4} sm={4} className="mt-4">
                       <TextField
                         name="Comment"
                         onChange={clientHandler}
                         value={clientBuyModal.Comment}
                         type="text"
                         as={"textarea"}
+                        labelClass="d-none"
                         rows="1"
                       />
                     </Col>

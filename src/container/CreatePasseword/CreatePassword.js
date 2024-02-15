@@ -1,24 +1,55 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
-import { Button, TextField, Loader } from "../../components/elements";
+import { Button, Loader } from "../../components/elements";
 import PasswordChecklist from "react-password-checklist";
 import PasswordHideEyeIcon from "../../assets/images/password_hide.svg";
 import PasswordEyeIcon from "../../assets/images/password.svg";
+import { createCorporateUser } from "../../store/actions/Auth-Actions";
 import jsLogo from "../../assets/images/js-logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./CreatePassword.css";
 const CreatePassword = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { auth } = useSelector((state) => state);
+
+  const location = useLocation();
+
+  // This condition split the token and get array index 1 and array index 0
+  const tokenId =
+    location.search !== "" ? location.search.split("=")[1].split("%")[0] : "";
+  let getToken = localStorage.getItem("ForPasswordCreation");
   const [passwordDetails, setPasswordDetails] = useState({
     Password: "",
     ConfirmPassword: "",
+    token: tokenId === "" ? getToken : tokenId,
   });
+  console.log(passwordDetails, "passwordDetailspasswordDetails");
+  console.log(passwordDetails, "passwordDetailspasswordDetails");
   const [isPasswordStrong, setPasswordStrong] = useState(false);
   const [errorBar, setErrorBar] = useState(false);
   const [password, setPassword] = useState("");
   const [remeberPassword, SetRememberPassword] = useState(false);
   const [showNewPasswordIcon, setShowNewPasswordIcon] = useState(false);
   const [showConfirmPasswordIcon, setConfirmShowPasswordIcon] = useState(false);
+
+  const createPasswordHandler = () => {
+    if (
+      passwordDetails.Password === passwordDetails.ConfirmPassword &&
+      passwordDetails.Password !== "" &&
+      passwordDetails.ConfirmPassword !== ""
+    ) {
+      let data = {
+        Token: { Token: passwordDetails.token },
+        Password: passwordDetails.Password,
+        ConfirmPassword: passwordDetails.ConfirmPassword,
+      };
+      dispatch(createCorporateUser(navigate, data));
+    } else {
+      alert("Password doesn't match or Empty");
+    }
+  };
 
   const encryptPassword = (password) => {
     let encryptedPassword = "";
@@ -80,7 +111,7 @@ const CreatePassword = () => {
     <Fragment>
       <Col sm={12} lg={12} md={12} className="createpassword">
         <Col lg={12} md={12} sm={12} className="js-logo-image">
-          <img src={jsLogo} width="150px" />
+          <img src={jsLogo} alt="Js-logo" width="150px" />
         </Col>
         <Container>
           <Row className="">
@@ -118,9 +149,9 @@ const CreatePassword = () => {
                           onClick={showNewPassowrd}
                         >
                           {showNewPasswordIcon ? (
-                            <img src={PasswordHideEyeIcon} />
+                            <img src={PasswordHideEyeIcon} alt="Icon" />
                           ) : (
-                            <img src={PasswordEyeIcon} />
+                            <img src={PasswordEyeIcon} alt="Icon" />
                           )}
                         </span>
                       </InputGroup>
@@ -152,9 +183,9 @@ const CreatePassword = () => {
                           onClick={showConfirmPassowrd}
                         >
                           {showConfirmPasswordIcon ? (
-                            <img src={PasswordHideEyeIcon} />
+                            <img src={PasswordHideEyeIcon} alt="Icon" />
                           ) : (
-                            <img src={PasswordEyeIcon} />
+                            <img src={PasswordEyeIcon} alt="Icon" />
                           )}
                         </span>
                       </InputGroup>
@@ -201,7 +232,11 @@ const CreatePassword = () => {
                       lg={12}
                       className="signIn-Signup-btn-col mt-3"
                     >
-                      <Button text="Create Password" className="login-btn" />
+                      <Button
+                        text="Create Password"
+                        onClick={createPasswordHandler}
+                        className="login-btn"
+                      />
                     </Col>
                   </Row>
                 </Col>
@@ -210,6 +245,7 @@ const CreatePassword = () => {
           </Row>
         </Container>
       </Col>
+      {auth.Loading ? <Loader /> : null}
     </Fragment>
   );
 };

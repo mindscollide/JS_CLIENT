@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Table, Button, Modal, TextField } from "../../components/elements";
-import {
-  ChevronDown,
-  CaretDownFill,
-  ListUl,
-  ChatDots,
-  Facebook,
-} from "react-bootstrap-icons";
 import DatePicker from "react-datepicker";
 import DowJones from "../../assets/images/dowjones.png";
 import CNBC from "../../assets/images/cnbc.png";
@@ -429,7 +422,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -458,7 +451,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -483,7 +476,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -532,7 +525,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -555,7 +548,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -768,7 +761,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -797,7 +790,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -822,7 +815,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -877,7 +870,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
   ];
@@ -910,7 +903,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -939,7 +932,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -964,7 +957,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -972,7 +965,7 @@ const Client = () => {
       dataIndex: "bid",
       key: "bid",
       width: "80px",
-      ellipsis: true,
+      // ellipsis: true,
       render: (text) => (
         <Button
           text={text}
@@ -1019,7 +1012,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -1058,7 +1051,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -1087,7 +1080,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -1112,7 +1105,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -1167,7 +1160,7 @@ const Client = () => {
         },
       ],
       filterIcon: (filtered) => (
-        <CaretDownFill className="filter-chevron-icon-client" />
+        <i className="icon-arrow-down-fill icon-color-filter"></i>
       ),
     },
     {
@@ -1209,7 +1202,8 @@ const Client = () => {
       ),
       dataIndex: "txnid",
       key: "txnid",
-      width: "110px",
+      width: "140px",
+      align: "center",
       ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1218,7 +1212,9 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: (
@@ -1237,7 +1233,8 @@ const Client = () => {
       ),
       dataIndex: "bank",
       key: "bank",
-      width: "75px",
+      width: "100px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1246,13 +1243,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Position</label>,
       dataIndex: "position",
       key: "position",
-      width: "78px",
+      width: "120px",
+      align: "center",
       ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1261,7 +1261,9 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: (
@@ -1288,7 +1290,8 @@ const Client = () => {
       ),
       dataIndex: "securitytype",
       key: "securitytype",
-      width: "100px",
+      width: "120px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1297,13 +1300,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Amount</label>,
       dataIndex: "amount",
       key: "amount",
-      width: "80px",
+      width: "120px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1312,13 +1318,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Rate</label>,
       dataIndex: "rate",
       key: "rate",
-      width: "60px",
+      align: "center",
+      width: "80px",
       ellipsis: true,
     },
     {
@@ -1326,6 +1335,7 @@ const Client = () => {
       dataIndex: "tenor",
       key: "tenor",
       width: "100px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1334,13 +1344,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Issue Date</label>,
       dataIndex: "issuedate",
       key: "issuedate",
-      width: "100px",
+      width: "120px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1349,13 +1362,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Maturity Date</label>,
       dataIndex: "maturitydate",
       key: "maturitydate",
-      width: "120px",
+      width: "130px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1364,13 +1380,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">Trade Date</label>,
       dataIndex: "tradedate",
       key: "tradedate",
-      width: "100px",
+      width: "120px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1379,13 +1398,16 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: <label className="bottom-table-header">No of Days</label>,
       dataIndex: "noofdays",
       key: "noofdays",
-      width: "70px",
+      width: "120px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1394,7 +1416,9 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: (
@@ -1421,7 +1445,8 @@ const Client = () => {
       ),
       dataIndex: "settlement",
       key: "settlement",
-      width: "110px",
+      width: "130px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label>{text}</label>,
       filters: [
@@ -1430,7 +1455,9 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: (
@@ -1450,7 +1477,8 @@ const Client = () => {
       ),
       dataIndex: "status",
       key: "status",
-      width: "87px",
+      width: "100px",
+      align: "center",
       // ellipsis: true,
       render: (text) => <label className="issue-date-column">{text}</label>,
       filters: [
@@ -1459,7 +1487,9 @@ const Client = () => {
           value: "1",
         },
       ],
-      filterIcon: (filtered) => <CaretDownFill className="filtericon-bottom" />,
+      filterIcon: (filtered) => (
+        <i className="icon-arrow-down-fill icon-color-bottom-table"></i>
+      ),
     },
     {
       title: (
@@ -1478,7 +1508,8 @@ const Client = () => {
       ),
       dataIndex: "action",
       key: "action",
-      width: "90px",
+      width: "100px",
+      align: "center",
       // ellipsis: true,
     },
     {
@@ -1486,6 +1517,7 @@ const Client = () => {
       dataIndex: "comment",
       key: "comment",
       width: "80px",
+      align: "center",
       // ellipsis: true,
     },
     {
@@ -1505,7 +1537,8 @@ const Client = () => {
       ),
       dataIndex: "chat",
       key: "chat",
-      width: "65px",
+      width: "100px",
+      align: "center",
       render: (text) => (
         <Button text={text} className="chatIcon-inBotton-table" />
       ),
@@ -1634,29 +1667,6 @@ const Client = () => {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
-
-  //on Clicking on screen making a state false
-  useEffect(() => {
-    console.log("click");
-    window.addEventListener("click", function (e) {
-      console.log("eeeeeeeee", e.target.className);
-      var clsname = e.target.className;
-      let arr = clsname && clsname.split("_");
-      console.log("click", typeof arr);
-      console.log("click", arr != "");
-      console.log("click", arr.length);
-      if (arr != undefined && arr.length > 0) {
-        if (arr[1] === "export-bttom-btn " && arr[1] === "btn-primary") {
-          console.log("click", arr);
-          setIsExport(false);
-        } else {
-          console.log("clickclick", arr);
-          setIsExport(false);
-          setIsExport(true);
-        }
-      }
-    });
-  }, []);
 
   return (
     <>
@@ -2295,7 +2305,7 @@ const Client = () => {
               <Button
                 text="Export"
                 className="export-bttom-btn"
-                // onClick={() => setIsExport(true)}
+                onClick={() => setIsExport(!isExport)}
               />
 
               {isExport ? (
@@ -2360,226 +2370,6 @@ const Client = () => {
           setModalRequest={setRequestQuoteModal}
         />
       ) : null}
-
-      {/* <Modal
-        show={show}
-        setShow={() => {
-          setShow();
-        }}
-        // backdrop={true}
-        modalHeaderClassName={"header-Video-Modal-close-btn"}
-        modalFooterClassName={"showFooter"}
-        className={"modaldialog modal-styles"}
-        size={show === true ? "lg" : "lg"}
-        onHide={closeHandlerModals}
-        ModalBody={
-          <>
-            {show ? (
-              <>
-                <Row>
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    className="d-flex justify-content-center mb-4"
-                  >
-                    <label className="request-quote-label">
-                      REQUEST FOR QUOTE
-                    </label>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col lg={12} md={12} sm={12} className="text-field">
-                    <Row>
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">Trade Date</label>
-                      </Col>
-
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                        />
-                      </Col>
-
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">No. of Days</label>
-                      </Col>
-
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                          name={"NoOfDays"}
-                          onChange={clientHandler}
-                          value={isRequestModal.NoOfDays}
-                        />
-                      </Col>
-
-                      <Col lg={1} md={1} sm={12}>
-                        <label className="modal-title-trade">
-                          Settlement Date
-                        </label>
-                      </Col>
-
-                      <Col lg={3} md={3} sm={12}>
-                        <TextField
-                          className="text-field-size-modal"
-                          labelClass="d-none"
-                        />
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-
-                <div className="heading-paper">
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Position*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4} className="mt-4">
-                      <Select className="quoteShowModal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Coupon Rate</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField
-                        className="text-field-size-modal"
-                        name={"CouponRate"}
-                        onChange={clientHandler}
-                        value={isRequestModal.CouponRate}
-                      />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Security Type*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4} className="mt-4">
-                      <Select className="quoteShowModal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Issue date</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Tenor*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4} className="mt-4">
-                      <Select className="quoteShowModal" />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Maturity date</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField className="text-field-size-modal" />
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Amount (PKR)*</label>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField
-                        className="text-field-size-modal"
-                        name={"AmountPKR"}
-                        onChange={clientHandler}
-                        value={isRequestModal.AmountPKR}
-                      />
-                    </Col>
-
-                    <Col
-                      lg={2}
-                      md={2}
-                      sm={2}
-                      className="d-flex justify-content-start mt-4"
-                    >
-                      <label className="position-label">Comment</label>
-                    </Col>
-                    <Col lg={4} md={4} sm={4}>
-                      <TextField
-                        className="text-field-size-modal"
-                        name={"Comment"}
-                        onChange={clientHandler}
-                        value={isRequestModal.Comment}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </>
-            ) : null}
-          </>
-        }
-        ModalFooter={
-          <>
-            {show ? (
-              <>
-                <Row className="showRow-top-line">
-                  <Col
-                    lg={12}
-                    md={12}
-                    sm={12}
-                    xs={12}
-                    className="modal-footer-confirm"
-                  >
-                    <Button text="Confirm" className="conifrm-btn" />
-                  </Col>
-                </Row>
-              </>
-            ) : null}
-          </>
-        }
-      /> */}
     </>
   );
 };

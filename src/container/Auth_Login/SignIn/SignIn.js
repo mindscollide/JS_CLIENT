@@ -1,13 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
-import { Button, TextField, Loader } from "../../../components/elements";
+import { Button, Loader } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
-import { LoginUser, logIn } from "../../../store/actions/Auth-Actions";
-import PasswordHideEyeIcon from "../../../assets/images/password_hide.svg";
-import PasswordEyeIcon from "../../../assets/images/password.svg";
+import { LoginUser } from "../../../store/actions/Auth-Actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Ubuntu } from "react-bootstrap-icons";
 import "./SignIn.css";
 const SignIn = () => {
   const { auth } = useSelector((state) => state);
@@ -19,10 +16,6 @@ const SignIn = () => {
     open: false,
     message: "",
   });
-
-  const showNewPassowrd = () => {
-    setShowNewPasswordIcon(!showNewPasswordIcon);
-  };
 
   // state for client Login
   const [clientCredentials, setClientCredentials] = useState({
@@ -53,7 +46,7 @@ const SignIn = () => {
       });
     }
   };
-
+  console.log("clientCredentials", clientCredentials);
   // handler for submit login
   const loginValidateHandler = (e) => {
     e.preventDefault();
@@ -71,11 +64,16 @@ const SignIn = () => {
     }
   };
 
+  // navigate to Forgot password page
+  const passwordForgot = () => {
+    navigate("./forgotPassword");
+  };
+
   return (
     <Fragment>
       <Col sm={12} lg={12} md={12} className="sign-in">
         <Col lg={12} md={12} sm={12} className="js-logo-image">
-          <img src={jsLogo} width="150px" />
+          <img src={jsLogo} width="150px" alt="jsLogo" />
         </Col>
         <Container>
           <Row className="">
@@ -125,22 +123,22 @@ const SignIn = () => {
                           aria-label="Username"
                           aria-describedby="basic-addon1"
                         />
-                        <span
-                          className="passwordIcon"
-                          onClick={showNewPassowrd}
-                        >
-                          {showNewPasswordIcon ? (
-                            <img src={PasswordHideEyeIcon} />
-                          ) : (
-                            <img src={PasswordEyeIcon} />
-                          )}
-                        </span>
                       </InputGroup>
-                      {/* <TextField
-                        placeholder="User Password"
-                        className="Text-field"
-                      /> */}
                     </Col>
+                    <Col
+                      lg={12}
+                      md={12}
+                      sm={12}
+                      className="d-flex justify-content-center"
+                    >
+                      <p
+                        className="forget-password-login"
+                        onClick={passwordForgot}
+                      >
+                        Forgot Password?
+                      </p>
+                    </Col>
+
                     <Col
                       sm={12}
                       md={12}

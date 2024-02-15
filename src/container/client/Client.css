@@ -12,6 +12,13 @@
   overflow: auto !important;
   overflow-x: hidden;
 }
+
+.inside-table .ant-table-thead > tr > th {
+  position: sticky !important;
+  top: 0;
+  z-index: 1;
+}
+
 :where(.css-dev-only-do-not-override-1e3x2xa).ant-table-wrapper
   .ant-table-tbody
   > tr
@@ -635,9 +642,12 @@
 
 .bottom-inside-table th.ant-table-cell {
   color: #ffffff !important;
-  padding: 10px 5px !important;
-
   border-radius: 0% !important;
+  position: sticky !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  top: 0 !important;
   background: linear-gradient(to bottom, #5b67cd 0%, #2a38af 100%) !important;
 }
 
@@ -794,7 +804,7 @@
   > tr
   > td {
   position: relative;
-  padding: 10px 16px;
+  padding: 5px 16px !important;
   overflow-wrap: break-word;
 }
 
@@ -805,4 +815,12 @@
   font-size: 13px;
   padding: 0px 8px;
   border: 1px solid #ccc !important;
+}
+
+.icon-color-filter {
+  color: #000000 !important;
+}
+
+.icon-color-bottom-table {
+  color: #ffffff !important;
 }
