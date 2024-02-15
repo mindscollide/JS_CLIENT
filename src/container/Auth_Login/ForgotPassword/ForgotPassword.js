@@ -1,20 +1,22 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
-import { Button } from "../../../components/elements";
+import { Button, Loader } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { validateEmail } from "../../../assets/common/functions/emailValidation";
 import { sendEmailResetPasswordApi } from "../../../store/actions/Auth-Actions";
 import "./ForgotPassword.css";
 const ForgotPassword = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { auth } = useSelector((state) => state);
 
-  const [open, setOpen] = useState({
-    open: false,
-    message: "",
-  });
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  //state for error Message
+  const [errorShow, setErrorShow] = useState(false);
 
+  // state for email textfield
   const [forgotTextField, setForgotTextField] = useState({
     email: {
       value: "",
@@ -23,13 +25,7 @@ const ForgotPassword = () => {
     },
   });
 
-  const emailVerifyHandler = () => {
-    let verifyEmail = {
-      Email: forgotTextField.email.value,
-    };
-    dispatch(sendEmailResetPasswordApi(navigate, verifyEmail));
-  };
-
+  // Email Onchange handler
   const validationHandler = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -58,11 +54,48 @@ const ForgotPassword = () => {
     }
   };
 
+  // for Verify email handler
+  const emailVerifyHandler = (e) => {
+    e.preventDefault();
+    if (forgotTextField.email.value !== "") {
+      if (validateEmail(forgotTextField.email.value)) {
+        let verifyEmail = {
+          Email: forgotTextField.email.value,
+        };
+        setErrorShow(false);
+        setIsValidEmail(true);
+        dispatch(sendEmailResetPasswordApi(navigate, verifyEmail));
+      } else if (validateEmail(forgotTextField.email.value) === false) {
+        setErrorShow(true);
+        setIsValidEmail(false);
+        setForgotTextField({
+          ...forgotTextField,
+          email: {
+            value: forgotTextField.email.value,
+            errorMessage: "Email Should be In Valid Format",
+            errorStatus: true,
+          },
+        });
+      }
+    } else {
+      setErrorShow(true);
+      setIsValidEmail(false);
+      setForgotTextField({
+        ...forgotTextField,
+        email: {
+          value: forgotTextField.email.value,
+          errorMessage: "Email is requried",
+          errorStatus: true,
+        },
+      });
+    }
+  };
+
   return (
     <Fragment>
       <Col sm={12} lg={12} md={12} className="Password-Forgot">
         <Col lg={12} md={12} sm={12} className="js-logo-image">
-          <img src={jsLogo} width="150px" />
+          <img src={jsLogo} alt="JS-Logo" width="150px" />
         </Col>
         <Container>
           <Row className="">
@@ -81,7 +114,7 @@ const ForgotPassword = () => {
                       </span>
                     </Col>
                     <Col sm={12} md={12} lg={12} className="mt-3">
-                      <InputGroup className="mb-3">
+                      <InputGroup>
                         <InputGroup.Text
                           id="basic-addon1"
                           className="Forgot-field-class"
@@ -99,11 +132,50 @@ const ForgotPassword = () => {
                         />
                       </InputGroup>
                     </Col>
+                    <Row>
+                      {/* <Col className="d-flex justify-content-start">
+                        <p
+                          className={
+                            errorShow && forgotTextField.email.value === ""
+                              ? "bankErrorMessage"
+                              : "bankErrorMessage_hidden"
+                          }
+                        >
+                          Email is required
+                        </p>
+                      </Col> */}
+
+                      <Col className="d-flex justify-content-start">
+                        {(!isValidEmail &&
+                          forgotTextField.email.value !== "" && (
+                            <p
+                              className={
+                                errorShow &&
+                                forgotTextField.email.errorMessage !== ""
+                                  ? "bankErrorMessage"
+                                  : "bankErrorMessage_hidden"
+                              }
+                            >
+                              {forgotTextField.email.errorMessage}
+                            </p>
+                          )) || (
+                          <p
+                            className={
+                              errorShow && forgotTextField.email.value === ""
+                                ? "bankErrorMessage"
+                                : "bankErrorMessage_hidden"
+                            }
+                          >
+                            {forgotTextField.email.errorMessage}
+                          </p>
+                        )}
+                      </Col>
+                    </Row>
                     <Col
                       sm={12}
                       md={12}
                       lg={12}
-                      className="signIn-Signup-btn-col"
+                      className="signIn-Signup-btn-col mt-2"
                     >
                       <Button
                         text="Verify Email"
@@ -118,6 +190,7 @@ const ForgotPassword = () => {
           </Row>
         </Container>
       </Col>
+      {auth.Loading ? <Loader /> : null}
     </Fragment>
   );
 };

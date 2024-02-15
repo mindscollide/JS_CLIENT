@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
-import { Button, TextField, Loader } from "../../../components/elements";
+import { Button, Loader } from "../../../components/elements";
 import jsLogo from "../../../assets/images/js-logo.png";
-import { LoginUser, logIn } from "../../../store/actions/Auth-Actions";
+import { LoginUser } from "../../../store/actions/Auth-Actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
@@ -16,10 +16,6 @@ const SignIn = () => {
     open: false,
     message: "",
   });
-
-  const showNewPassowrd = () => {
-    setShowNewPasswordIcon(!showNewPasswordIcon);
-  };
 
   // state for client Login
   const [clientCredentials, setClientCredentials] = useState({
@@ -77,7 +73,7 @@ const SignIn = () => {
     <Fragment>
       <Col sm={12} lg={12} md={12} className="sign-in">
         <Col lg={12} md={12} sm={12} className="js-logo-image">
-          <img src={jsLogo} width="150px" />
+          <img src={jsLogo} width="150px" alt="jsLogo" />
         </Col>
         <Container>
           <Row className="">

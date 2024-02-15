@@ -374,7 +374,7 @@ const LoginUser = (UserData, navigate) => {
                 );
                 navigate("/Js/");
                 dispatch(CorporateUuserSignINSuccess("Successfully Logged In"));
-              } else if (response.data.responseResult.roleID === 1) {
+              } else if (response.data.responseResult.roleID === 2) {
                 localStorage.setItem(
                   "loginTime",
                   response.data.responseResult.loginTime
@@ -625,7 +625,7 @@ const signUp = (UserData, navigate) => {
               response.data.responseResult.responseMessage ===
               "ERM_AuthService_SignUpManager_SignUp_03"
             ) {
-              if (response.data.responseResult.roleID === 1) {
+              if (response.data.responseResult.roleID === 2) {
                 localStorage.setItem(
                   "userID",
                   response.data.responseResult.userID
@@ -839,7 +839,7 @@ const createCorporateUser = (navigate, data) => {
                   "ERM_AuthService_AuthManager_CreateCorporatePassword_01".toLowerCase()
                 )
             ) {
-              if (response.data.responseResult.roleID === 1) {
+              if (response.data.responseResult.roleID === 2) {
                 localStorage.setItem(
                   "loginTime",
                   response.data.responseResult.loginTime
@@ -992,7 +992,7 @@ const sendEmailCorporateFail = (message) => {
 };
 
 const sendEmailResetPasswordApi = (navigate, verifyEmail) => {
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = localStorage.getItem("token");
   return (dispatch) => {
     dispatch(sendEmailCorporateInit());
     let form = new FormData();

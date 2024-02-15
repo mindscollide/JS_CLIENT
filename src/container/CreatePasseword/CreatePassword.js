@@ -1,14 +1,13 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Col, Row, InputGroup, Form } from "react-bootstrap";
-import { Button, TextField, Loader } from "../../components/elements";
+import { Button, Loader } from "../../components/elements";
 import PasswordChecklist from "react-password-checklist";
 import PasswordHideEyeIcon from "../../assets/images/password_hide.svg";
 import PasswordEyeIcon from "../../assets/images/password.svg";
-import { useLocation } from "react-router-dom";
 import { createCorporateUser } from "../../store/actions/Auth-Actions";
 import jsLogo from "../../assets/images/js-logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./CreatePassword.css";
 const CreatePassword = () => {
   const dispatch = useDispatch();
@@ -112,7 +111,7 @@ const CreatePassword = () => {
     <Fragment>
       <Col sm={12} lg={12} md={12} className="createpassword">
         <Col lg={12} md={12} sm={12} className="js-logo-image">
-          <img src={jsLogo} width="150px" />
+          <img src={jsLogo} alt="Js-logo" width="150px" />
         </Col>
         <Container>
           <Row className="">
@@ -150,9 +149,9 @@ const CreatePassword = () => {
                           onClick={showNewPassowrd}
                         >
                           {showNewPasswordIcon ? (
-                            <img src={PasswordHideEyeIcon} />
+                            <img src={PasswordHideEyeIcon} alt="Icon" />
                           ) : (
-                            <img src={PasswordEyeIcon} />
+                            <img src={PasswordEyeIcon} alt="Icon" />
                           )}
                         </span>
                       </InputGroup>
@@ -184,9 +183,9 @@ const CreatePassword = () => {
                           onClick={showConfirmPassowrd}
                         >
                           {showConfirmPasswordIcon ? (
-                            <img src={PasswordHideEyeIcon} />
+                            <img src={PasswordHideEyeIcon} alt="Icon" />
                           ) : (
-                            <img src={PasswordEyeIcon} />
+                            <img src={PasswordEyeIcon} alt="Icon" />
                           )}
                         </span>
                       </InputGroup>
